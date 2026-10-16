@@ -64,19 +64,86 @@ def render_kg_tab(db: DatabaseManager, builder: KnowledgeGraphBuilder):
 
     # 2. Node Inspector & Interactive Dynamic Graph
     st.subheader("2. Đồ thị mạng lưới quan hệ trực quan (Interactive Dynamic Graph)")
+
+    c_srch1, c_srch2 = st.columns([2, 1])
+    with c_srch1:
+        search_kw = st.text_input(
+            "🔍 Tìm kiếm nhanh theo Số hiệu văn bản / Tên điều khoản:",
+            value="",
+            placeholder="Nhập số hiệu hoặc từ khóa (VD: 34/2023, 112/2014, An ninh...)...",
+        )
+    with c_srch2:
+        only_related = st.checkbox("Chỉ hiện điều khoản có liên kết KG (Khuyên dùng)", value=True)
+
     with db.get_connection() as conn:
         cursor = conn.cursor()
-        cursor.execute("""
-            SELECT p.provision_id, p.title, d.doc_number
-            FROM provisions p
-            JOIN documents d ON p.document_id = d.document_id
-            WHERE p.level = 'ARTICLE'
-            LIMIT 60
-        """)
+        if search_kw.strip():
+            kw_param = f"%{search_kw.strip()}%"
+            if only_related:
+                cursor.execute("""
+                    SELECT DISTINCT p.provision_id, p.title, d.doc_number
+                    FROM provisions p
+                    JOIN documents d ON p.document_id = d.document_id
+                    WHERE (p.title LIKE ? OR d.doc_number LIKE ? OR d.title LIKE ?)
+                      AND p.provision_id IN (
+                          SELECT source_id FROM kg_edges WHERE relation_type != 'CONTAINS'
+                          UNION
+                          SELECT target_id FROM kg_edges WHERE relation_type != 'CONTAINS'
+                      )
+                    ORDER BY d.doc_number, p.title
+                    LIMIT 200
+                """, (kw_param, kw_param, kw_param))
+            else:
+                cursor.execute("""
+                    SELECT p.provision_id, p.title, d.doc_number
+                    FROM provisions p
+                    JOIN documents d ON p.document_id = d.document_id
+                    WHERE (p.title LIKE ? OR d.doc_number LIKE ? OR d.title LIKE ?)
+                    ORDER BY d.doc_number, p.title
+                    LIMIT 200
+                """, (kw_param, kw_param, kw_param))
+        else:
+            if only_related:
+                cursor.execute("""
+                    SELECT DISTINCT p.provision_id, p.title, d.doc_number
+                    FROM provisions p
+                    JOIN documents d ON p.document_id = d.document_id
+                    WHERE p.provision_id IN (
+                        SELECT source_id FROM kg_edges WHERE relation_type != 'CONTAINS'
+                        UNION
+                        SELECT target_id FROM kg_edges WHERE relation_type != 'CONTAINS'
+                    )
+                    ORDER BY d.doc_number, p.title
+                """)
+            else:
+                cursor.execute("""
+                    SELECT p.provision_id, p.title, d.doc_number
+                    FROM provisions p
+                    JOIN documents d ON p.document_id = d.document_id
+                    WHERE p.level = 'ARTICLE'
+                    LIMIT 200
+                """)
         prov_rows = cursor.fetchall()
 
+    if not prov_rows:
+        st.warning("⚠️ Không tìm thấy điều khoản nào khớp với từ khóa tìm kiếm. Vui lòng thử từ khóa khác.")
+        return
+
     prov_options = {f"{r['title']} ({r['doc_number']})": r["provision_id"] for r in prov_rows}
-    selected_label = st.selectbox("Chọn Điều khoản để trực quan hóa mạng lưới quan hệ liên kết:", list(prov_options.keys()))
+
+    # Đặt mặc định ưu tiên tìm thấy Điều 1 Nghị định 34/2023/NĐ-CP nếu có
+    default_idx = 0
+    keys_list = list(prov_options.keys())
+    for i, k in enumerate(keys_list):
+        if "34/2023" in k and "Điều 1" in k:
+            default_idx = i
+            break
+
+    selected_label = st.selectbox(
+        "Chọn Điều khoản để trực quan hóa mạng lưới quan hệ liên kết:",
+        keys_list,
+        index=default_idx,
+    )
     selected_id = prov_options[selected_label]
 
     if graph.has_node(selected_id):
