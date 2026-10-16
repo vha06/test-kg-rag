@@ -70,8 +70,8 @@ def render_search_tab(
             allowed_rels = st.multiselect(
                 "Loại quan hệ mở rộng:",
                 ["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES", "CONTAINS"],
-                default=["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES"],
-                help="Chọn thêm CONTAINS nếu muốn trực quan hóa thêm Văn bản cha và các Khoản thuộc Điều.",
+                default=["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES", "CONTAINS"],
+                help="Bao gồm CONTAINS để trực quan hóa Văn bản QPPL cha và các Khoản thuộc Điều.",
             )
         with c_kg3:
             ref_date_input = st.text_input("Ngày tham chiếu hiệu lực (YYYY-MM-DD):", value="2024-01-01")
