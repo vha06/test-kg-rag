@@ -1,8 +1,10 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 from typing import Dict, Any, List
 from storage.db import DatabaseManager
 from knowledge_graph.builder import KnowledgeGraphBuilder
+from knowledge_graph.visualizer import build_pyvis_html, RELATION_COLORS
 
 
 def render_kg_tab(db: DatabaseManager, builder: KnowledgeGraphBuilder):
@@ -60,8 +62,8 @@ def render_kg_tab(db: DatabaseManager, builder: KnowledgeGraphBuilder):
 
     st.divider()
 
-    # 2. Node Inspector
-    st.subheader("2. Tra cứu một Điều khoản cụ thể trên Đồ thị")
+    # 2. Node Inspector & Interactive Dynamic Graph
+    st.subheader("2. Đồ thị mạng lưới quan hệ trực quan (Interactive Dynamic Graph)")
     with db.get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute("""
@@ -69,21 +71,62 @@ def render_kg_tab(db: DatabaseManager, builder: KnowledgeGraphBuilder):
             FROM provisions p
             JOIN documents d ON p.document_id = d.document_id
             WHERE p.level = 'ARTICLE'
-            LIMIT 40
+            LIMIT 60
         """)
         prov_rows = cursor.fetchall()
 
     prov_options = {f"{r['title']} ({r['doc_number']})": r["provision_id"] for r in prov_rows}
-    selected_label = st.selectbox("Chọn Điều khoản để xem mạng lưới quan hệ liên kết:", list(prov_options.keys()))
+    selected_label = st.selectbox("Chọn Điều khoản để trực quan hóa mạng lưới quan hệ liên kết:", list(prov_options.keys()))
     selected_id = prov_options[selected_label]
 
     if graph.has_node(selected_id):
         node_data = graph.nodes[selected_id]
-        st.markdown(f"### {node_data.get('title')}")
+
+        # Interactive Graph Controls
+        cg1, cg2, cg3 = st.columns([1, 2, 1])
+        with cg1:
+            graph_hops = st.selectbox("Độ sâu đồ thị:", [1, 2], index=0, format_func=lambda h: f"{h} hop (Láng giềng trực tiếp)" if h == 1 else f"{h} hops (Mở rộng 2 tầng)")
+        with cg2:
+            graph_rels = st.multiselect(
+                "Lọc quan hệ vẽ trên đồ thị:",
+                ["REFERENCES", "AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "CONTAINS"],
+                default=["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES", "CONTAINS"],
+            )
+        with cg3:
+            enable_physics = st.checkbox("Mô phỏng vật lý động (Physics)", value=True)
+
+        # Legend explanation
+        st.markdown("""
+        **Chú giải màu sắc:** 
+        🟡 **Vàng**: Điều khoản đang chọn &nbsp;|&nbsp; 
+        🔵 **Xanh dương**: Văn bản pháp luật cha &nbsp;|&nbsp; 
+        🟢 **Xanh lá**: Điều khoản liên kết &nbsp;|&nbsp; 
+        🔴 **Đỏ**: Điều khoản sửa đổi/bổ sung (`AMENDS`) &nbsp;|&nbsp; 
+        🟣 **Tím**: Dẫn chiếu (`REFERENCES`) &nbsp;|&nbsp; 
+        🌐 **Xanh lơ**: Quy định chi tiết (`DETAILS`)
+        """)
+
+        # Generate & Embed Interactive PyVis Network
+        with st.spinner("Đang vẽ đồ thị tương tác..."):
+            graph_html = build_pyvis_html(
+                graph=graph,
+                center_node_id=selected_id,
+                max_hops=graph_hops,
+                allowed_relations=graph_rels,
+                height="540px",
+                physics=enable_physics,
+            )
+            components.html(graph_html, height=550, scrolling=False)
+
+        st.caption("💡 *Mẹo tương tác: Bạn có thể kéo thả các node, cuộn chuột để phóng to/thu nhỏ (Zoom), nhấp chuột vào node hoặc di chuột qua đường nối để xem chi tiết căn cứ và loại quan hệ.*")
+
+        st.divider()
+
+        st.markdown(f"### Chi tiết: {node_data.get('title')}")
         st.caption(f"**Đường dẫn:** {node_data.get('structural_path')} | **Hiệu lực từ:** `{node_data.get('effective_start')}` | **Trạng thái:** `{node_data.get('status')}`")
         st.info(node_data.get("content"))
 
-        # In-edges and out-edges
+        # In-edges and out-edges text inspection
         c_in, c_out = st.columns(2)
         with c_in:
             st.markdown("#### ⬅️ Quan hệ trỏ vào (Incoming Edges)")

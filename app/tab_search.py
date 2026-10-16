@@ -1,9 +1,11 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from typing import Optional
 from retrieval.bm25_retriever import BM25Retriever
 from retrieval.dense_retriever import DenseRetriever
 from retrieval.hybrid_retriever import HybridRetriever
 from knowledge_graph.expander import GraphExpander
+from knowledge_graph.visualizer import build_pyvis_html
 from temporal.validity_filter import TemporalValidityFilter
 from storage.db import DatabaseManager
 
@@ -94,6 +96,20 @@ def render_search_tab(db: DatabaseManager, expander: GraphExpander, temporal_fil
         if not results:
             st.info("Không tìm thấy điều khoản phù hợp.")
             return
+
+        # Interactive Graph visualization for search results
+        if kg_enabled and len(results) > 1:
+            with st.expander("🕸️ Đồ thị động tương tác mạng lưới kết quả truy xuất (Seed ↔ KG Expansion)", expanded=True):
+                st.caption("Các node bao gồm Seed được truy xuất trực tiếp và các node được mở rộng tự động qua Knowledge Graph:")
+                top_seed_id = results[0].provision_id
+                graph_html = build_pyvis_html(
+                    graph=expander.graph,
+                    center_node_id=top_seed_id,
+                    max_hops=max_hops,
+                    allowed_relations=allowed_rels,
+                    height="420px",
+                )
+                components.html(graph_html, height=430, scrolling=False)
 
         for idx, res in enumerate(results, start=1):
             with st.container():
