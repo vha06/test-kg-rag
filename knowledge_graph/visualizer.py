@@ -22,6 +22,7 @@ def build_pyvis_html(
     height: str = "520px",
     width: str = "100%",
     physics: bool = True,
+    **kwargs,
 ) -> str:
     allowed_rels = set(allowed_relations) if allowed_relations else set(RELATION_COLORS.keys())
 

@@ -265,15 +265,24 @@ def render_search_tab(
             with st.expander("🕸️ Đồ thị động tương tác mạng lưới kết quả truy xuất (Seed ↔ KG Expansion)", expanded=True):
                 st.caption("Các node bao gồm Seed được truy xuất trực tiếp và các node được mở rộng tự động qua Knowledge Graph:")
                 top_seed_id = active_results[0].provision_id
-                all_prov_ids = [r.provision_id for r in active_results]
-                graph_html = build_pyvis_html(
-                    graph=expander.graph,
-                    center_node_id=top_seed_id,
-                    highlight_node_ids=all_prov_ids,
-                    max_hops=max_hops,
-                    allowed_relations=allowed_rels,
-                    height="420px",
-                )
+                try:
+                    graph_html = build_pyvis_html(
+                        graph=expander.graph,
+                        center_node_id=top_seed_id,
+                        highlight_node_ids=all_prov_ids,
+                        max_hops=max_hops,
+                        allowed_relations=allowed_rels,
+                        height="420px",
+                    )
+                except TypeError:
+                    # Fallback phòng trường hợp tiến trình Streamlit cũ chưa tải lại module visualizer
+                    graph_html = build_pyvis_html(
+                        graph=expander.graph,
+                        center_node_id=top_seed_id,
+                        max_hops=max_hops,
+                        allowed_relations=allowed_rels,
+                        height="420px",
+                    )
                 components.html(graph_html, height=430, scrolling=False)
 
         for idx, res in enumerate(active_results, start=1):
