@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
+import importlib
 from typing import Optional, List
 from retrieval.bm25_retriever import BM25Retriever
 from retrieval.dense_retriever import DenseRetriever
@@ -10,6 +11,14 @@ from knowledge_graph.visualizer import build_pyvis_html
 from temporal.validity_filter import TemporalValidityFilter
 from storage.db import DatabaseManager
 from storage.models import RetrievalResult
+
+import generation.models
+import generation.llm_client
+import generation.answer_generator
+importlib.reload(generation.models)
+importlib.reload(generation.llm_client)
+importlib.reload(generation.answer_generator)
+
 from generation.models import LLMConfig, LegalAnswerResponse, ABComparisonResult
 from generation.answer_generator import LegalAnswerGenerator
 
@@ -149,9 +158,10 @@ def render_search_tab(
                     st.warning("⚠️ **Lưu ý về Hiệu lực Thời gian & Văn bản Sửa đổi:**\n\n" + "\n\n".join(answer_resp.temporal_warnings))
 
             # Quá trình suy luận nội bộ (nếu có, ví dụ Gemini 2.5 / Thinking models)
-            if answer_resp.thought_process:
+            thought_text = getattr(answer_resp, "thought_process", None)
+            if thought_text:
                 with st.expander("💭 Quá trình suy luận nội bộ của mô hình (Thinking Process)", expanded=False):
-                    st.markdown(answer_resp.thought_process)
+                    st.markdown(thought_text)
 
             # Nội dung câu trả lời
             with st.container(border=True):
@@ -206,9 +216,10 @@ def render_search_tab(
             with col_a:
                 st.markdown("### ❌ Cấu hình A: KHÔNG có Knowledge Graph")
                 st.caption(f"Chỉ dựa vào {len(seeds)} Chunks điểm cao nhất từ Retrieval | Model: `{ab_resp.without_kg.model_used}` | `{ab_resp.without_kg.latency_ms:.0f} ms`")
-                if ab_resp.without_kg.thought_process:
+                thought_a = getattr(ab_resp.without_kg, "thought_process", None)
+                if thought_a:
                     with st.expander("💭 Quá trình suy luận (Không KG)", expanded=False):
-                        st.markdown(ab_resp.without_kg.thought_process)
+                        st.markdown(thought_a)
                 if ab_resp.without_kg.temporal_warnings:
                     st.warning("\n\n".join(ab_resp.without_kg.temporal_warnings))
                 st.info(ab_resp.without_kg.answer_text)
@@ -217,9 +228,10 @@ def render_search_tab(
             with col_b:
                 st.markdown("### ✅ Cấu hình B: CÓ Knowledge Graph Expansion")
                 st.caption(f"Bổ sung {len(expanded) - len(seeds)} điều khoản sửa đổi/dẫn chiếu | Model: `{ab_resp.with_kg.model_used}` | `{ab_resp.with_kg.latency_ms:.0f} ms`")
-                if ab_resp.with_kg.thought_process:
+                thought_b = getattr(ab_resp.with_kg, "thought_process", None)
+                if thought_b:
                     with st.expander("💭 Quá trình suy luận (Có KG)", expanded=False):
-                        st.markdown(ab_resp.with_kg.thought_process)
+                        st.markdown(thought_b)
                 if ab_resp.with_kg.temporal_warnings:
                     st.warning("\n\n".join(ab_resp.with_kg.temporal_warnings))
                 st.success(ab_resp.with_kg.answer_text)

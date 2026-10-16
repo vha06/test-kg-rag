@@ -1,5 +1,5 @@
 from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class LLMConfig(BaseModel):
@@ -28,6 +28,8 @@ class CitationItem(BaseModel):
 
 
 class LegalAnswerResponse(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     query: str
     reference_date: str
     answer_text: str
