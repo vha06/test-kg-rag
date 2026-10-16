@@ -16,6 +16,7 @@ RELATION_COLORS = {
 def build_pyvis_html(
     graph: nx.MultiDiGraph,
     center_node_id: Optional[str] = None,
+    highlight_node_ids: Optional[List[str]] = None,
     max_hops: int = 1,
     allowed_relations: Optional[List[str]] = None,
     height: str = "520px",
@@ -25,10 +26,14 @@ def build_pyvis_html(
     allowed_rels = set(allowed_relations) if allowed_relations else set(RELATION_COLORS.keys())
 
     # 1. Determine nodes to include
+    sub_nodes: Set[str] = set()
+    if highlight_node_ids:
+        sub_nodes.update([nid for nid in highlight_node_ids if graph.has_node(nid)])
     if center_node_id and graph.has_node(center_node_id):
-        sub_nodes: Set[str] = {center_node_id}
-        current_frontier = {center_node_id}
+        sub_nodes.add(center_node_id)
 
+    if sub_nodes:
+        current_frontier = set(sub_nodes)
         for _ in range(max_hops):
             next_frontier = set()
             for n in current_frontier:
@@ -99,6 +104,11 @@ def build_pyvis_html(
             size = 32
             shape = "dot"
             border_width = 4
+        elif highlight_node_ids and node_id in highlight_node_ids:
+            color = "#10b981"  # Emerald green for other active retrieved results
+            size = 25
+            shape = "dot"
+            border_width = 3
         elif ntype == "DOCUMENT":
             color = "#3b82f6"  # Royal blue for legal document
             size = 26
@@ -110,7 +120,7 @@ def build_pyvis_html(
             shape = "triangle"
             border_width = 2
         else:
-            color = "#10b981"  # Emerald green for normal provisions
+            color = "#a855f7"  # Purple for KG expanded neighbor provisions
             size = 20
             shape = "dot"
             border_width = 2

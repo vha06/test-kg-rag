@@ -69,8 +69,9 @@ def render_search_tab(
         with c_kg2:
             allowed_rels = st.multiselect(
                 "Loại quan hệ mở rộng:",
-                ["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES"],
+                ["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES", "CONTAINS"],
                 default=["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES"],
+                help="Chọn thêm CONTAINS nếu muốn trực quan hóa thêm Văn bản cha và các Khoản thuộc Điều.",
             )
         with c_kg3:
             ref_date_input = st.text_input("Ngày tham chiếu hiệu lực (YYYY-MM-DD):", value="2024-01-01")
@@ -163,11 +164,19 @@ def render_search_tab(
                     table_rows = []
                     for c in answer_resp.citations:
                         status_str = "✅ Đã trích dẫn" if c.is_cited_in_answer else "⚪ Cung cấp thêm"
+                        if c.expansion_path and c.retrieval_method != "KG_EXPANSION":
+                            origin_str = "Seed + KG Liên kết"
+                        elif c.retrieval_method == "KG_EXPANSION":
+                            origin_str = "KG Expansion"
+                        else:
+                            origin_str = "Seed Retrieval"
+
                         table_rows.append({
                             "Mã nguồn": f"[#{c.ref_index}]",
                             "Văn bản QPPL": f"{c.doc_title} ({c.doc_number})",
                             "Điều khoản": c.provision_title,
-                            "Nguồn gốc": "Seed Retrieval" if c.retrieval_method != "KG_EXPANSION" else "KG Expansion",
+                            "Nguồn gốc": origin_str,
+                            "Mối quan hệ KG": c.expansion_path or "—",
                             "Trạng thái trong câu trả lời": status_str,
                             "Hiệu lực": c.validity_status,
                         })
@@ -256,9 +265,11 @@ def render_search_tab(
             with st.expander("🕸️ Đồ thị động tương tác mạng lưới kết quả truy xuất (Seed ↔ KG Expansion)", expanded=True):
                 st.caption("Các node bao gồm Seed được truy xuất trực tiếp và các node được mở rộng tự động qua Knowledge Graph:")
                 top_seed_id = active_results[0].provision_id
+                all_prov_ids = [r.provision_id for r in active_results]
                 graph_html = build_pyvis_html(
                     graph=expander.graph,
                     center_node_id=top_seed_id,
+                    highlight_node_ids=all_prov_ids,
                     max_hops=max_hops,
                     allowed_relations=allowed_rels,
                     height="420px",
@@ -267,8 +278,12 @@ def render_search_tab(
 
         for idx, res in enumerate(active_results, start=1):
             with st.container():
-                badge_color = "blue" if res.retrieval_method != "KG_EXPANSION" else "purple"
-                kg_badge = f":{badge_color}-background[{res.retrieval_method}]"
+                if res.expansion_path and res.retrieval_method != "KG_EXPANSION":
+                    kg_badge = ":blue-background[SEED + KG LIÊN KẾT]"
+                elif res.retrieval_method == "KG_EXPANSION":
+                    kg_badge = ":purple-background[KG_EXPANSION]"
+                else:
+                    kg_badge = f":blue-background[{res.retrieval_method}]"
 
                 val_badge = ""
                 if res.validity_status == "VALID":

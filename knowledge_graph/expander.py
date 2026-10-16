@@ -139,4 +139,48 @@ class GraphExpander:
             combined.append(item)
             current_rank += 1
 
+        # Ghi nhận toàn bộ mối quan hệ KG giữa các node trong tập kết quả (kể cả giữa các Seed với nhau)
+        self.annotate_inter_node_relations(combined, allowed_relations=allowed_relations)
+
         return combined
+
+    def annotate_inter_node_relations(
+        self,
+        results: List[RetrievalResult],
+        allowed_relations: Optional[List[str]] = None,
+    ):
+        """
+        Quét và bổ sung các quan hệ Knowledge Graph giữa bất kỳ cặp node nào trong danh sách kết quả,
+        đảm bảo không bị mất liên kết pháp lý giữa các Seed Nodes hoặc giữa Seed và Expanded nodes.
+        """
+        if not results:
+            return
+
+        allowed_set = set(allowed_relations) if allowed_relations else set(self.relation_weights.keys())
+        node_map = {r.provision_id: r for r in results}
+
+        for r in results:
+            u = r.provision_id
+            if not self.graph.has_node(u):
+                continue
+
+            # Kiểm tra quan hệ trỏ ra (outgoing) tới các node khác trong results
+            for _, v, k, d in self.graph.out_edges(u, keys=True, data=True):
+                rel = d.get("relation_type", "")
+                if rel in allowed_set and v in node_map and v != u:
+                    target_r = node_map[v]
+                    evidence = d.get("evidence_text", "")
+
+                    out_note = f"Dẫn chiếu [{rel}] tới {target_r.provision_title}"
+                    if not r.expansion_path:
+                        r.expansion_path = out_note
+                        r.evidence_text = evidence
+                    elif out_note not in r.expansion_path:
+                        r.expansion_path += f"; {out_note}"
+
+                    in_note = f"Được [{rel}] bởi {r.provision_title}"
+                    if not target_r.expansion_path:
+                        target_r.expansion_path = in_note
+                        target_r.evidence_text = evidence
+                    elif in_note not in target_r.expansion_path:
+                        target_r.expansion_path += f"; {in_note}"

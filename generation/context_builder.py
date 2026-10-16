@@ -60,11 +60,12 @@ class LegalContextBuilder:
                 )
 
             # 3. Format Context Block
-            method_desc = (
-                "Truy xuất trực tiếp (Seed Retrieval)"
-                if res.retrieval_method != "KG_EXPANSION"
-                else "Mở rộng qua Knowledge Graph (KG Expansion)"
-            )
+            if res.expansion_path and res.retrieval_method != "KG_EXPANSION":
+                method_desc = f"Truy xuất trực tiếp (Seed) + Có liên kết Knowledge Graph"
+            elif res.retrieval_method == "KG_EXPANSION":
+                method_desc = "Mở rộng qua Knowledge Graph (KG Expansion)"
+            else:
+                method_desc = "Truy xuất trực tiếp (Seed Retrieval)"
 
             val_desc = "ĐANG CÓ HIỆU LỰC"
             if res.validity_status == "INVALID_EXPIRED":
