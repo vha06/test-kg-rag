@@ -1,0 +1,49 @@
+paths:
+  raw_data: "mau_data.json"
+  processed_dir: "data/processed"
+  vbqppl_documents: "data/processed/vbqppl_documents.jsonl"
+  kg_relations: "data/processed/kg_relations.jsonl"
+  benchmark_qa: "data/processed/benchmark_qa.jsonl"
+  db_path: "artifacts/legal_lab.db"
+  indices_dir: "artifacts/indices"
+  reports_dir: "artifacts/reports"
+
+chunking:
+  max_tokens: 512
+  fixed_chunk_size: 256
+  fixed_chunk_overlap: 32
+  structure_max_tokens: 256
+
+embedding:
+  model_name: "bkai-foundation-models/vietnamese-bi-encoder"
+  fallback_model: "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  device: "cuda"
+  batch_size: 32
+  normalize_embeddings: true
+
+retrieval:
+  top_k: 10
+  candidate_pool: 50
+  rrf_k: 60
+  bm25_weight: 0.5
+  dense_weight: 0.5
+
+knowledge_graph:
+  enabled: true
+  max_hops: 1
+  max_expanded_nodes: 5
+  seed_limit: 3
+  decay_factor: 0.7
+  allowed_relations:
+    - "AMENDS"
+    - "SUPPLEMENTS"
+    - "REPEALS"
+    - "DETAILS"
+    - "REFERENCES"
+  relation_weights:
+    AMENDS: 1.0
+    SUPPLEMENTS: 1.0
+    REPEALS: 1.0
+    DETAILS: 0.9
+    REFERENCES: 0.85
+    CONTAINS: 0.5
