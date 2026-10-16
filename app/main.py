@@ -49,7 +49,57 @@ def main():
     - **Phiên bản lịch sử:** `{counts.get('provision_versions', 0)}`
     """)
     st.sidebar.divider()
-    st.sidebar.info("💡 Hệ thống hỗ trợ 18 cấu hình thí nghiệm (3 Chunking × 3 Retrieval × 2 KG) và kiểm soát hiệu lực theo thời gian.")
+    st.sidebar.title("🤖 Cấu hình LLM Generator")
+    provider_choice = st.sidebar.selectbox(
+        "Nhà cung cấp (Provider):",
+        ["Google Gemini API", "OpenAI / Compatible API", "Local Ollama", "Chế độ mô phỏng (Mock Test)"],
+        index=0,
+    )
+
+    provider_map = {
+        "Google Gemini API": "gemini",
+        "OpenAI / Compatible API": "openai_compatible",
+        "Local Ollama": "ollama",
+        "Chế độ mô phỏng (Mock Test)": "mock",
+    }
+    provider = provider_map[provider_choice]
+
+    api_key_input = None
+    base_url_input = None
+
+    if provider == "gemini":
+        model_name = st.sidebar.text_input("Tên Model Gemini:", value="gemini-2.5-flash")
+        env_key = os.environ.get("GEMINI_API_KEY", "")
+        if env_key:
+            st.sidebar.caption("✅ Đã nhận diện `GEMINI_API_KEY` từ môi trường.")
+        api_key_input = st.sidebar.text_input(
+            "Gemini API Key:",
+            value=env_key,
+            type="password",
+            placeholder="AIzaSy...",
+            help="Để trống sẽ dùng biến môi trường GEMINI_API_KEY. Nếu chưa có key, hệ thống sẽ dùng chế độ Mock để xem trước định dạng.",
+        )
+    elif provider == "openai_compatible":
+        model_name = st.sidebar.text_input("Tên Model:", value="gpt-4o-mini")
+        env_key = os.environ.get("OPENAI_API_KEY", "")
+        api_key_input = st.sidebar.text_input("API Key:", value=env_key, type="password")
+        base_url_input = st.sidebar.text_input("Base URL:", value="https://api.openai.com/v1", help="Có thể thay bằng Groq, OpenRouter, vLLM...")
+    elif provider == "ollama":
+        model_name = st.sidebar.text_input("Tên Model Ollama:", value="qwen2.5:7b")
+        base_url_input = st.sidebar.text_input("Ollama URL:", value="http://localhost:11434")
+    else:
+        model_name = "mock-evaluator"
+
+    temperature = st.sidebar.slider("Temperature:", min_value=0.0, max_value=1.0, value=0.1, step=0.05)
+
+    from generation.models import LLMConfig
+    llm_config = LLMConfig(
+        provider=provider,
+        model_name=model_name,
+        api_key=api_key_input,
+        base_url=base_url_input,
+        temperature=temperature,
+    )
 
     tab1, tab2, tab3, tab4 = st.tabs([
         "🔍 1. Interactive Search",
@@ -59,7 +109,7 @@ def main():
     ])
 
     with tab1:
-        render_search_tab(db, expander, temporal_filter)
+        render_search_tab(db, expander, temporal_filter, llm_config=llm_config)
 
     with tab2:
         render_chunking_tab(db)
