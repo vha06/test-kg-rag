@@ -59,8 +59,12 @@ class LegalAnswerGenerator:
         # 3. Gọi LLM
         client = MultiProviderLLMClient(cfg)
         error_msg: Optional[str] = None
+        thought_process: Optional[str] = None
         try:
-            raw_answer = client.generate(system_prompt=system_prompt, user_prompt=user_prompt)
+            raw_answer, thought_process = client.generate_with_thought(
+                system_prompt=system_prompt,
+                user_prompt=user_prompt
+            )
         except Exception as e:
             raw_answer = f"⚠️ Lỗi khi gọi mô hình LLM ({cfg.provider} - {cfg.model_name}): {str(e)}"
             error_msg = str(e)
@@ -91,6 +95,7 @@ class LegalAnswerGenerator:
             query=query,
             reference_date=reference_date,
             answer_text=raw_answer,
+            thought_process=thought_process,
             has_sufficient_evidence=has_sufficient,
             temporal_warnings=temporal_warnings,
             citations=citations,

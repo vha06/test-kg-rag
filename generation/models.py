@@ -8,7 +8,7 @@ class LLMConfig(BaseModel):
     api_key: Optional[str] = None
     base_url: Optional[str] = None
     temperature: float = 0.1
-    max_tokens: int = 2048
+    max_tokens: int = 8192
 
 
 class CitationItem(BaseModel):
@@ -31,6 +31,7 @@ class LegalAnswerResponse(BaseModel):
     query: str
     reference_date: str
     answer_text: str
+    thought_process: Optional[str] = None
     has_sufficient_evidence: bool = True
     temporal_warnings: List[str] = Field(default_factory=list)
     citations: List[CitationItem] = Field(default_factory=list)

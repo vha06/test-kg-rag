@@ -27,27 +27,46 @@ class MultiProviderLLMClient:
                 api_key = os.environ.get("OPENAI_API_KEY", "")
 
         # Fallback to mock mode if testing or missing required credentials
+        ans, _ = self.generate_with_thought(system_prompt, user_prompt)
+        return ans
+
+    def generate_with_thought(self, system_prompt: str, user_prompt: str) -> tuple[str, Optional[str]]:
+        provider = (self.config.provider or "gemini").lower()
+
+        # Check API key from env if missing
+        api_key = self.config.api_key
+        if not api_key:
+            if provider == "gemini":
+                api_key = os.environ.get("GEMINI_API_KEY", "")
+            elif provider in ("openai_compatible", "openai"):
+                api_key = os.environ.get("OPENAI_API_KEY", "")
+
+        # Fallback to mock mode if testing or missing required credentials
         if provider == "mock" or (provider in ("gemini", "openai_compatible", "openai") and not api_key):
             if provider != "mock":
-                return self._mock_generate(system_prompt, user_prompt, note="[LƯU Ý: Chưa cấu hình API Key. Đây là câu trả lời mô phỏng cấu trúc trích dẫn].")
-            return self._mock_generate(system_prompt, user_prompt)
+                return self._mock_generate(system_prompt, user_prompt, note="[LƯU Ý: Chưa cấu hình API Key. Đây là câu trả lời mô phỏng cấu trúc trích dẫn]."), None
+            return self._mock_generate(system_prompt, user_prompt), None
 
         if provider == "gemini":
             return self._call_gemini(api_key, system_prompt, user_prompt)
         elif provider in ("openai_compatible", "openai"):
             return self._call_openai_compatible(api_key, system_prompt, user_prompt)
         elif provider == "ollama":
-            return self._call_ollama(system_prompt, user_prompt)
+            return self._call_ollama(system_prompt, user_prompt), None
         else:
             raise ValueError(f"Provider không được hỗ trợ: {provider}")
 
-    def _call_gemini(self, api_key: str, system_prompt: str, user_prompt: str) -> str:
+    def _call_gemini(self, api_key: str, system_prompt: str, user_prompt: str) -> tuple[str, Optional[str]]:
         model = self.config.model_name or "gemini-2.5-flash"
         # Strip models/ prefix if provided
         if model.startswith("models/"):
             model = model[len("models/"):]
 
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+        
+        # Đảm bảo maxOutputTokens đủ lớn (tối thiểu 8192) để mô hình có đủ token cho cả Thinking và Answer hoàn chỉnh
+        max_tokens = max(self.config.max_tokens or 8192, 8192)
+
         payload = {
             "contents": [
                 {
@@ -60,7 +79,7 @@ class MultiProviderLLMClient:
             },
             "generationConfig": {
                 "temperature": self.config.temperature,
-                "maxOutputTokens": self.config.max_tokens,
+                "maxOutputTokens": max_tokens,
             },
         }
 
@@ -72,13 +91,35 @@ class MultiProviderLLMClient:
         )
 
         try:
-            with urllib.request.urlopen(req, timeout=60) as response:
+            with urllib.request.urlopen(req, timeout=90) as response:
                 res_data = json.loads(response.read().decode("utf-8"))
                 candidates = res_data.get("candidates", [])
                 if not candidates:
                     raise RuntimeError("Gemini không trả về kết quả.")
+
                 parts = candidates[0].get("content", {}).get("parts", [])
-                return "".join(p.get("text", "") for p in parts)
+                
+                # Tách biệt phần suy luận nội bộ (thought: True) và phần câu trả lời chính thức
+                answer_parts = []
+                thought_parts = []
+                for p in parts:
+                    if p.get("thought", False):
+                        thought_parts.append(p.get("text", ""))
+                    else:
+                        answer_parts.append(p.get("text", ""))
+
+                thought_text = "".join(thought_parts).strip() or None
+                if answer_parts:
+                    answer_text = "".join(answer_parts).strip()
+                else:
+                    # Fallback nếu mô hình không phân tách bằng cờ thought
+                    answer_text = "".join(p.get("text", "") for p in parts).strip()
+
+                finish_reason = candidates[0].get("finishReason", "")
+                if finish_reason == "MAX_TOKENS":
+                    answer_text += "\n\n⚠️ *[Lưu ý: Câu trả lời đã đạt giới hạn độ dài token tối đa (MAX_TOKENS) nên bị dừng lại. Hãy tăng max_tokens để nhận câu trả lời trọn vẹn hơn].*"
+
+                return answer_text, thought_text
         except urllib.error.HTTPError as e:
             err_body = e.read().decode("utf-8", errors="ignore")
             raise RuntimeError(f"Gemini API Error {e.code}: {err_body}")

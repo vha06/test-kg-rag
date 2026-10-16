@@ -148,15 +148,14 @@ def render_search_tab(
                 with st.container():
                     st.warning("⚠️ **Lưu ý về Hiệu lực Thời gian & Văn bản Sửa đổi:**\n\n" + "\n\n".join(answer_resp.temporal_warnings))
 
+            # Quá trình suy luận nội bộ (nếu có, ví dụ Gemini 2.5 / Thinking models)
+            if answer_resp.thought_process:
+                with st.expander("💭 Quá trình suy luận nội bộ của mô hình (Thinking Process)", expanded=False):
+                    st.markdown(answer_resp.thought_process)
+
             # Nội dung câu trả lời
-            st.markdown(
-                f"""
-                <div style="background-color: rgba(28, 131, 225, 0.08); padding: 18px; border-radius: 8px; border-left: 5px solid #1C83E1; margin: 12px 0;">
-                {answer_resp.answer_text}
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+            with st.container(border=True):
+                st.markdown(answer_resp.answer_text)
 
             # Bảng trích dẫn nguồn (Citation Verification Table)
             if answer_resp.citations:
@@ -207,6 +206,9 @@ def render_search_tab(
             with col_a:
                 st.markdown("### ❌ Cấu hình A: KHÔNG có Knowledge Graph")
                 st.caption(f"Chỉ dựa vào {len(seeds)} Chunks điểm cao nhất từ Retrieval | Model: `{ab_resp.without_kg.model_used}` | `{ab_resp.without_kg.latency_ms:.0f} ms`")
+                if ab_resp.without_kg.thought_process:
+                    with st.expander("💭 Quá trình suy luận (Không KG)", expanded=False):
+                        st.markdown(ab_resp.without_kg.thought_process)
                 if ab_resp.without_kg.temporal_warnings:
                     st.warning("\n\n".join(ab_resp.without_kg.temporal_warnings))
                 st.info(ab_resp.without_kg.answer_text)
@@ -215,6 +217,9 @@ def render_search_tab(
             with col_b:
                 st.markdown("### ✅ Cấu hình B: CÓ Knowledge Graph Expansion")
                 st.caption(f"Bổ sung {len(expanded) - len(seeds)} điều khoản sửa đổi/dẫn chiếu | Model: `{ab_resp.with_kg.model_used}` | `{ab_resp.with_kg.latency_ms:.0f} ms`")
+                if ab_resp.with_kg.thought_process:
+                    with st.expander("💭 Quá trình suy luận (Có KG)", expanded=False):
+                        st.markdown(ab_resp.with_kg.thought_process)
                 if ab_resp.with_kg.temporal_warnings:
                     st.warning("\n\n".join(ab_resp.with_kg.temporal_warnings))
                 st.success(ab_resp.with_kg.answer_text)
