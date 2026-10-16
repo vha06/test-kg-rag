@@ -28,7 +28,7 @@ class CitationItem(BaseModel):
 
 
 class LegalAnswerResponse(BaseModel):
-    model_config = ConfigDict(extra="ignore")
+    model_config = ConfigDict(extra="ignore", arbitrary_types_allowed=True)
 
     query: str
     reference_date: str
@@ -36,7 +36,7 @@ class LegalAnswerResponse(BaseModel):
     thought_process: Optional[str] = None
     has_sufficient_evidence: bool = True
     temporal_warnings: List[str] = Field(default_factory=list)
-    citations: List[CitationItem] = Field(default_factory=list)
+    citations: List[Any] = Field(default_factory=list)
     formatted_context: str = ""
     system_prompt: str = ""
     model_used: str = ""
@@ -45,7 +45,9 @@ class LegalAnswerResponse(BaseModel):
 
 
 class ABComparisonResult(BaseModel):
+    model_config = ConfigDict(extra="ignore", arbitrary_types_allowed=True)
+
     query: str
     reference_date: str
-    without_kg: LegalAnswerResponse
-    with_kg: LegalAnswerResponse
+    without_kg: Any
+    with_kg: Any

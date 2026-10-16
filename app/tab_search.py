@@ -11,14 +11,6 @@ from knowledge_graph.visualizer import build_pyvis_html
 from temporal.validity_filter import TemporalValidityFilter
 from storage.db import DatabaseManager
 from storage.models import RetrievalResult
-
-import generation.models
-import generation.llm_client
-import generation.answer_generator
-importlib.reload(generation.models)
-importlib.reload(generation.llm_client)
-importlib.reload(generation.answer_generator)
-
 from generation.models import LLMConfig, LegalAnswerResponse, ABComparisonResult
 from generation.answer_generator import LegalAnswerGenerator
 

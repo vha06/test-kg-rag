@@ -129,3 +129,24 @@ def test_05_multi_provider_llm_client_mock():
     )
     assert len(ans) > 50
     assert "[#1]" in ans
+
+
+def test_06_flexible_citations_and_thought_process(sample_retrieval_results):
+    generator = LegalAnswerGenerator(LLMConfig(provider="mock"))
+    resp = generator.generate_answer(
+        query="Kiểm tra thought process và citations flexibility",
+        results=sample_retrieval_results,
+        reference_date="2024-01-01",
+    )
+    assert hasattr(resp, "thought_process")
+    assert isinstance(resp.citations, list)
+    # Đảm bảo LegalAnswerResponse chấp nhận linh hoạt các kiểu citation mà không lỗi ValidationError
+    custom_resp = LegalAnswerResponse(
+        query="q",
+        reference_date="2024-01-01",
+        answer_text="ans",
+        thought_process="suy luận",
+        citations=[{"ref_index": 1, "provision_id": "P1"}, resp.citations[0]],
+    )
+    assert custom_resp.thought_process == "suy luận"
+    assert len(custom_resp.citations) == 2
