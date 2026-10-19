@@ -1,11 +1,14 @@
 import os
-from typing import List, Union
+import hashlib
+from typing import List, Union, Dict, Any
 import numpy as np
 import torch
 from sentence_transformers import SentenceTransformer
 
+from pipeline.interfaces import ILocalModelAdapter
 
-class EmbeddingAdapter:
+
+class EmbeddingAdapter(ILocalModelAdapter):
     def __init__(
         self,
         model_name: str = "bkai-foundation-models/vietnamese-bi-encoder",
@@ -48,3 +51,56 @@ class EmbeddingAdapter:
 
     def get_dimension(self) -> int:
         return self.model.get_sentence_embedding_dimension()
+
+    def get_model_info(self) -> Dict[str, Any]:
+        return {
+            "adapter_type": "SentenceTransformer",
+            "model_name": self.model_name,
+            "device": self.device,
+            "dimension": self.get_dimension(),
+        }
+
+
+class DeterministicHashEmbeddingAdapter(ILocalModelAdapter):
+    """
+    Lightweight, deterministic embedding adapter using n-gram/word hashing.
+    Runs 100% offline with zero GPU and zero dependencies on model weights.
+    Ideal for unit tests, CI pipelines, and resource-constrained environments.
+    """
+
+    def __init__(self, dimension: int = 64, salt: str = "platform_hash"):
+        self.dimension = dimension
+        self.salt = salt
+
+    def encode(self, texts: List[str]) -> np.ndarray:
+        if not texts:
+            return np.empty((0, self.dimension), dtype=np.float32)
+
+        vectors = []
+        for t in texts:
+            vec = np.zeros(self.dimension, dtype=np.float32)
+            words = t.lower().split()
+            if not words:
+                vectors.append(vec)
+                continue
+            for w in words:
+                h = int(hashlib.md5((self.salt + w).encode("utf-8")).hexdigest(), 16)
+                idx = h % self.dimension
+                sign = 1.0 if (h >> 8) % 2 == 0 else -1.0
+                vec[idx] += sign
+            norm = np.linalg.norm(vec)
+            if norm > 1e-9:
+                vec = vec / norm
+            vectors.append(vec)
+        return np.array(vectors, dtype=np.float32)
+
+    def get_dimension(self) -> int:
+        return self.dimension
+
+    def get_model_info(self) -> Dict[str, Any]:
+        return {
+            "adapter_type": "DeterministicHashEmbeddingAdapter",
+            "dimension": self.dimension,
+            "salt": self.salt,
+        }
+
