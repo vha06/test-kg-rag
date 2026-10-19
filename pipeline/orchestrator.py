@@ -34,6 +34,18 @@ class PipelineExecutionTrace(BaseModel):
     is_valid: bool = False
     validation_issues: List[Dict[str, str]] = Field(default_factory=list)
     step_timings: Dict[str, float] = Field(default_factory=dict)
+    status: str = "SUCCESS"
+
+    @property
+    def total_duration_sec(self) -> float:
+        return self.elapsed_ms / 1000.0
+
+    @property
+    def step_logs(self) -> List[Dict[str, Any]]:
+        return [
+            {"Step": step, "Duration (ms)": timing}
+            for step, timing in self.step_timings.items()
+        ]
 
 
 class PipelineOrchestrator:
@@ -47,9 +59,11 @@ class PipelineOrchestrator:
         self,
         domain_registry: Optional[DomainRegistry] = None,
         profile_registry: Optional[ProfileRegistry] = None,
+        db_manager: Optional[Any] = None,
     ):
         self.domain_registry = domain_registry or DomainRegistry()
         self.profile_registry = profile_registry or ProfileRegistry(domain_registry=self.domain_registry)
+        self.db = db_manager
 
     def process_document(
         self,
@@ -173,3 +187,31 @@ class PipelineOrchestrator:
         )
 
         return doc, blocks, chunks, entities, mentions, relationships, evidences, trace
+
+    def process_raw_text(
+        self,
+        raw_text: str,
+        title: str = "Untitled Document",
+        document_meta: Optional[Dict[str, Any]] = None,
+        document_id: Optional[str] = None,
+    ) -> Tuple[Dict[str, Any], PipelineExecutionTrace]:
+        meta = dict(document_meta or {})
+        meta["title"] = title
+        if document_id:
+            meta["document_id"] = document_id
+        doc, blocks, chunks, entities, mentions, relationships, evidences, trace = self.process_document(
+            raw_text=raw_text,
+            document_metadata=meta,
+            profile_id=meta.get("profile_id"),
+        )
+        bundle = {
+            "document": doc,
+            "blocks": blocks,
+            "chunks": chunks,
+            "entities": entities,
+            "mentions": mentions,
+            "relationships": relationships,
+            "evidences": evidences,
+        }
+        return bundle, trace
+

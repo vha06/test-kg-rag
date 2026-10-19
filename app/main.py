@@ -13,10 +13,12 @@ from app.tab_search import render_search_tab
 from app.tab_chunking import render_chunking_tab
 from app.tab_kg import render_kg_tab
 from app.tab_benchmark import render_benchmark_tab
+from app.tab_platform_overview import render_platform_overview_tab
+from app.tab_multi_domain_lab import render_multi_domain_lab_tab
 
 st.set_page_config(
-    page_title="Legal Retrieval Lab",
-    page_icon="⚖️",
+    page_title="Multi-Domain GraphRAG Platform",
+    page_icon="🧭",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -101,12 +103,20 @@ def main():
         temperature=temperature,
     )
 
-    tab1, tab2, tab3, tab4 = st.tabs([
-        "🔍 1. Interactive Search",
-        "🔬 2. Chunking Lab",
-        "🕸️ 3. Knowledge Graph Explorer",
-        "📊 4. Benchmark & Evaluation",
+    tab_plat, tab_multi, tab1, tab2, tab3, tab4 = st.tabs([
+        "🌐 0. Platform Architecture",
+        "🧭 1. Multi-Domain Lab",
+        "🔍 2. Interactive Search (Legal)",
+        "🔬 3. Chunking Lab (Legal)",
+        "🕸️ 4. Knowledge Graph (Legal)",
+        "📊 5. Benchmark & Evaluation (Legal)",
     ])
+
+    with tab_plat:
+        render_platform_overview_tab(db)
+
+    with tab_multi:
+        render_multi_domain_lab_tab(db)
 
     with tab1:
         render_search_tab(db, expander, temporal_filter, llm_config=llm_config)

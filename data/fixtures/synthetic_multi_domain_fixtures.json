@@ -1,0 +1,454 @@
+{
+  "_fixture_notice": "SYNTHETIC_TEST_ONLY - DO NOT USE AS CUSTOMER BENCHMARK",
+  "domains": [
+    {
+      "domain_id": "synth_domain_ops",
+      "name": "Hạ tầng & Vận hành Hệ thống",
+      "graph_namespace": "ns_ops",
+      "documents": [
+        {
+          "document_id": "DOC_OPS_MANUAL_01",
+          "title": "Sổ tay Kiến trúc và Vận hành Hạ tầng Cụm Dịch vụ",
+          "source_id": "SRC_OPS_01",
+          "domain_id": "synth_domain_ops",
+          "document_type": "operational_manual",
+          "profile_id": "profile_ops_standard",
+          "profile_version": "1.0.0",
+          "checksum": "chk_ops_manual_01",
+          "security_classification": "INTERNAL",
+          "acl": {
+            "owner": "ops_lead",
+            "allowed_roles": ["ops", "admin", "developer"],
+            "allowed_users": [],
+            "classification": "INTERNAL"
+          },
+          "raw_text": "Cổng Ingress Gateway đóng vai trò điều hướng toàn bộ lưu lượng HTTP bên ngoài vào các microservices nội bộ.\n\nCổng Ingress phụ thuộc trực tiếp vào Cụm Kubernetes Cluster để định tuyến và cân bằng tải các dịch vụ backend.\n\nDịch vụ Xác thực Authentication Service phụ thuộc vào Cơ sở dữ liệu Postgres Primary để lưu trữ phiên làm việc và tài khoản người dùng.\n\nBộ nhớ đệm Redis Cache được sử dụng để giảm tải truy vấn cho Postgres và tăng tốc phản hồi cho Gateway."
+        },
+        {
+          "document_id": "DOC_OPS_INCIDENT_01",
+          "title": "Báo cáo Sự cố Hạ tầng INC-2024-001: Quá tải Bộ nhớ Đệm",
+          "source_id": "SRC_INC_01",
+          "domain_id": "synth_domain_ops",
+          "document_type": "incident_report",
+          "profile_id": "profile_ops_incident",
+          "profile_version": "1.0.0",
+          "checksum": "chk_ops_incident_01",
+          "security_classification": "INTERNAL",
+          "acl": {
+            "owner": "sre_oncall",
+            "allowed_roles": ["ops", "admin"],
+            "allowed_users": [],
+            "classification": "INTERNAL"
+          },
+          "raw_text": "# Báo cáo sự cố INC-2024-001\n\nSự cố INC-2024-001 xảy ra vào lúc 14:00 do Bộ nhớ đệm Redis Cache bị tràn bộ nhớ dẫn đến tình trạng treo kết nối.\n\nSự cố này đã gây ra lỗi 504 Gateway Timeout trên Cổng Ingress Gateway kéo dài trong 15 phút.\n\nĐội ngũ vận hành đã khởi động lại Redis Cache và mở rộng dung lượng RAM lên 32GB để giải quyết dứt điểm sự cố."
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "ops::ENT::SYS::ingress_gateway",
+          "canonical_name": "Ingress Gateway",
+          "entity_type": "SERVICE",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_manual_1"]
+        },
+        {
+          "entity_id": "ops::ENT::SYS::k8s_cluster",
+          "canonical_name": "Kubernetes Cluster",
+          "entity_type": "SERVER",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_manual_2"]
+        },
+        {
+          "entity_id": "ops::ENT::SYS::auth_service",
+          "canonical_name": "Authentication Service",
+          "entity_type": "SERVICE",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_manual_3"]
+        },
+        {
+          "entity_id": "ops::ENT::DB::postgres_primary",
+          "canonical_name": "Postgres Primary",
+          "entity_type": "DATABASE",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_manual_3"]
+        },
+        {
+          "entity_id": "ops::ENT::DB::redis_cache",
+          "canonical_name": "Redis Cache",
+          "entity_type": "DATABASE",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_manual_4", "ev_ops_inc_1"]
+        },
+        {
+          "entity_id": "ops::ENT::INC::inc_2024_001",
+          "canonical_name": "Sự cố INC-2024-001",
+          "entity_type": "INCIDENT",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_ops_inc_1", "ev_ops_inc_2"]
+        }
+      ],
+      "relationships": [
+        {
+          "relationship_id": "rel_ops_ing_k8s",
+          "subject_entity_id": "ops::ENT::SYS::ingress_gateway",
+          "predicate": "DEPENDS_ON",
+          "object_entity_id": "ops::ENT::SYS::k8s_cluster",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "confidence": 1.0,
+          "evidence_refs": ["ev_ops_manual_2"]
+        },
+        {
+          "relationship_id": "rel_ops_auth_pg",
+          "subject_entity_id": "ops::ENT::SYS::auth_service",
+          "predicate": "STORES_DATA_IN",
+          "object_entity_id": "ops::ENT::DB::postgres_primary",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "confidence": 1.0,
+          "evidence_refs": ["ev_ops_manual_3"]
+        },
+        {
+          "relationship_id": "rel_ops_redis_pg",
+          "subject_entity_id": "ops::ENT::DB::redis_cache",
+          "predicate": "COMMUNICATES_WITH",
+          "object_entity_id": "ops::ENT::DB::postgres_primary",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "confidence": 0.95,
+          "evidence_refs": ["ev_ops_manual_4"]
+        },
+        {
+          "relationship_id": "rel_ops_inc_redis",
+          "subject_entity_id": "ops::ENT::INC::inc_2024_001",
+          "predicate": "TRIGGERED_BY",
+          "object_entity_id": "ops::ENT::DB::redis_cache",
+          "domain_id": "synth_domain_ops",
+          "graph_namespace": "ns_ops",
+          "verification_status": "VERIFIED",
+          "confidence": 1.0,
+          "evidence_refs": ["ev_ops_inc_1"]
+        }
+      ],
+      "evidences": [
+        {
+          "evidence_id": "ev_ops_manual_1",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_MANUAL_01",
+          "quote_text": "Cổng Ingress Gateway đóng vai trò điều hướng toàn bộ lưu lượng HTTP bên ngoài vào các microservices nội bộ.",
+          "extractor_id": "rule_based_ops",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_ops_manual_2",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_MANUAL_01",
+          "quote_text": "Cổng Ingress phụ thuộc trực tiếp vào Cụm Kubernetes Cluster để định tuyến và cân bằng tải các dịch vụ backend.",
+          "extractor_id": "rule_based_ops",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_ops_manual_3",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_MANUAL_01",
+          "quote_text": "Dịch vụ Xác thực Authentication Service phụ thuộc vào Cơ sở dữ liệu Postgres Primary để lưu trữ phiên làm việc và tài khoản người dùng.",
+          "extractor_id": "rule_based_ops",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_ops_manual_4",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_MANUAL_01",
+          "quote_text": "Bộ nhớ đệm Redis Cache được sử dụng để giảm tải truy vấn cho Postgres và tăng tốc phản hồi cho Gateway.",
+          "extractor_id": "rule_based_ops",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_ops_inc_1",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_INCIDENT_01",
+          "quote_text": "Sự cố INC-2024-001 xảy ra vào lúc 14:00 do Bộ nhớ đệm Redis Cache bị tràn bộ nhớ dẫn đến tình trạng treo kết nối.",
+          "extractor_id": "rule_based_incident",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_ops_inc_2",
+          "domain_id": "synth_domain_ops",
+          "document_id": "DOC_OPS_INCIDENT_01",
+          "quote_text": "Đội ngũ vận hành đã khởi động lại Redis Cache và mở rộng dung lượng RAM lên 32GB để giải quyết dứt điểm sự cố.",
+          "extractor_id": "rule_based_incident",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        }
+      ]
+    },
+    {
+      "domain_id": "synth_domain_rd",
+      "name": "Nghiên cứu & Phát triển",
+      "graph_namespace": "ns_rd",
+      "documents": [
+        {
+          "document_id": "DOC_RD_CONSENSUS_01",
+          "title": "Ghi chú Nghiên cứu: Thuật toán Đồng thuận FastLease Consensus",
+          "source_id": "SRC_RD_01",
+          "domain_id": "synth_domain_rd",
+          "document_type": "research_memo",
+          "profile_id": "profile_rd_standard",
+          "profile_version": "1.0.0",
+          "checksum": "chk_rd_consensus_01",
+          "security_classification": "INTERNAL",
+          "acl": {
+            "owner": "rd_lead",
+            "allowed_roles": ["researcher", "admin"],
+            "allowed_users": [],
+            "classification": "INTERNAL"
+          },
+          "raw_text": "Giao thức FastLease Protocol là một mở rộng của thuật toán đồng thuận Raft Consensus nhằm giảm thiểu độ trễ ghi dữ liệu.\n\nFastLease Protocol tối ưu hóa thuật toán Raft Consensus bằng cách sử dụng cơ chế Leader Lease cục bộ.\n\nModule LeaseManager chịu trách nhiệm gia hạn và theo dõi tính hợp lệ của lease trên toàn bộ các node phân tán."
+        },
+        {
+          "document_id": "DOC_RD_ATTN_01",
+          "title": "Đặc tả Thuật toán và Benchmark Nén Attention Cache",
+          "source_id": "SRC_RD_02",
+          "domain_id": "synth_domain_rd",
+          "document_type": "research_memo",
+          "profile_id": "profile_rd_standard",
+          "profile_version": "1.0.0",
+          "checksum": "chk_rd_attn_01",
+          "security_classification": "INTERNAL",
+          "acl": {
+            "owner": "rd_engineer",
+            "allowed_roles": ["researcher", "admin"],
+            "allowed_users": [],
+            "classification": "INTERNAL"
+          },
+          "raw_text": "Module SparseAttention tối ưu hóa mức tiêu thụ bộ nhớ KV Cache trong quá trình suy luận mô hình ngôn ngữ lớn.\n\nBộ đo Benchmark LLaMA-Eval đánh giá Module SparseAttention và chứng minh giảm 40% bộ nhớ mà vẫn duy trì 99% độ chính xác."
+        }
+      ],
+      "entities": [
+        {
+          "entity_id": "rd::ENT::PROTO::fastlease",
+          "canonical_name": "FastLease Protocol",
+          "entity_type": "PROTOCOL",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_rd_cons_1"]
+        },
+        {
+          "entity_id": "rd::ENT::ALGO::raft",
+          "canonical_name": "Raft Consensus",
+          "entity_type": "ALGORITHM",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_rd_cons_1"]
+        },
+        {
+          "entity_id": "rd::ENT::MOD::lease_manager",
+          "canonical_name": "LeaseManager",
+          "entity_type": "MODULE",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_rd_cons_3"]
+        },
+        {
+          "entity_id": "rd::ENT::MOD::sparse_attn",
+          "canonical_name": "SparseAttention",
+          "entity_type": "MODULE",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_rd_attn_1"]
+        },
+        {
+          "entity_id": "rd::ENT::BENCH::llama_eval",
+          "canonical_name": "LLaMA-Eval",
+          "entity_type": "BENCHMARK",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "evidence_refs": ["ev_rd_attn_2"]
+        }
+      ],
+      "relationships": [
+        {
+          "relationship_id": "rel_rd_fastlease_raft",
+          "subject_entity_id": "rd::ENT::PROTO::fastlease",
+          "predicate": "EXTENDS",
+          "object_entity_id": "rd::ENT::ALGO::raft",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "confidence": 1.0,
+          "evidence_refs": ["ev_rd_cons_1"]
+        },
+        {
+          "relationship_id": "rel_rd_fastlease_opt",
+          "subject_entity_id": "rd::ENT::PROTO::fastlease",
+          "predicate": "OPTIMIZES",
+          "object_entity_id": "rd::ENT::ALGO::raft",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "confidence": 0.95,
+          "evidence_refs": ["ev_rd_cons_2"]
+        },
+        {
+          "relationship_id": "rel_rd_bench_eval",
+          "subject_entity_id": "rd::ENT::BENCH::llama_eval",
+          "predicate": "EVALUATES",
+          "object_entity_id": "rd::ENT::MOD::sparse_attn",
+          "domain_id": "synth_domain_rd",
+          "graph_namespace": "ns_rd",
+          "verification_status": "VERIFIED",
+          "confidence": 1.0,
+          "evidence_refs": ["ev_rd_attn_2"]
+        }
+      ],
+      "evidences": [
+        {
+          "evidence_id": "ev_rd_cons_1",
+          "domain_id": "synth_domain_rd",
+          "document_id": "DOC_RD_CONSENSUS_01",
+          "quote_text": "Giao thức FastLease Protocol là một mở rộng của thuật toán đồng thuận Raft Consensus nhằm giảm thiểu độ trễ ghi dữ liệu.",
+          "extractor_id": "rule_based_rd",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_rd_cons_2",
+          "domain_id": "synth_domain_rd",
+          "document_id": "DOC_RD_CONSENSUS_01",
+          "quote_text": "FastLease Protocol tối ưu hóa thuật toán Raft Consensus bằng cách sử dụng cơ chế Leader Lease cục bộ.",
+          "extractor_id": "rule_based_rd",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_rd_cons_3",
+          "domain_id": "synth_domain_rd",
+          "document_id": "DOC_RD_CONSENSUS_01",
+          "quote_text": "Module LeaseManager chịu trách nhiệm gia hạn và theo dõi tính hợp lệ của lease trên toàn bộ các node phân tán.",
+          "extractor_id": "rule_based_rd",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_rd_attn_1",
+          "domain_id": "synth_domain_rd",
+          "document_id": "DOC_RD_ATTN_01",
+          "quote_text": "Module SparseAttention tối ưu hóa mức tiêu thụ bộ nhớ KV Cache trong quá trình suy luận mô hình ngôn ngữ lớn.",
+          "extractor_id": "rule_based_rd",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        },
+        {
+          "evidence_id": "ev_rd_attn_2",
+          "domain_id": "synth_domain_rd",
+          "document_id": "DOC_RD_ATTN_01",
+          "quote_text": "Bộ đo Benchmark LLaMA-Eval đánh giá Module SparseAttention và chứng minh giảm 40% bộ nhớ mà vẫn duy trì 99% độ chính xác.",
+          "extractor_id": "rule_based_rd",
+          "verification_status": "VERIFIED",
+          "origin_type": "FIXTURE_PROVIDED"
+        }
+      ]
+    }
+  ],
+  "cross_domain_mappings": [
+    {
+      "mapping_id": "map_cross_ops_rd_01",
+      "source_entity_id": "ops::ENT::SYS::k8s_cluster",
+      "target_entity_id": "rd::ENT::ALGO::raft",
+      "source_namespace": "ns_ops",
+      "target_namespace": "ns_rd",
+      "relation_type": "USES_UNDERLYING_CONSENSUS",
+      "verification_status": "VERIFIED",
+      "confidence": 0.9,
+      "metadata": {
+        "mapping_origin": "technical_architecture_alignment"
+      }
+    }
+  ],
+  "evaluation_questions": [
+    {
+      "question_id": "eval_q1",
+      "query": "Cổng Ingress Gateway định tuyến lưu lượng vào hệ thống và phụ thuộc vào thành phần nào?",
+      "target_domain_id": "synth_domain_ops",
+      "expected_entity_ids": ["ops::ENT::SYS::ingress_gateway", "ops::ENT::SYS::k8s_cluster"],
+      "expected_predicates": ["DEPENDS_ON"]
+    },
+    {
+      "question_id": "eval_q2",
+      "query": "Nguyên nhân sự cố INC-2024-001 là gì và liên quan đến dịch vụ nào?",
+      "target_domain_id": "synth_domain_ops",
+      "expected_entity_ids": ["ops::ENT::INC::inc_2024_001", "ops::ENT::DB::redis_cache"],
+      "expected_predicates": ["TRIGGERED_BY"]
+    },
+    {
+      "question_id": "eval_q3",
+      "query": "Giao thức FastLease mở rộng từ thuật toán nào và cải thiện điều gì?",
+      "target_domain_id": "synth_domain_rd",
+      "expected_entity_ids": ["rd::ENT::PROTO::fastlease", "rd::ENT::ALGO::raft"],
+      "expected_predicates": ["EXTENDS", "OPTIMIZES"]
+    },
+    {
+      "question_id": "eval_q4",
+      "query": "Bộ đo benchmark nào được sử dụng để đánh giá module SparseAttention?",
+      "target_domain_id": "synth_domain_rd",
+      "expected_entity_ids": ["rd::ENT::BENCH::llama_eval", "rd::ENT::MOD::sparse_attn"],
+      "expected_predicates": ["EVALUATES"]
+    }
+  ],
+  "negative_test_cases": [
+    {
+      "case_id": "neg_unverified_missing_evidence",
+      "description": "Mối quan hệ được gắn cờ VERIFIED nhưng không có bằng chứng evidence_refs.",
+      "entity": {
+        "entity_id": "ops::ENT::SYS::orphan",
+        "canonical_name": "Orphan Service",
+        "entity_type": "SERVICE",
+        "domain_id": "synth_domain_ops",
+        "graph_namespace": "ns_ops",
+        "verification_status": "VERIFIED",
+        "evidence_refs": []
+      },
+      "expected_validation_error": "VERIFIED must contain at least one valid evidence reference."
+    },
+    {
+      "case_id": "neg_cross_domain_violation",
+      "description": "Quan hệ giữa hai node thuộc hai domain khác nhau mà không thông qua bảng mapping.",
+      "relationship": {
+        "relationship_id": "rel_invalid_cross",
+        "subject_entity_id": "ops::ENT::SYS::k8s_cluster",
+        "predicate": "INVALID_CROSS_LINK",
+        "object_entity_id": "rd::ENT::ALGO::raft",
+        "domain_id": "synth_domain_ops",
+        "graph_namespace": "ns_ops",
+        "verification_status": "VERIFIED",
+        "evidence_refs": ["ev_dummy"]
+      },
+      "expected_behavior": "Must be rejected or isolated from single namespace queries."
+    }
+  ]
+}

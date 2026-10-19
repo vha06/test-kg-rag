@@ -211,3 +211,48 @@ class CanonicalSchemaValidator:
 
         has_errors = any(i.level == "ERROR" for i in issues)
         return (not has_errors), issues
+
+    @classmethod
+    def validate_bundle(
+        cls,
+        documents: List[CanonicalDocument],
+        content_blocks: List[ContentBlock],
+        chunks: List[CanonicalChunk],
+        entities: Optional[List[CanonicalEntity]] = None,
+        relationships: Optional[List[CanonicalRelationship]] = None,
+        evidences: Optional[List[EvidenceRecord]] = None,
+        mentions: Optional[List[EntityMention]] = None,
+    ):
+        class ValidationResult:
+            def __init__(self, is_valid: bool, issues: List[ValidationIssue]):
+                self.is_valid = is_valid
+                self.issues = issues
+                self.errors = [i for i in issues if i.level == "ERROR"]
+
+        all_valid = True
+        all_issues: List[ValidationIssue] = []
+        for doc in documents:
+            d_blocks = [b for b in content_blocks if b.document_id == doc.document_id]
+            d_chunks = [c for c in chunks if c.document_id == doc.document_id]
+            d_entities = [e for e in (entities or []) if e.domain_id == doc.domain_id]
+            d_mentions = [m for m in (mentions or []) if m.document_id == doc.document_id]
+            d_relationships = [r for r in (relationships or []) if r.domain_id == doc.domain_id]
+            d_evidences = [
+                ev for ev in (evidences or [])
+                if ev.domain_id == doc.domain_id and (ev.document_id == doc.document_id or not ev.document_id)
+            ]
+
+            valid, issues = cls.validate_document_bundle(
+                document=doc,
+                blocks=d_blocks,
+                chunks=d_chunks,
+                entities=d_entities,
+                mentions=d_mentions,
+                relationships=d_relationships,
+                evidences=d_evidences,
+            )
+            if not valid:
+                all_valid = False
+            all_issues.extend(issues)
+        return ValidationResult(all_valid, all_issues)
+

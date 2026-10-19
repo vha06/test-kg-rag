@@ -1,0 +1,77 @@
+{
+  "report_id": "platform_audit_20261019_044602",
+  "generated_at": "2026-10-19T04:46:02.596737+00:00",
+  "overall_status": "PASSED",
+  "passed_checks": 11,
+  "total_checks": 11,
+  "pass_rate": "100.0%",
+  "disclaimer": "SYNTHETIC TEST ENVIRONMENT NOTICE: These evaluation metrics are computed exclusively on synthetic test fixtures to verify platform extensibility, namespace isolation, and provenance integrity. They do NOT represent customer operational benchmarks or live corpus accuracy.",
+  "checks": [
+    {
+      "check_id": "01_domain_and_profile_resolution",
+      "title": "Domain & Profile Resolution",
+      "status": "PASSED",
+      "details": "Resolved ops=profile_ops_standard, inc=profile_ops_incident"
+    },
+    {
+      "check_id": "02_parsing_and_content_block_hierarchy",
+      "title": "Parsing & ContentBlock Hierarchy",
+      "status": "PASSED",
+      "details": "Blocks parsed: 4, has_heading: True"
+    },
+    {
+      "check_id": "03_chunking_and_source_tracing",
+      "title": "Chunking & Source Tracing",
+      "status": "PASSED",
+      "details": "Checked 2 chunks, all trace to source_block_ids"
+    },
+    {
+      "check_id": "04_extraction_and_evidence_binding",
+      "title": "Extraction & Evidence Binding",
+      "status": "PASSED",
+      "details": "Verified 6 evidence records with non-empty quote_text and valid origin_type"
+    },
+    {
+      "check_id": "05_schema_integrity_validation",
+      "title": "Canonical Schema Integrity Validation",
+      "status": "PASSED",
+      "details": "Validation errors across bundles: 0"
+    },
+    {
+      "check_id": "06_multi_graph_namespace_isolation",
+      "title": "Multi-Graph Namespace Isolation",
+      "status": "PASSED",
+      "details": "Zero node overlap between ns_ops (6) and ns_rd (5)"
+    },
+    {
+      "check_id": "07_candidate_vs_verified_edge_filtering",
+      "title": "Candidate vs. Verified Edge Filtering",
+      "status": "PASSED",
+      "details": "Verified edges count: 4"
+    },
+    {
+      "check_id": "08_cross_domain_entity_mapping",
+      "title": "Cross-Domain Entity Mapping",
+      "status": "PASSED",
+      "details": "Active mappings: 1, Cross-domain edges in combined graph: 1"
+    },
+    {
+      "check_id": "09_security_classification_and_acl",
+      "title": "Security Classification & ACL Enforcement",
+      "status": "PASSED",
+      "details": "Incident report accessible to 'ops' (True) but barred from 'developer' (False)"
+    },
+    {
+      "check_id": "10_hybrid_retrieval_accuracy",
+      "title": "Hybrid Retrieval Accuracy on Fixtures",
+      "status": "PASSED",
+      "details": "Accurate domain top-1 hits: 4/4 (100%)"
+    },
+    {
+      "check_id": "11_namespace_graph_expansion_and_provenance",
+      "title": "Namespace-Aware Graph Expansion & Provenance Traceability",
+      "status": "PASSED",
+      "details": "Expanded 1 entities with verified provenance binding"
+    }
+  ]
+}

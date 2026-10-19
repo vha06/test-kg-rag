@@ -3,6 +3,15 @@
 # KHÔNG coi đây là taxonomy chính thức của khách hàng.
 
 domains:
+  - domain_id: "*"
+    name: "Cấu hình Mặc định Toàn cục (Generic Global)"
+    description: "Domain mặc định dự phòng cho mọi tài liệu chưa xác định domain."
+    enabled: true
+    schema_version: "1.0.0"
+    graph_namespace: "default"
+    default_profile_id: "profile_generic_default"
+    is_test_fixture: false
+
   - domain_id: "synth_domain_ops"
     name: "Hạ tầng & Vận hành Hệ thống (Synthetic Ops)"
     description: "Tài liệu kỹ thuật, hướng dẫn vận hành, báo cáo sự cố hạ tầng máy chủ."

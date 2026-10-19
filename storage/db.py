@@ -151,8 +151,7 @@ class DatabaseManager:
                     relationship_schema_ref TEXT,
                     validation_rules TEXT,
                     fallback_profile_id TEXT,
-                    enabled INTEGER DEFAULT 1,
-                    FOREIGN KEY (domain_id) REFERENCES platform_domains(domain_id) ON DELETE CASCADE
+                    enabled INTEGER DEFAULT 1
                 );
 
                 CREATE TABLE IF NOT EXISTS platform_documents (
