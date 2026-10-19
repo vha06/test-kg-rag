@@ -42,6 +42,23 @@ def test_01_database_platform_tables_creation(temp_db):
     assert "platform_evidences" in counts
     assert counts["platform_entities"] == 0
 
+    # Test get_platform_domains and get_platform_profiles
+    from core.registry import DomainConfig, ProcessingProfile
+    temp_db.insert_platform_domains([
+        DomainConfig(domain_id="dom_test", name="Domain Test", graph_namespace="ns_test")
+    ])
+    doms = temp_db.get_platform_domains()
+    assert len(doms) == 1
+    assert doms[0]["domain_id"] == "dom_test"
+
+    temp_db.insert_platform_profiles([
+        ProcessingProfile(profile_id="prof_test", domain_id="dom_test", document_type="test_doc")
+    ])
+    profs = temp_db.get_platform_profiles(domain_id="dom_test")
+    assert len(profs) == 1
+    assert profs[0]["profile_id"] == "prof_test"
+
+
 
 def test_02_namespace_isolation(temp_db):
     builder = MultiDomainGraphBuilder(temp_db)

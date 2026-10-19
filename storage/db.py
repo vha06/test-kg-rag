@@ -819,7 +819,49 @@ class DatabaseManager:
 
             conn.commit()
 
+    def get_platform_domains(self, enabled_only: bool = False) -> List[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            query = "SELECT * FROM platform_domains"
+            params: List[Any] = []
+            if enabled_only:
+                query += " WHERE enabled = 1"
+            cursor.execute(query, params)
+            rows = cursor.fetchall()
+            results = []
+            for r in rows:
+                item = dict(r)
+                item["allowed_entity_types"] = json.loads(item["allowed_entity_types"]) if item.get("allowed_entity_types") else []
+                item["allowed_predicates"] = json.loads(item["allowed_predicates"]) if item.get("allowed_predicates") else []
+                item["enabled"] = bool(item.get("enabled", 1))
+                item["is_test_fixture"] = bool(item.get("is_test_fixture", 0))
+                results.append(item)
+            return results
+
+    def get_platform_profiles(self, domain_id: Optional[str] = None, enabled_only: bool = False) -> List[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            query = "SELECT * FROM platform_profiles WHERE 1=1"
+            params: List[Any] = []
+            if domain_id:
+                query += " AND (domain_id = ? OR domain_id = '*')"
+                params.append(domain_id)
+            if enabled_only:
+                query += " AND enabled = 1"
+            cursor.execute(query, params)
+            rows = cursor.fetchall()
+            results = []
+            for r in rows:
+                item = dict(r)
+                item["chunking_parameters"] = json.loads(item["chunking_parameters"]) if item.get("chunking_parameters") else {}
+                item["metadata_extractors"] = json.loads(item["metadata_extractors"]) if item.get("metadata_extractors") else []
+                item["validation_rules"] = json.loads(item["validation_rules"]) if item.get("validation_rules") else {}
+                item["enabled"] = bool(item.get("enabled", 1))
+                results.append(item)
+            return results
+
     def get_platform_document(self, document_id: str) -> Optional[Dict[str, Any]]:
+
         with self.get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM platform_documents WHERE document_id = ?", (document_id,))
