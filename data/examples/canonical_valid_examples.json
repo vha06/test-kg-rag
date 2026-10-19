@@ -1,0 +1,158 @@
+{
+  "_notice": "CANONICAL_SCHEMA_VALID_EXAMPLES - SYNTHETIC",
+  "document": {
+    "document_id": "DOC_SYNTH_001",
+    "schema_version": "1.0.0",
+    "title": "Hướng dẫn Vận hành Hệ thống Cụm Máy chủ",
+    "source_id": "SRC_OP_MANUAL_01",
+    "domain_id": "synth_domain_ops",
+    "document_type": "operational_manual",
+    "profile_id": "profile_ops_standard",
+    "profile_version": "1.0.0",
+    "checksum": "a1b2c3d4e5f67890",
+    "ingested_at": "2026-10-19T00:00:00Z",
+    "processing_status": "INDEXED",
+    "security_classification": "INTERNAL",
+    "source_uri": "file:///docs/ops/cluster_manual.md",
+    "mime_type": "text/markdown",
+    "language": "vi",
+    "acl": {
+      "owner": "ops_team",
+      "allowed_roles": ["ops_engineer", "admin"],
+      "allowed_users": [],
+      "classification": "INTERNAL"
+    },
+    "metadata": {
+      "ops_extension": {
+        "cluster_tier": "Production",
+        "datacenter": "HN01"
+      }
+    }
+  },
+  "blocks": [
+    {
+      "block_id": "BLK_001",
+      "document_id": "DOC_SYNTH_001",
+      "domain_id": "synth_domain_ops",
+      "block_index": 0,
+      "block_type": "HEADING",
+      "text": "1. Quy trình Khởi động Cụm Dịch vụ",
+      "parent_block_id": null,
+      "source_location": { "start_offset": 0, "end_offset": 34, "page_number": 1, "section_path": "1." },
+      "metadata": { "level": 1 }
+    },
+    {
+      "block_id": "BLK_002",
+      "document_id": "DOC_SYNTH_001",
+      "domain_id": "synth_domain_ops",
+      "block_index": 1,
+      "block_type": "PARAGRAPH",
+      "text": "Trước khi kích hoạt máy chủ Gateway, kỹ sư phải kiểm tra dịch vụ AuthServer và cơ sở dữ liệu Redis.",
+      "parent_block_id": "BLK_001",
+      "source_location": { "start_offset": 35, "end_offset": 136, "page_number": 1, "section_path": "1. > paragraph" },
+      "metadata": {}
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_id": "CHK_001",
+      "document_id": "DOC_SYNTH_001",
+      "domain_id": "synth_domain_ops",
+      "source_block_ids": ["BLK_001", "BLK_002"],
+      "content": "1. Quy trình Khởi động Cụm Dịch vụ\nTrước khi kích hoạt máy chủ Gateway, kỹ sư phải kiểm tra dịch vụ AuthServer và cơ sở dữ liệu Redis.",
+      "chunk_index": 0,
+      "chunking_strategy": "block_preserving",
+      "profile_id": "profile_ops_standard",
+      "profile_version": "1.0.0",
+      "token_count": 28,
+      "source_location": { "start_offset": 0, "end_offset": 136, "page_number": 1 },
+      "security_classification": "INTERNAL",
+      "acl": {
+        "owner": "ops_team",
+        "allowed_roles": ["ops_engineer", "admin"],
+        "classification": "INTERNAL"
+      },
+      "metadata": {}
+    }
+  ],
+  "evidences": [
+    {
+      "evidence_id": "EVI_001",
+      "domain_id": "synth_domain_ops",
+      "document_id": "DOC_SYNTH_001",
+      "block_id": "BLK_002",
+      "chunk_id": "CHK_001",
+      "quote_text": "Trước khi kích hoạt máy chủ Gateway, kỹ sư phải kiểm tra dịch vụ AuthServer",
+      "source_location": { "start_offset": 35, "end_offset": 110, "page_number": 1 },
+      "extractor_id": "rule_based_ops_extractor",
+      "extractor_version": "1.0.0",
+      "extracted_at": "2026-10-19T00:00:00Z",
+      "verification_status": "VERIFIED",
+      "origin_type": "EXTRACTOR_GENERATED"
+    }
+  ],
+  "entities": [
+    {
+      "entity_id": "synth_domain_ops::ENT::SERVICE::Gateway",
+      "canonical_name": "Gateway",
+      "entity_type": "SERVICE",
+      "aliases": ["Cổng điều hướng API", "API Gateway"],
+      "description": "Máy chủ gateway tiếp nhận lưu lượng mạng",
+      "domain_id": "synth_domain_ops",
+      "graph_namespace": "ns_ops",
+      "extraction_method": "RULE_BASED",
+      "extractor_version": "1.0.0",
+      "verification_status": "VERIFIED",
+      "schema_version": "1.0.0",
+      "attributes": { "port": 443 },
+      "evidence_refs": ["EVI_001"]
+    },
+    {
+      "entity_id": "synth_domain_ops::ENT::SERVICE::AuthServer",
+      "canonical_name": "AuthServer",
+      "entity_type": "SERVICE",
+      "aliases": ["Dịch vụ xác thực", "IAM"],
+      "description": "Dịch vụ cấp phát và kiểm tra JWT token",
+      "domain_id": "synth_domain_ops",
+      "graph_namespace": "ns_ops",
+      "extraction_method": "RULE_BASED",
+      "extractor_version": "1.0.0",
+      "verification_status": "VERIFIED",
+      "schema_version": "1.0.0",
+      "attributes": { "port": 8080 },
+      "evidence_refs": ["EVI_001"]
+    }
+  ],
+  "mentions": [
+    {
+      "mention_id": "MEN_001",
+      "entity_id": "synth_domain_ops::ENT::SERVICE::Gateway",
+      "domain_id": "synth_domain_ops",
+      "document_id": "DOC_SYNTH_001",
+      "block_id": "BLK_002",
+      "chunk_id": "CHK_001",
+      "surface_text": "Gateway",
+      "source_location": { "start_offset": 63, "end_offset": 70 },
+      "verification_status": "VERIFIED",
+      "evidence_id": "EVI_001"
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "REL_001",
+      "subject_entity_id": "synth_domain_ops::ENT::SERVICE::Gateway",
+      "predicate": "DEPENDS_ON",
+      "object_entity_id": "synth_domain_ops::ENT::SERVICE::AuthServer",
+      "domain_id": "synth_domain_ops",
+      "graph_namespace": "ns_ops",
+      "evidence_refs": ["EVI_001"],
+      "extraction_method": "RULE_BASED",
+      "extractor_version": "1.0.0",
+      "confidence": 0.98,
+      "verification_status": "VERIFIED",
+      "recorded_at": "2026-10-19T00:00:00Z",
+      "schema_version": "1.0.0",
+      "attributes": { "criticality": "HIGH" }
+    }
+  ]
+}

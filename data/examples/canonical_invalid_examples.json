@@ -1,0 +1,32 @@
+{
+  "_notice": "CANONICAL_SCHEMA_INVALID_EXAMPLES - SYNTHETIC",
+  "invalid_chunk_no_source_block": {
+    "chunk_id": "CHK_BAD_001",
+    "document_id": "DOC_SYNTH_001",
+    "domain_id": "synth_domain_ops",
+    "source_block_ids": [],
+    "content": "Nội dung mồ côi không gắn với block nào",
+    "chunk_index": 0,
+    "chunking_strategy": "fixed",
+    "profile_id": "profile_ops_standard"
+  },
+  "invalid_relationship_missing_evidence": {
+    "relationship_id": "REL_BAD_001",
+    "subject_entity_id": "synth_domain_ops::ENT::SERVICE::Gateway",
+    "predicate": "DEPENDS_ON",
+    "object_entity_id": "synth_domain_ops::ENT::SERVICE::AuthServer",
+    "domain_id": "synth_domain_ops",
+    "graph_namespace": "ns_ops",
+    "evidence_refs": [],
+    "verification_status": "VERIFIED"
+  },
+  "invalid_cross_domain_entity_leak": {
+    "relationship_id": "REL_BAD_002",
+    "subject_entity_id": "synth_domain_ops::ENT::SERVICE::Gateway",
+    "predicate": "CALLS",
+    "object_entity_id": "synth_domain_finance::ENT::ACCOUNT::123",
+    "domain_id": "synth_domain_ops",
+    "graph_namespace": "ns_ops",
+    "evidence_refs": ["EVI_NON_EXISTENT"]
+  }
+}
