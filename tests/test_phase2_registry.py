@@ -128,3 +128,10 @@ def test_04_load_from_yaml():
     prof_rd = p_reg.resolve_profile("synth_domain_rd", document_type="research_memo")
     assert prof_rd.profile_id == "profile_rd_standard"
     assert prof_rd.chunking_parameters["max_tokens"] == 512
+
+    # Check list_profiles_for_domain
+    ops_profiles = p_reg.list_profiles_for_domain("synth_domain_ops")
+    ops_ids = [p.profile_id for p in ops_profiles]
+    assert "profile_ops_standard" in ops_ids
+    assert "profile_ops_incident" in ops_ids
+

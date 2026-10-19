@@ -219,7 +219,7 @@ def render_platform_overview_tab(db: DatabaseManager):
         with sb_col1:
             domain_opts = [d.domain_id for d in domain_reg.list_domains(enabled_only=True)]
             selected_domain = st.selectbox("Chọn Domain:", domain_opts, index=0 if domain_opts else None)
-            available_profiles = [p.profile_id for p in profile_reg.list_profiles_for_domain(selected_domain)]
+            available_profiles = [p.profile_id for p in profile_reg.list_profiles(domain_id=selected_domain)]
             if not available_profiles:
                 available_profiles = ["profile_generic_default"]
             selected_profile_id = st.selectbox("Chọn Profile Xử Lý:", available_profiles)

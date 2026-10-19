@@ -109,6 +109,13 @@ class ProfileRegistry:
             res = [p for p in res if p.enabled]
         return res
 
+    def list_profiles_for_domain(
+        self, domain_id: Optional[str] = None, enabled_only: bool = True
+    ) -> List[ProcessingProfile]:
+        """Convenience alias for list_profiles(domain_id=domain_id, enabled_only=enabled_only)."""
+        return self.list_profiles(domain_id=domain_id, enabled_only=enabled_only)
+
+
     def resolve_profile(
         self,
         domain_id: str,
