@@ -109,34 +109,41 @@ def build_platform_pyvis_html(
     return net.generate_html()
 
 
-def render_multi_domain_lab_tab(db: DatabaseManager):
+def render_multi_domain_lab_tab(db: DatabaseManager, llm_config: Optional[Any] = None):
     st.header("🧭 Multi-Domain GraphRAG Lab")
     st.caption(
-        "Trải nghiệm truy xuất và mở rộng đồ thị tri thức trên các miền dữ liệu tổng hợp (Synthetic Ops & R&D), "
-        "với cơ chế cách ly Graph Namespace, lọc quyền truy cập ACL và kiểm tra nguồn gốc Provenance."
+        "Trải nghiệm truy xuất và mở rộng đồ thị tri thức trên các miền dữ liệu tổng hợp (Synthetic Ops & R&D) "
+        "và các tài liệu nghiệp vụ thực tế, với cơ chế cách ly Graph Namespace, lọc quyền truy cập ACL và kiểm tra nguồn gốc Provenance."
     )
 
     # 1. Configuration & Security Context
+    db_domains = db.get_platform_domains()
+    dom_id_map = {d["domain_id"]: d.get("name", d["domain_id"]) for d in db_domains if d.get("enabled", 1)}
+    if not dom_id_map:
+        dom_id_map = {
+            "synth_domain_ops": "Hạ tầng & Vận hành (Synthetic Ops)",
+            "synth_domain_rd": "Nghiên cứu & Phát triển (Synthetic R&D)",
+        }
+
+    domain_labels = [f"{did} ({name})" for did, name in dom_id_map.items()]
+    all_domains_label = "🌐 Tất cả Miền dữ liệu (All Domains)"
+    domain_opts = domain_labels + ([all_domains_label] if len(domain_labels) > 1 else [])
+
     ctrl_col1, ctrl_col2, ctrl_col3 = st.columns([1.5, 1.2, 1.3])
     with ctrl_col1:
         domain_choice = st.selectbox(
             "Phạm vi Miền dữ liệu (Target Domain):",
-            [
-                "synth_domain_ops (Hạ tầng & Vận hành)",
-                "synth_domain_rd (Nghiên cứu & Phát triển)",
-                "🌐 Multi-Domain (Cả hai miền)",
-            ],
+            domain_opts,
             index=0,
         )
-        if "ops" in domain_choice:
-            target_domain_ids = ["synth_domain_ops"]
-            target_namespaces = ["ns_ops"]
-        elif "rd" in domain_choice:
-            target_domain_ids = ["synth_domain_rd"]
-            target_namespaces = ["ns_rd"]
+        if domain_choice == all_domains_label:
+            target_domain_ids = list(dom_id_map.keys())
+            target_namespaces = [f"ns_{d.replace('synth_domain_', '').replace('domain_', '')}" for d in target_domain_ids]
         else:
-            target_domain_ids = ["synth_domain_ops", "synth_domain_rd"]
-            target_namespaces = ["ns_ops", "ns_rd"]
+            selected_did = domain_choice.split(" ")[0]
+            target_domain_ids = [selected_did]
+            target_namespaces = [f"ns_{selected_did.replace('synth_domain_', '').replace('domain_', '')}"]
+
 
     with ctrl_col2:
         user_role = st.selectbox(

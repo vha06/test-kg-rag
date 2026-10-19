@@ -113,10 +113,11 @@ def main():
     ])
 
     with tab_plat:
-        render_platform_overview_tab(db)
+        render_platform_overview_tab(db, llm_config=llm_config)
 
     with tab_multi:
-        render_multi_domain_lab_tab(db)
+        render_multi_domain_lab_tab(db, llm_config=llm_config)
+
 
     with tab1:
         render_search_tab(db, expander, temporal_filter, llm_config=llm_config)

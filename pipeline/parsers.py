@@ -188,3 +188,8 @@ class ParserRegistry:
             # Fallback to generic_paragraph
             return cls._parsers["generic_paragraph"]
         return cls._parsers[name]
+
+    @classmethod
+    def list_strategies(cls) -> List[str]:
+        return list(cls._parsers.keys())
+

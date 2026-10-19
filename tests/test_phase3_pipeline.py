@@ -156,3 +156,77 @@ def test_04_orchestrator_end_to_end(sample_raw_text):
     assert trace.relationship_count == len(relationships)
     assert trace.elapsed_ms > 0
     assert "parse_blocks_ms" in trace.step_timings
+
+
+def test_05_new_chunkers_and_overrides(sample_raw_text):
+    from pipeline.chunkers import HierarchicalHeadingChunker, FixedTokenChunker, ChunkerRegistry
+    from pipeline.parsers import ParserRegistry
+    from pipeline.extractors import ExtractorRegistry
+    from core.registry import ProcessingProfile
+
+    assert "hierarchical_heading" in ChunkerRegistry.list_strategies()
+    assert "fixed_token" in ChunkerRegistry.list_strategies()
+    assert "structured_heading" in ParserRegistry.list_strategies()
+    assert "llm_extractor" in ExtractorRegistry.list_knowledge_extractors()
+
+    doc = CanonicalDocument(
+        document_id="DOC_P3_05",
+        title="Hierarchical Doc",
+        source_id="S5",
+        domain_id="synth_domain_ops",
+        document_type="operational_manual",
+        profile_id="profile_ops_standard",
+        checksum="chk",
+    )
+    blocks = ParserRegistry.get("structured_heading").parse(sample_raw_text, doc)
+    prof = ProcessingProfile(
+        profile_id="p_custom",
+        domain_id="synth_domain_ops",
+        document_type="operational_manual",
+        chunking_strategy="hierarchical_heading",
+        chunking_parameters={"max_tokens": 100},
+    )
+
+    chunks_h = HierarchicalHeadingChunker().chunk(doc, blocks, prof)
+    assert len(chunks_h) > 0
+    assert all(c.chunking_strategy == "hierarchical_heading" for c in chunks_h)
+
+    chunks_f = FixedTokenChunker().chunk(doc, blocks, prof)
+    assert len(chunks_f) > 0
+    assert all(c.chunking_strategy == "fixed_token" for c in chunks_f)
+
+
+def test_06_orchestrator_overrides_and_persist(sample_raw_text, tmp_path):
+    from storage.db import DatabaseManager
+
+    test_db_path = str(tmp_path / "test_persist.db")
+    db = DatabaseManager(db_path=test_db_path)
+
+    yaml_path = "config/platform_profiles.yaml"
+    d_reg = DomainRegistry()
+    d_reg.load_from_yaml(yaml_path)
+    p_reg = ProfileRegistry(domain_registry=d_reg)
+    p_reg.load_from_yaml(yaml_path)
+
+    orchestrator = PipelineOrchestrator(
+        domain_registry=d_reg, profile_registry=p_reg, db_manager=db
+    )
+
+    bundle, trace = orchestrator.process_raw_text(
+        raw_text=sample_raw_text,
+        title="Override Document",
+        document_meta={"domain_id": "synth_domain_ops", "document_type": "operational_manual"},
+        chunking_strategy_override="hierarchical_heading",
+        chunking_params_override={"max_tokens": 80},
+    )
+
+    assert trace.is_valid is True
+    assert all(c.chunking_strategy == "hierarchical_heading" for c in bundle["chunks"])
+
+    # Persist bundle
+    orchestrator.persist_bundle(bundle)
+
+    # Verify persisted in DB
+    persisted_chunks = db.get_platform_chunks(domain_id="synth_domain_ops")
+    assert len(persisted_chunks) == len(bundle["chunks"])
+

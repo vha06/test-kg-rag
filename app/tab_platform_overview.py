@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import json
+from typing import Optional, Any, List, Dict
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
+from pyvis.network import Network
 
-from core.registry import DomainRegistry, ProfileRegistry
+from core.registry import DomainRegistry, ProfileRegistry, DomainConfig, ProcessingProfile
 from core.schema import (
     CanonicalDocument,
     ContentBlock,
@@ -17,10 +20,59 @@ from core.schema import (
 )
 from core.validator import CanonicalSchemaValidator
 from pipeline.orchestrator import PipelineOrchestrator
+from pipeline.chunkers import ChunkerRegistry
+from pipeline.parsers import ParserRegistry
+from pipeline.extractors import ExtractorRegistry
 from storage.db import DatabaseManager
 
 
-def render_platform_overview_tab(db: DatabaseManager):
+def render_bundle_pyvis_html(entities: List[Any], relationships: List[Any], height: str = "480px") -> str:
+    net = Network(height=height, width="100%", bgcolor="#0e1117", font_color="#ffffff", directed=True)
+    color_map = {
+        "SERVICE": "#3b82f6",     # Blue
+        "SERVER": "#06b6d4",      # Cyan
+        "DATABASE": "#10b981",    # Emerald
+        "PROTOCOL": "#8b5cf6",    # Purple
+        "INCIDENT": "#ef4444",    # Red
+        "COMPONENT": "#f59e0b",   # Amber
+    }
+    for e in entities:
+        etype = getattr(e, "entity_type", "COMPONENT")
+        c = color_map.get(etype, "#94a3b8")
+        label = getattr(e, "canonical_name", str(getattr(e, "entity_id", "")))
+        net.add_node(
+            str(getattr(e, "entity_id", "")),
+            label=label,
+            color=c,
+            title=f"Name: {label}\nType: {etype}\nDomain: {getattr(e, 'domain_id', '')}",
+            size=22,
+        )
+    for r in relationships:
+        pred = getattr(r, "predicate", "RELATED_TO")
+        net.add_edge(
+            str(getattr(r, "subject_entity_id", "")),
+            str(getattr(r, "object_entity_id", "")),
+            label=pred,
+            color="#cbd5e1",
+            title=f"Predicate: {pred}\nMethod: {getattr(r, 'extraction_method', 'RULE_BASED')}",
+        )
+    net.set_options("""
+    var options = {
+      "nodes": {"font": {"size": 13, "color": "#ffffff"}},
+      "edges": {
+        "arrows": {"to": {"enabled": true, "scaleFactor": 0.8}},
+        "color": {"inherit": false},
+        "smooth": {"type": "continuous"}
+      },
+      "physics": {
+        "barnesHut": {"gravitationalConstant": -2500, "springLength": 110}
+      }
+    }
+    """)
+    return net.generate_html()
+
+
+def render_platform_overview_tab(db: DatabaseManager, llm_config: Optional[Any] = None):
     st.header("🌐 Extensible Multi-Domain Platform Architecture")
     st.caption(
         "Khám phá kiến trúc nền tảng GraphRAG đa miền: Hệ thống Canonical Schema, "
@@ -28,18 +80,40 @@ def render_platform_overview_tab(db: DatabaseManager):
     )
 
     domain_reg = DomainRegistry()
-    profile_reg = ProfileRegistry(domain_reg)
     yaml_path = "config/platform_profiles.yaml"
+    try:
+        domain_reg.load_from_yaml(yaml_path)
+    except Exception as e:
+        st.warning(f"Không thể tải domain YAML ({e}). Dùng cấu hình mặc định.")
+
+    # Load custom domains from DB
+    try:
+        for d in db.get_platform_domains():
+            if not domain_reg.get_domain(d["domain_id"]):
+                domain_reg.register_domain(DomainConfig.model_validate(d))
+    except Exception:
+        pass
+
+    profile_reg = ProfileRegistry(domain_reg)
     try:
         profile_reg.load_from_yaml(yaml_path)
     except Exception as e:
         st.warning(f"Không thể tải profile YAML ({e}). Dùng cấu hình bộ nhớ mặc định.")
 
+    # Load custom profiles from DB
+    try:
+        for p in db.get_platform_profiles():
+            if not profile_reg.get_profile(p["profile_id"]):
+                profile_reg.register_profile(ProcessingProfile.model_validate(p))
+    except Exception:
+        pass
+
     subtab1, subtab2, subtab3 = st.tabs([
         "📋 1. Pipeline & Profile Registry",
         "📐 2. Canonical Schema & Validator",
-        "🧪 3. Live Pipeline Sandbox",
+        "🧪 3. Quy Trình Xử Lý & Dựng Đồ Thị Từ File",
     ])
+
 
     # =========================================================================
     # SUBTAB 1: PIPELINE & PROFILE REGISTRY
@@ -206,77 +280,263 @@ def render_platform_overview_tab(db: DatabaseManager):
                     st.error(f"Lỗi: {ex}")
 
     # =========================================================================
-    # SUBTAB 3: LIVE PIPELINE SANDBOX
+    # SUBTAB 3: QUY TRÌNH XỬ LÝ & DỰNG ĐỒ THỊ TỪ FILE (4 BƯỚC)
     # =========================================================================
     with subtab3:
-        st.subheader("Môi Trường Chạy Thử Nghiệm Trực Tiếp (Live Pipeline Sandbox)")
+        st.subheader("🧪 Quy Trình Xử Lý Văn Bản, Tùy Biến Chunking & Dựng Đồ Thị Tri Thức")
         st.markdown(
-            "Nhập văn bản bất kỳ, chọn Domain và Profile xử lý để xem trực tiếp "
-            "quá trình bóc tách `ContentBlock` -> `CanonicalChunk` -> `Entity/Relationship` hoàn toàn không phụ thuộc logic cũ."
+            "Trải nghiệm quy trình toàn diện từ việc đưa vào một file văn bản bất kỳ (`.txt`, `.md`, `.json`), "
+            "tự chọn cơ chế Chunking và Parser phù hợp, bóc tách Thực thể/Quan hệ và đưa trực tiếp vào Đồ thị tri thức."
         )
 
-        sb_col1, sb_col2 = st.columns([1, 1])
-        with sb_col1:
-            domain_opts = [d.domain_id for d in domain_reg.list_domains(enabled_only=True)]
-            selected_domain = st.selectbox("Chọn Domain:", domain_opts, index=0 if domain_opts else None)
-            available_profiles = [p.profile_id for p in profile_reg.list_profiles(domain_id=selected_domain)]
-            if not available_profiles:
-                available_profiles = ["profile_generic_default"]
-            selected_profile_id = st.selectbox("Chọn Profile Xử Lý:", available_profiles)
-            test_doc_title = st.text_input("Tiêu đề Tài liệu:", value="Quy trình Vận hành Trạm Giám sát Hạ tầng")
+        st.markdown("---")
+        # -------------------------------------------------------------
+        # BƯỚC 1: FILE VĂN BẢN VÀ METADATA ĐẦU VÀO
+        # -------------------------------------------------------------
+        st.markdown("#### 📥 Bước 1: Đưa Dữ Liệu Đầu Vào (File Văn bản & Metadata)")
+        
+        in_col1, in_col2 = st.columns([1, 1])
+        with in_col1:
+            input_mode = st.radio(
+                "Nguồn cung cấp nội dung:",
+                ["📁 Tải file lên (.txt, .md, .json)", "✍️ Nhập / Dán văn bản trực tiếp"],
+                horizontal=True,
+            )
+            raw_file_text = ""
+            default_title = "Tài liệu Quy trình Vận hành Trạm Giám sát"
+            file_meta = {}
 
-        with sb_col2:
-            default_text = (
+            if "Tải file" in input_mode:
+                uploaded_doc = st.file_uploader(
+                    "Tải lên file văn bản:",
+                    type=["txt", "md", "markdown", "json"],
+                    help="Hỗ trợ file Text, Markdown hoặc JSON có trường content/metadata.",
+                )
+                if uploaded_doc is not None:
+                    try:
+                        content_bytes = uploaded_doc.read()
+                        decoded_text = content_bytes.decode("utf-8", errors="replace")
+                        if uploaded_doc.name.endswith(".json"):
+                            parsed_json = json.loads(decoded_text)
+                            if isinstance(parsed_json, dict) and "content" in parsed_json:
+                                raw_file_text = parsed_json.get("content", "")
+                                file_meta = parsed_json.get("metadata", {})
+                            else:
+                                raw_file_text = decoded_text
+                        else:
+                            raw_file_text = decoded_text
+                        default_title = uploaded_doc.name.rsplit(".", 1)[0].replace("_", " ").title()
+                        st.success(f"Đã đọc file: **{uploaded_doc.name}** ({len(raw_file_text)} ký tự)")
+                    except Exception as err:
+                        st.error(f"Lỗi khi đọc file: {err}")
+
+            fallback_sample = (
                 "# 1. Khởi động hệ thống\n\n"
                 "Cụm máy chủ Gateway tiếp nhận kết nối từ Internet và chuyển tiếp yêu cầu đến Server Backend.\n\n"
                 "# 2. Quản lý lưu trữ\n\n"
                 "Server Backend lưu trữ phiên làm việc trong Redis Cache và dữ liệu dài hạn trong Cơ sở dữ liệu Postgres.\n\n"
                 "Khi Redis Cache bị đầy, Gateway sẽ phản hồi mã lỗi 504 Timeout."
             )
-            input_raw_text = st.text_area("Văn bản thô (Raw text):", value=default_text, height=180)
-
-        if st.button("🚀 Chạy Thử Nghiệm Toàn Trình (Execute Pipeline)", type="primary"):
-            orchestrator = PipelineOrchestrator(
-                domain_registry=domain_reg,
-                profile_registry=profile_reg,
-                db_manager=db,
+            initial_text = raw_file_text if raw_file_text else fallback_sample
+            input_raw_text = st.text_area(
+                "Xem trước & chỉnh sửa nội dung văn bản đầu vào (Raw text):",
+                value=initial_text,
+                height=160,
             )
-            doc_meta = {
-                "source_id": "SANDBOX_01",
-                "domain_id": selected_domain,
-                "profile_id": selected_profile_id,
-                "document_type": "operational_manual",
-                "security_classification": "INTERNAL",
+
+        with in_col2:
+            st.markdown("**Khai báo Metadata của Tài liệu:**")
+            test_doc_title = st.text_input("Tiêu đề Tài liệu:", value=file_meta.get("title", default_title))
+
+            # Domain selection
+            existing_domains = [d.domain_id for d in domain_reg.list_domains(enabled_only=False)]
+            domain_choice_list = existing_domains + ["➕ Tạo Domain mới..."]
+            selected_domain_raw = st.selectbox("Chọn Lĩnh vực / Miền dữ liệu (Domain):", domain_choice_list, index=0 if existing_domains else None)
+
+            if selected_domain_raw == "➕ Tạo Domain mới...":
+                new_dom_col1, new_dom_col2 = st.columns(2)
+                with new_dom_col1:
+                    new_domain_id = st.text_input("Mã Domain mới (ID):", value="domain_custom_ops")
+                with new_dom_col2:
+                    new_domain_name = st.text_input("Tên Domain mới:", value="Miền Nghiệp vụ Mới")
+                selected_domain = new_domain_id
+                # Register on the fly
+                if not domain_reg.get_domain(new_domain_id):
+                    new_dom_obj = DomainConfig(
+                        domain_id=new_domain_id,
+                        name=new_domain_name,
+                        graph_namespace=f"ns_{new_domain_id.replace('synth_domain_', '').replace('domain_', '')}",
+                    )
+                    domain_reg.register_domain(new_dom_obj)
+            else:
+                selected_domain = selected_domain_raw
+
+            meta_c1, meta_c2 = st.columns(2)
+            with meta_c1:
+                selected_doc_type = st.selectbox(
+                    "Loại văn bản (Document Type):",
+                    ["operational_manual", "incident_report", "research_memo", "legal_regulation", "technical_spec", "general"],
+                    index=0,
+                )
+            with meta_c2:
+                selected_sec_class = st.selectbox(
+                    "Cấp độ Bảo mật (Security):",
+                    ["INTERNAL", "PUBLIC", "CONFIDENTIAL", "RESTRICTED"],
+                    index=0,
+                )
+
+            selected_roles = st.multiselect(
+                "Vai trò được phép truy cập (ACL Allowed Roles):",
+                ["public", "ops", "developer", "researcher", "sec_admin"],
+                default=["public", "ops", "developer"],
+            )
+
+        st.markdown("---")
+        # -------------------------------------------------------------
+        # BƯỚC 2: LỰA CHỌN CƠ CHẾ CHUNKING & PARSER
+        # -------------------------------------------------------------
+        st.markdown("#### 🧩 Bước 2: Lựa Chọn Cơ Chế Chunking & Tách Khối (Parser)")
+        st.caption("Bạn có thể tự do chọn cơ chế Chunking và tinh chỉnh kích thước phân mảnh phù hợp nhất với cấu trúc văn bản.")
+
+        chunk_col1, chunk_col2, chunk_col3, chunk_col4 = st.columns([1.3, 1.2, 1, 1])
+        with chunk_col1:
+            chunker_options = {
+                "block_preserving": "Block Preserving (Bảo toàn trọn vẹn khối đoạn/mục)",
+                "sliding_window": "Sliding Window (Cửa sổ trượt có overlap)",
+                "hierarchical_heading": "Hierarchical Heading (Phân cấp theo tiêu đề mục)",
+                "fixed_token": "Fixed Token (Cắt cố định theo số token)",
             }
-            bundle, trace = orchestrator.process_raw_text(
-                raw_text=input_raw_text,
-                title=test_doc_title,
-                document_meta=doc_meta,
+            selected_chunker_key = st.selectbox(
+                "Cơ chế Chunking (Strategy):",
+                list(chunker_options.keys()),
+                format_func=lambda k: chunker_options[k],
+                index=0,
             )
 
-            st.success(f"Xử lý thành công trong **{trace.total_duration_sec * 1000:.1f}ms**!")
+        with chunk_col2:
+            parser_options = {
+                "structured_heading": "Structured Heading (Nhận diện tiêu đề #, Điều, Mục)",
+                "generic_paragraph": "Generic Paragraph (Tách theo đoạn văn thông thường)",
+            }
+            selected_parser_key = st.selectbox(
+                "Cơ chế Phân Tách Khối (Parser):",
+                list(parser_options.keys()),
+                format_func=lambda k: parser_options[k],
+                index=0,
+            )
 
-            r_tab1, r_tab2, r_tab3, r_tab4 = st.tabs([
-                f"🧱 ContentBlocks ({len(bundle['blocks'])})",
-                f"🧩 Chunks ({len(bundle['chunks'])})",
-                f"🏷️ Extracted Knowledge ({len(bundle['entities'])} Ent, {len(bundle['relationships'])} Rel)",
-                f"⏱️ Execution Trace",
+        with chunk_col3:
+            max_tokens_val = st.slider("Kích thước Chunk (Max Tokens):", min_value=64, max_value=1024, value=256, step=32)
+
+        with chunk_col4:
+            overlap_val = st.slider("Độ chồng lấp (Chunk Overlap):", min_value=0, max_value=128, value=32, step=8)
+
+        st.markdown("---")
+        # -------------------------------------------------------------
+        # BƯỚC 3: CẤU HÌNH TRÍCH XUẤT THỰC THỂ & QUAN HỆ
+        # -------------------------------------------------------------
+        st.markdown("#### 🏷️ Bước 3: Cấu Hình Trích Xuất Thực Thể & Mối Quan Hệ")
+        ext_col1, ext_col2 = st.columns([1.5, 1])
+
+        with ext_col1:
+            extractor_labels = {
+                "rule_based_ops": "Rule-based & Regex Heuristic (Chạy Local - Nhanh, không cần API Key)",
+                "llm_extractor": "LLM Assisted Extractor (Sử dụng Model đã chọn ở Sidebar)",
+            }
+            selected_extractor_key = st.selectbox(
+                "Phương thức trích xuất tri thức (Knowledge Extractor):",
+                list(extractor_labels.keys()),
+                format_func=lambda k: extractor_labels[k],
+                index=0,
+            )
+
+        with ext_col2:
+            persist_toggle = st.checkbox(
+                "💾 Tự động đưa vào Cơ sở dữ liệu & Đồ thị (Persist to DB & Graph)",
+                value=True,
+                help="Lưu toàn bộ Chunks, Thực thể và Quan hệ vào CSDL để có thể tìm kiếm và mở rộng đồ thị ngay tại Tab 1 (Multi-Domain Lab).",
+            )
+
+        st.markdown("---")
+        # -------------------------------------------------------------
+        # BƯỚC 4: THỰC THI & ĐƯA VÀO ĐỒ THỊ TRI THỨC
+        # -------------------------------------------------------------
+        st.markdown("#### 🚀 Bước 4: Thực Thi Quy Trình & Hiển Thị Đồ Thị")
+
+        if st.button("🚀 Chạy Quy Trình Toàn Trình & Dựng Đồ Thị (Execute & Build Graph)", type="primary"):
+            with st.spinner("Đang bóc tách blocks, cắt chunks, trích xuất tri thức và thẩm định schema..."):
+                orchestrator = PipelineOrchestrator(
+                    domain_registry=domain_reg,
+                    profile_registry=profile_reg,
+                    db_manager=db,
+                )
+                doc_meta = {
+                    "source_id": "SANDBOX_DOC",
+                    "domain_id": selected_domain,
+                    "document_type": selected_doc_type,
+                    "security_classification": selected_sec_class,
+                    "acl": {
+                        "allowed_roles": selected_roles,
+                        "allowed_users": [],
+                        "classification": selected_sec_class,
+                    },
+                }
+
+                bundle, trace = orchestrator.process_raw_text(
+                    raw_text=input_raw_text,
+                    title=test_doc_title,
+                    document_meta=doc_meta,
+                    parser_strategy_override=selected_parser_key,
+                    chunking_strategy_override=selected_chunker_key,
+                    chunking_params_override={"max_tokens": max_tokens_val, "chunk_overlap": overlap_val},
+                    extractor_override=selected_extractor_key,
+                    llm_config=llm_config,
+                )
+
+                if persist_toggle:
+                    try:
+                        orchestrator.persist_bundle(bundle)
+                        st.toast("✅ Đã lưu thành công dữ liệu vào kho tri thức!", icon="💾")
+                    except Exception as p_err:
+                        st.warning(f"Không thể lưu vào DB: {p_err}")
+
+            st.success(
+                f"✅ Xử lý hoàn tất trong **{trace.total_duration_sec * 1000:.1f}ms**! "
+                f"Tạo được: **{len(bundle['blocks'])} Blocks**, **{len(bundle['chunks'])} Chunks**, "
+                f"**{len(bundle['entities'])} Thực thể**, **{len(bundle['relationships'])} Quan hệ**."
+            )
+
+            if persist_toggle:
+                st.info(
+                    f"💡 **Dữ liệu đã được nạp vào Đồ thị tri thức & CSDL:** Bạn có thể chuyển sang "
+                    f"**Tab 1 (Multi-Domain Lab)**, chọn Domain `{selected_domain}` để truy vấn Hybrid và mở rộng đồ thị (KG Expansion) ngay trên tài liệu này!"
+                )
+
+            # 5 View Tabs
+            r_tab1, r_tab2, r_tab3, r_tab4, r_tab5 = st.tabs([
+                f"🧱 1. ContentBlocks ({len(bundle['blocks'])})",
+                f"🧩 2. Canonical Chunks ({len(bundle['chunks'])})",
+                f"🏷️ 3. Thực Thể & Quan Hệ ({len(bundle['entities'])} Ent, {len(bundle['relationships'])} Rel)",
+                f"🕸️ 4. Đồ Thị Tri Thức Trực Quan (Interactive KG)",
+                f"⏱️ 5. Thẩm Định Schema & Trace",
             ])
 
             with r_tab1:
+                st.subheader("Danh Sách Khối Nội Dung (ContentBlocks)")
                 b_rows = [
                     {
                         "Block ID": b.block_id,
-                        "Type": b.block_type,
+                        "Loại": b.block_type,
                         "Offsets": f"{b.start_offset} -> {b.end_offset}",
                         "Parent Block": b.parent_block_id or "Root",
-                        "Nội dung": b.text[:120] + ("..." if len(b.text) > 120 else ""),
+                        "Nội dung": b.text[:140] + ("..." if len(b.text) > 140 else ""),
                     }
                     for b in bundle["blocks"]
                 ]
-                st.dataframe(pd.DataFrame(b_rows), use_container_width=True)
+                st.dataframe(pd.DataFrame(b_rows), use_container_width=True) if b_rows else st.info("Không có block nào.")
 
             with r_tab2:
+                st.subheader(f"Danh Sách Chunks Đã Cắt (Chiến lược: `{selected_chunker_key}`)")
                 c_rows = [
                     {
                         "Chunk ID": c.chunk_id,
@@ -287,7 +547,7 @@ def render_platform_overview_tab(db: DatabaseManager):
                     }
                     for c in bundle["chunks"]
                 ]
-                st.dataframe(pd.DataFrame(c_rows), use_container_width=True)
+                st.dataframe(pd.DataFrame(c_rows), use_container_width=True) if c_rows else st.info("Không có chunk nào.")
 
             with r_tab3:
                 e_col1, e_col2 = st.columns(2)
@@ -299,25 +559,44 @@ def render_platform_overview_tab(db: DatabaseManager):
                             "Tên chuẩn hóa": e.canonical_name,
                             "Loại": e.entity_type,
                             "Namespace": e.graph_namespace,
-                            "Bằng chứng": e.evidence_refs,
+                            "Bằng chứng": ", ".join(e.evidence_refs),
                         }
                         for e in bundle["entities"]
                     ]
-                    st.dataframe(pd.DataFrame(ent_rows), use_container_width=True) if ent_rows else st.info("Không có thực thể.")
+                    st.dataframe(pd.DataFrame(ent_rows), use_container_width=True) if ent_rows else st.info("Chưa phát hiện thực thể.")
 
                 with e_col2:
                     st.markdown("**Quan hệ bóc tách (Relationships):**")
                     rel_rows = [
                         {
-                            "Subject": r.subject_entity_id,
+                            "Subject": r.subject_entity_id.split("::")[-1] if "::" in r.subject_entity_id else r.subject_entity_id,
                             "Predicate": r.predicate,
-                            "Object": r.object_entity_id,
-                            "Bằng chứng": r.evidence_refs,
+                            "Object": r.object_entity_id.split("::")[-1] if "::" in r.object_entity_id else r.object_entity_id,
+                            "Bằng chứng": ", ".join(r.evidence_refs),
                         }
                         for r in bundle["relationships"]
                     ]
-                    st.dataframe(pd.DataFrame(rel_rows), use_container_width=True) if rel_rows else st.info("Không có quan hệ.")
+                    st.dataframe(pd.DataFrame(rel_rows), use_container_width=True) if rel_rows else st.info("Chưa phát hiện quan hệ.")
 
             with r_tab4:
-                st.markdown(f"**Trạng thái Pipeline:** `{trace.status}` | **Document ID:** `{trace.document_id}`")
+                st.subheader("Đồ Thị Tri Thức Bóc Tách Từ Tài Liệu (Interactive Knowledge Graph)")
+                if bundle["entities"]:
+                    html_graph = render_bundle_pyvis_html(bundle["entities"], bundle["relationships"], height="500px")
+                    components.html(html_graph, height=520)
+                    st.caption("🔵 Xanh dương: Service | 🟢 Xanh lá: Database | 🟣 Tím: Protocol | 🔴 Đỏ: Incident | 🟠 Vàng: Component | ⚪ Xám: Liên kết có hướng")
+                else:
+                    st.info("Chưa có thực thể nào để hiển thị đồ thị mạng lưới.")
+
+            with r_tab5:
+                st.subheader("Kết Quả Thẩm Định Toàn Vẹn & Vết Thời Gian")
+                st.markdown(
+                    f"**Trạng thái Pipeline:** `{trace.status}` | **Hợp lệ Schema:** {'✅ ĐẠT' if trace.is_valid else '❌ LỖI'} | "
+                    f"**Document ID:** `{trace.document_id}` | **Profile:** `{trace.profile_id}`"
+                )
+                if trace.validation_issues:
+                    st.warning(f"Phát hiện {len(trace.validation_issues)} cảnh báo schema:")
+                    st.json(trace.validation_issues)
+                else:
+                    st.success("Tất cả các điều kiện ràng buộc Schema, Offset và Provenance đều đạt chuẩn 100%!")
                 st.dataframe(pd.DataFrame(trace.step_logs), use_container_width=True)
+
