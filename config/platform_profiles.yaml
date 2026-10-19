@@ -1,0 +1,104 @@
+# Cấu hình Domain Registry và Processing Profile Registry
+# Tất cả domain trong file này là Synthetic/Test-Only fixtures.
+# KHÔNG coi đây là taxonomy chính thức của khách hàng.
+
+domains:
+  - domain_id: "synth_domain_ops"
+    name: "Hạ tầng & Vận hành Hệ thống (Synthetic Ops)"
+    description: "Tài liệu kỹ thuật, hướng dẫn vận hành, báo cáo sự cố hạ tầng máy chủ."
+    enabled: true
+    schema_version: "1.0.0"
+    graph_namespace: "ns_ops"
+    default_profile_id: "profile_ops_standard"
+    is_test_fixture: true
+    allowed_entity_types:
+      - "SERVICE"
+      - "SERVER"
+      - "DATABASE"
+      - "INCIDENT"
+      - "PROTOCOL"
+    allowed_predicates:
+      - "DEPENDS_ON"
+      - "COMMUNICATES_WITH"
+      - "STORES_DATA_IN"
+      - "TRIGGERED_BY"
+      - "RESOLVED_BY"
+
+  - domain_id: "synth_domain_rd"
+    name: "Nghiên cứu & Phát triển (Synthetic R&D)"
+    description: "Đặc tả giao thức, tài liệu thuật toán, ghi chú kiến trúc phần mềm."
+    enabled: true
+    schema_version: "1.0.0"
+    graph_namespace: "ns_rd"
+    default_profile_id: "profile_rd_standard"
+    is_test_fixture: true
+    allowed_entity_types:
+      - "ALGORITHM"
+      - "PROTOCOL"
+      - "MODULE"
+      - "BENCHMARK"
+    allowed_predicates:
+      - "IMPLEMENTS"
+      - "EXTENDS"
+      - "EVALUATES"
+      - "OPTIMIZES"
+
+profiles:
+  - profile_id: "profile_ops_standard"
+    domain_id: "synth_domain_ops"
+    document_type: "operational_manual"
+    profile_version: "1.0.0"
+    parser_strategy: "generic_paragraph"
+    chunking_strategy: "sliding_window"
+    chunking_parameters:
+      max_tokens: 256
+      chunk_overlap: 32
+    metadata_extractors:
+      - "basic_structural"
+      - "rule_based_ops"
+    fallback_profile_id: "profile_generic_default"
+    enabled: true
+
+  - profile_id: "profile_ops_incident"
+    domain_id: "synth_domain_ops"
+    document_type: "incident_report"
+    profile_version: "1.0.0"
+    parser_strategy: "structured_heading"
+    chunking_strategy: "block_preserving"
+    chunking_parameters:
+      max_tokens: 384
+      chunk_overlap: 0
+    metadata_extractors:
+      - "basic_structural"
+      - "rule_based_incident"
+    fallback_profile_id: "profile_ops_standard"
+    enabled: true
+
+  - profile_id: "profile_rd_standard"
+    domain_id: "synth_domain_rd"
+    document_type: "research_memo"
+    profile_version: "1.0.0"
+    parser_strategy: "generic_paragraph"
+    chunking_strategy: "sliding_window"
+    chunking_parameters:
+      max_tokens: 512
+      chunk_overlap: 64
+    metadata_extractors:
+      - "basic_structural"
+      - "rule_based_rd"
+    fallback_profile_id: "profile_generic_default"
+    enabled: true
+
+  - profile_id: "profile_generic_default"
+    domain_id: "*"
+    document_type: "*"
+    profile_version: "1.0.0"
+    parser_strategy: "generic_paragraph"
+    chunking_strategy: "sliding_window"
+    chunking_parameters:
+      max_tokens: 256
+      chunk_overlap: 32
+    metadata_extractors:
+      - "basic_structural"
+    fallback_profile_id: null
+    enabled: true
