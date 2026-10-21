@@ -30,7 +30,7 @@ class GraphExpander:
         query: str,
         seed_results: List[RetrievalResult],
         max_hops: int = 1,
-        seed_limit: int = 3,
+        seed_limit: int = 10,
         max_expanded_nodes: int = 5,
         allowed_relations: Optional[List[str]] = None,
     ) -> List[RetrievalResult]:
@@ -38,7 +38,7 @@ class GraphExpander:
             return []
 
         if allowed_relations is None:
-            allowed_relations = ["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES"]
+            allowed_relations = ["AMENDS", "SUPPLEMENTS", "REPEALS", "DETAILS", "REFERENCES", "CONTAINS"]
 
         allowed_set = set(allowed_relations)
         seen_provisions: Set[str] = {r.provision_id for r in seed_results}
@@ -84,7 +84,19 @@ class GraphExpander:
                     if node_data.get("node_type") != "PROVISION":
                         continue
 
+                    # Không duyệt xuôi CONTAINS nếu node cha (curr_node) đã là cấp Điều (ARTICLE)
+                    # hoặc đã có trong seen_provisions, vì node Điều đã chứa trọn vẹn văn bản các khoản con
+                    curr_data = self.graph.nodes.get(curr_node, {})
+                    if rel == "CONTAINS" and direction == "-->":
+                        if curr_data.get("level") == "ARTICLE" or curr_node in seen_provisions:
+                            continue
+
                     rel_weight = self.relation_weights.get(rel, 0.5)
+                    # Duyệt ngược CONTAINS từ Khoản/Điểm lên Điều cha: ưu tiên trọng số cao để thu nạp trọn vẹn ngữ cảnh điều luật
+                    if rel == "CONTAINS" and direction == "<--":
+                        if node_data.get("level") == "ARTICLE":
+                            rel_weight = 0.85
+
                     node_content = node_data.get("content", "")
 
                     # Lexical overlap bonus

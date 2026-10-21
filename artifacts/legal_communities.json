@@ -1,0 +1,2877 @@
+[
+  {
+    "community_id": "COMM_58",
+    "title": "Cụm Luật Bảo vệ bí mật nhà nước (90/2018/NĐ-CP, 29/2018/QH14, 24/2018/QH14 (+11 VB))",
+    "summary": "**Cụm chủ đề:** Luật Bảo vệ bí mật nhà nước.\n\n**Văn bản nòng cốt:** Luật số 29/2018/QH14 (Luật Luật Bảo vệ bí mật nhà nước).\n\n**Quy mô:** Bao gồm 14 văn bản QPPL liên quan với tổng cộng 2273 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 66.\n\n**Danh mục văn bản chính:**\n- Nghị định 90/2018/NĐ-CP: Nghị định Quy định chi tiết thi hành một số điều của Luật Cảnh vệ\n- Luật 29/2018/QH14: Luật Luật Bảo vệ bí mật nhà nước\n- Luật 24/2018/QH14: Luật An ninh mạng\n- Thông tư 55/2019/TT-BCA: Thông tư Quy định tuyển chọn công dân vào Công an nhân dân\n- Luật 28/2013/QH13: Luật Phòng, chống khủng bố",
+    "doc_ids": [
+      "DOC_90_2018_N_CP",
+      "DOC_29_2018_QH14",
+      "DOC_24_2018_QH14",
+      "DOC_55_2019_TT_BCA",
+      "DOC_28_2013_QH13",
+      "DOC_32_2004_QH11",
+      "DOC_06_2014_N_CP",
+      "DOC_13_2017_QH14",
+      "DOC_23_2020_TT_BCA",
+      "DOC_02_2016_TTLT_BVHTTDL_BCA",
+      "DOC_37_2018_QH14",
+      "DOC_32_2007_PL_UBTVQH11",
+      "DOC_26_2020_N_CP",
+      "DOC_126_2008_N_CP"
+    ],
+    "doc_numbers": [
+      "90/2018/NĐ-CP",
+      "29/2018/QH14",
+      "24/2018/QH14",
+      "55/2019/TT-BCA",
+      "28/2013/QH13",
+      "32/2004/QH11",
+      "06/2014/NĐ-CP",
+      "13/2017/QH14",
+      "23/2020/TT-BCA",
+      "02/2016/TTLT-BVHTTDL-BCA",
+      "37/2018/QH14",
+      "32/2007/PL-UBTVQH11",
+      "26/2020/NĐ-CP",
+      "126/2008/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định chi tiết thi hành một số điều của Luật Cảnh vệ",
+      "Luật Luật Bảo vệ bí mật nhà nước",
+      "Luật An ninh mạng",
+      "Thông tư Quy định tuyển chọn công dân vào Công an nhân dân",
+      "Luật Phòng, chống khủng bố",
+      "Luật An ninh Quốc gia",
+      "Nghị định Về biện pháp vận động quần chúng bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội",
+      "Luật Cảnh vệ",
+      "Thông tư Quy định về Giấy chứng minh Công an nhân dân, Giấy chứng nhận trong Công an nhân dân",
+      "Thông tư Hướng dẫn phối hợp công tác bảo vệ an ninh quốc gia và bảo đảm trật tự, an toàn xã hội trong lĩnh vực văn hóa, gia đình, thể dục, thể thao và du lịch",
+      "Luật Công an nhân dân",
+      "Pháp lệnh Bảo vệ công trình quan trọng liên quan đến an ninh quốc gia",
+      "Nghị định Quy định chi tiết một số điều của Luật Bảo vệ bí mật nhà nước",
+      "Nghị định Quy định chi tiết và hướng dẫn thi hành một số điều của Pháp lệnh Bảo vệ công trình quan trọng liên quan đến an ninh quốc gia"
+    ],
+    "provision_count": 2273,
+    "relations_count": {
+      "REFERENCES": 66
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "32/2004/QH11 > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Luật này quy định về chính sách an ninh quốc gia; nguyên tắc, nhiệm vụ, biện pháp bảo vệ an ninh quốc gia; quyền, nghĩa vụ, trách nhiệm của cơ quan, tổ chức, công dân trong bảo vệ an ninh quốc gia."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "32/2004/QH11 > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Luật này áp dụng đối với cơ quan, tổ chức, công dân nước Cộng hoà xã hội chủ nghĩa Việt Nam; cá nhân, tổ chức nước ngoài, tổ chức quốc tế cư trú, hoạt động trên lãnh thổ nước Cộng hoà xã hội chủ nghĩa"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Nguyên tắc hoạt động bảo vệ an ninh quốc gia",
+        "structural_path": "32/2004/QH11 > Chương I > Điều 5. Nguyên tắc hoạt động bảo vệ an ninh quốc gia",
+        "snippet": "1. Tuân thủ Hiến pháp, pháp luật, bảo đảm lợi ích của Nhà nước, quyền và lợi ích hợp pháp của tổ chức, cá nhân.\n2. Đặt dưới sự lãnh đạo của Đảng Cộng sản Việt Nam, sự quản lý thống nhất của Nhà nước; "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 14. Nhiệm vụ bảo vệ an ninh quốc gia",
+        "structural_path": "32/2004/QH11 > Chương II > Điều 14. Nhiệm vụ bảo vệ an ninh quốc gia",
+        "snippet": "1. Bảo vệ chế độ chính trị và Nhà nước Cộng hoà xã hội chủ nghĩa Việt Nam, bảo vệ độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ của Tổ quốc.\n2. Bảo vệ an ninh về tư tưởng và văn hoá, khối đại đoàn"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 23. Nhiệm vụ của cơ quan chuyên trách bảo vệ an ninh quốc gia",
+        "structural_path": "32/2004/QH11 > Chương III > Điều 23. Nhiệm vụ của cơ quan chuyên trách bảo vệ an ninh quốc gia",
+        "snippet": "1. Cơ quan chuyên trách bảo vệ an ninh quốc gia thực hiện nhiệm vụ quy định tại Điều 14 của Luật này.\n2. Các nhiệm vụ cụ thể của cơ quan chuyên trách bảo vệ an ninh quốc gia:\na) Tổ chức thu thập thông"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "06/2014/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định nguyên tắc, nội dung, hình thức, trình tự, thủ tục, thẩm quyền, trách nhiệm và bảo đảm điều kiện áp dụng biện pháp vận động quần chúng bảo vệ an ninh quốc gia, giữ gìn trật tự, "
+      }
+    ],
+    "level": 0,
+    "weight": 2273.0
+  },
+  {
+    "community_id": "COMM_53",
+    "title": "Cụm Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài  (04/2015/TT-BCA, 53/2016/TT-BCA, 31/2015/TT-BCA (+8 VB))",
+    "summary": "**Cụm chủ đề:** Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam.\n\n**Văn bản nòng cốt:** Luật số 47/2014/QH13 (Luật Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam).\n\n**Quy mô:** Bao gồm 11 văn bản QPPL liên quan với tổng cộng 1073 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 86, SUPPLEMENTS: 1, AMENDS: 1.\n\n**Danh mục văn bản chính:**\n- Thông tư 04/2015/TT-BCA: Thông tư Quy định mẫu giấy tờ liên quan đến việc nhập cảnh, xuất cảnh, \ncư trú của người nước ngoài tại Việt Nam\n- Thông tư 53/2016/TT-BCA: Thông tư Thông tư quy định cách thức thực hiện khai báo, tiếp nhận thông tin tạm trú của người nước ngoài tại Việt Nam\n- Thông tư 31/2015/TT-BCA: Thông tư Hướng dẫn một số nội dung về cấp thị thực, cấp thẻ tạm trú, cấp giấy phép xuất nhập cảnh, giải quyết thường trú cho người nước ngoài tại Việt Nam\n- Nghị định 17/2019/NĐ-CP: Nghị định số 17/2019/NĐ-CP (Văn bản sửa đổi, bổ sung)\n- Nghị định 77/2017/NĐ-CP: Nghị định Quy định về quản lý, bảo vệ an ninh, trật tự tại cửa khẩu cảng",
+    "doc_ids": [
+      "DOC_04_2015_TT_BCA",
+      "DOC_53_2016_TT_BCA",
+      "DOC_31_2015_TT_BCA",
+      "DOC_17_2019_N_CP",
+      "DOC_77_2017_N_CP",
+      "DOC_21_2011_TT_BCA",
+      "DOC_07_2017_N_CP",
+      "DOC_64_2015_N_CP",
+      "DOC_04_2016_TT_BNG",
+      "DOC_82_2015_N_CP",
+      "DOC_47_2014_QH13"
+    ],
+    "doc_numbers": [
+      "04/2015/TT-BCA",
+      "53/2016/TT-BCA",
+      "31/2015/TT-BCA",
+      "17/2019/NĐ-CP",
+      "77/2017/NĐ-CP",
+      "21/2011/TT-BCA",
+      "07/2017/NĐ-CP",
+      "64/2015/NĐ-CP",
+      "04/2016/TT-BNG",
+      "82/2015/NĐ-CP",
+      "47/2014/QH13"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định mẫu giấy tờ liên quan đến việc nhập cảnh, xuất cảnh, \ncư trú của người nước ngoài tại Việt Nam",
+      "Thông tư Thông tư quy định cách thức thực hiện khai báo, tiếp nhận thông tin tạm trú của người nước ngoài tại Việt Nam",
+      "Thông tư Hướng dẫn một số nội dung về cấp thị thực, cấp thẻ tạm trú, cấp giấy phép xuất nhập cảnh, giải quyết thường trú cho người nước ngoài tại Việt Nam",
+      "Nghị định số 17/2019/NĐ-CP (Văn bản sửa đổi, bổ sung)",
+      "Nghị định Quy định về quản lý, bảo vệ an ninh, trật tự tại cửa khẩu cảng",
+      "Thông tư Quy định về trình tự, thủ tục thực hiện quyết định chưa cho nhập cảnh, chưa được xuất cảnh, tạm hoãn xuất cảnh",
+      "Nghị định Nghị định quy định trình tự, thủ tục thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam",
+      "Nghị định Quy định cơ chế phối hợp giữa các Bộ, cơ quan ngang Bộ, Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương trong công tác quản lý nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam",
+      "Thông tư Hướng dẫn thủ tục cấp thị thực, cấp thẻ tạm trú, gia hạn tạm trú cho người nước ngoài tại Việt Nam thuộc thẩm quyền của Bộ Ngoại giao",
+      "Nghị định Quy định về việc miễn thị thực cho người Việt Nam định cư ở nước ngoài và người nước ngoài là vợ, chồng, con của người Việt Nam định cư ở nước ngoài hoặc của công dân Việt Nam",
+      "Luật Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam"
+    ],
+    "provision_count": 1073,
+    "relations_count": {
+      "REFERENCES": 86,
+      "SUPPLEMENTS": 1,
+      "AMENDS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "77/2017/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Nghị định này quy định:\na) Thủ tục biên phòng; kiểm tra, giám sát biên phòng; cấp thị thực, Giấy phép đi bờ của thuyền viên, Giấy phép xuống tàu và Giấy phép do Bộ đội Biên phòng cấp tại cửa khẩu c"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "77/2017/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Cơ quan, tổ chức, cá nhân, tàu thuyền và các loại phương tiện khác của Việt Nam, nước ngoài ra, vào, hoạt động tại cửa khẩu cảng.\n2. Nghị định này không áp dụng đối với tàu quân sự nước ngoài đến n"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 11. Đối tượng áp dụng thủ tục biên phòng theo cách thức điện tử",
+        "structural_path": "77/2017/NĐ-CP > Điều 11. Đối tượng áp dụng thủ tục biên phòng theo cách thức điện tử",
+        "snippet": "1. Tàu thuyền Việt Nam nhập cảnh, xuất cảnh.\n\n\t2. Tàu thuyền nước ngoài nhập cảnh, xuất cảnh, quá cảnh, chuyển cảng.\n\n\t3. Tàu thuyền được cơ quan có thẩm quyền của Việt Nam cấp giấy phép hoặc có văn b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 12. Đối tượng áp dụng thủ tục biên phòng theo cách thức thủ công",
+        "structural_path": "77/2017/NĐ-CP > Điều 12. Đối tượng áp dụng thủ tục biên phòng theo cách thức thủ công",
+        "snippet": "1. Tàu cá Việt Nam.\n\n\t2. Tàu thuyền nước ngoài vì lý do khẩn cấp xin vào tránh trú bão, cấp cứu thuyền viên, hành khách hoặc bị tai nạn.\n\n\t3. Tàu thuyền không thực hiện được thủ tục biên phòng theo cá"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 18. Đối tượng kiểm tra, giám sát biên phòng",
+        "structural_path": "77/2017/NĐ-CP > Điều 18. Đối tượng kiểm tra, giám sát biên phòng",
+        "snippet": "1. Tàu thuyền Việt Nam xuất cảnh, nhập cảnh; tàu thuyền nước ngoài nhập cảnh, xuất cảnh, quá cảnh, chuyển cảng; tàu thuyền Việt Nam hoạt động tuyến nội địa trong phạm vi cửa khẩu cảng; các phương tiện"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "47/2014/QH13 > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Luật này quy định nguyên tắc, điều kiện, trình tự, thủ tục, quyền và nghĩa vụ của người nước ngoài nhập cảnh, xuất cảnh, quá cảnh, cư trú tại Việt Nam; quyền và trách nhiệm của cơ quan quản lý nhà nướ"
+      }
+    ],
+    "level": 0,
+    "weight": 1073.0
+  },
+  {
+    "community_id": "COMM_21",
+    "title": "Cụm Biển Việt Nam (18/2012/QH13, 71/2015/NĐ-CP, 34/2014/NĐ-CP (+4 VB))",
+    "summary": "**Cụm chủ đề:** Biển Việt Nam.\n\n**Văn bản nòng cốt:** Luật số 18/2012/QH13 (Luật Biển Việt Nam).\n\n**Quy mô:** Bao gồm 7 văn bản QPPL liên quan với tổng cộng 861 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 37.\n\n**Danh mục văn bản chính:**\n- Luật 18/2012/QH13: Luật Biển Việt Nam\n- Nghị định 71/2015/NĐ-CP: Nghị định Về quản lý hoạt động của người, phương tiện trong khu vực biên giới biển nước Cộng hòa xã hội chủ nghĩa Việt Nam\n- Nghị định 34/2014/NĐ-CP: Nghị định Về Quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam\n- Nghị định 140/2004/NĐ-CP: Nghị định Quy định chi tiết một số điều của Luật Biên giới quốc gia\n- Thông tư 162/2004/TTLT/BQP-BTC: Thông tư Hướng dẫn nội dung chi và quản lý ngân sách thực hiện công tác quản lý, bảo vệ biên giới quốc gia, giữ gìn an ninh, trật tự, an toàn xã hội trong khu vực biên giới",
+    "doc_ids": [
+      "DOC_18_2012_QH13",
+      "DOC_71_2015_N_CP",
+      "DOC_34_2014_N_CP",
+      "DOC_140_2004_N_CP",
+      "DOC_162_2004_TTLT_BQP_BTC",
+      "DOC_06_2003_QH11",
+      "DOC_162_2016_TT_BQP"
+    ],
+    "doc_numbers": [
+      "18/2012/QH13",
+      "71/2015/NĐ-CP",
+      "34/2014/NĐ-CP",
+      "140/2004/NĐ-CP",
+      "162/2004/TTLT/BQP-BTC",
+      "06/2003/QH11",
+      "162/2016/TT-BQP"
+    ],
+    "doc_titles": [
+      "Luật Biển Việt Nam",
+      "Nghị định Về quản lý hoạt động của người, phương tiện trong khu vực biên giới biển nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+      "Nghị định Về Quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+      "Nghị định Quy định chi tiết một số điều của Luật Biên giới quốc gia",
+      "Thông tư Hướng dẫn nội dung chi và quản lý ngân sách thực hiện công tác quản lý, bảo vệ biên giới quốc gia, giữ gìn an ninh, trật tự, an toàn xã hội trong khu vực biên giới",
+      "Luật Biên giới quốc gia",
+      "Thông tư Quy định thực hiện một số điều của Nghị định số 71/2015/NĐ-CP ngày 03 tháng 9 năm 2015 của Chính phủ về quản lý hoạt động của người, phương tiện trong khu vực biên giới biển nước Cộng hòa xã hội chủ nghĩa Việt Nam"
+    ],
+    "provision_count": 861,
+    "relations_count": {
+      "REFERENCES": 37
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "140/2004/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định chi tiết một số điều của Luật Biên giới quốc gia về xây dựng, quản lý, bảo vệ biên giới quốc gia, khu vực biên giới; bảo đảm ngân sách cho xây dựng, quản lý, bảo vệ biên giới, k"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng chấp hành pháp luật về biên giới",
+        "structural_path": "140/2004/NĐ-CP > Chương I > Điều 2. Đối tượng chấp hành pháp luật về biên giới",
+        "snippet": "Cơ quan, tổ chức, cá nhân Việt Nam và nước ngoài sinh sống, hoạt động có liên quan đến biên giới quốc gia và khu vực biên giới có trách nhiệm chấp hành các quy định của Luật Biên giới quốc gia, Nghị đ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 24. Phân cấp nhiệm vụ chi ngân sách về xây dựng, quản lý, bảo vệ biên giới quốc gia, khu vực biên giới",
+        "structural_path": "140/2004/NĐ-CP > Chương II > Điều 24. Phân cấp nhiệm vụ chi ngân sách về xây dựng, quản lý, bảo vệ biên giới quốc gia, khu vực biên giới",
+        "snippet": "1. Ngân sách trung ương bảo đảm cho các nhiệm vụ xây dựng, quản lý, bảo vệ biên giới quốc gia và khu vực biên giới do các cơ quan, đơn vị Trung ương thực hiện.\n\n\t2. Ngân sách địa phương bảo đảm cho cá"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "34/2014/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Nghị định này quy định về Quy chế và quản lý hoạt động của người, phương tiện trong khu vực biên giới đất liền; trách nhiệm của cơ quan, tổ chức và cá nhân trong xây dựng, quản lý, bảo vệ khu vực b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "34/2014/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Cơ quan, tổ chức, cá nhân Việt Nam và nước ngoài hoạt động trong khu vực biên giới đất liền có trách nhiệm chấp hành Nghị định này và các quy định khác của pháp luật Việt Nam có liên quan."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "71/2015/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định về quản lý hoạt động của người, phương tiện trong khu vực biên giới biển; trách nhiệm của cơ quan, tổ chức và cá nhân trong xây dựng, quản lý, bảo vệ khu vực biên giới biển nước"
+      }
+    ],
+    "level": 0,
+    "weight": 861.0
+  },
+  {
+    "community_id": "COMM_51",
+    "title": "Cụm Cơ yếu (08/2014/TTLT-BQP-BTC-BYT, 05/2011/QH13, 05/2015/TT-BQP (+3 VB))",
+    "summary": "**Cụm chủ đề:** Cơ yếu.\n\n**Văn bản nòng cốt:** Luật số 05/2011/QH13 (Luật Cơ yếu).\n\n**Quy mô:** Bao gồm 6 văn bản QPPL liên quan với tổng cộng 490 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 72.\n\n**Danh mục văn bản chính:**\n- Thông tư 08/2014/TTLT-BQP-BTC-BYT: Thông tư Hướng dẫn thực hiện một số tiêu chuẩn vật chất hậu cần và chế độ chăm sóc y tế đối với người làm công tác cơ yếu\n- Luật 05/2011/QH13: Luật Cơ yếu\n- Thông tư 05/2015/TT-BQP: Thông tư Quy định tiêu chuẩn trang bị nhà ăn, nhà bếp, dụng cụ cấp dưỡng; định mức sử dụng điện năng tại các kho, khu kỹ thuật; tiêu chuẩn, trang bị máy phát điện đối với các đơn vị, tổ chức thuộc lực lượng cơ yếu và doanh cụ trong phòng làm việc cơ yếu\n- Thông tư 11/2014/TTLT-BQP-BNV-BLĐTBXH-BTC: Thông tư Hướng dẫn thực hiện chế độ, chính sách đối với người làm công tác cơ yếu nghỉ hưu, chuyển ngành, thôi việc, hy sinh, từ trần hoặc chuyển sang làm công tác khác trong tổ chức cơ yếu\n- Nghị định 32/2013/NĐ-CP: Nghị định Hướng dẫn Luật Cơ yếu về chế độ, chính sách đối với người làm công tác cơ yếu",
+    "doc_ids": [
+      "DOC_08_2014_TTLT_BQP_BTC_BYT",
+      "DOC_05_2011_QH13",
+      "DOC_05_2015_TT_BQP",
+      "DOC_11_2014_TTLT_BQP_BNV_BL_TBXH_BTC",
+      "DOC_32_2013_N_CP",
+      "DOC_116_2015_TT_BQP"
+    ],
+    "doc_numbers": [
+      "08/2014/TTLT-BQP-BTC-BYT",
+      "05/2011/QH13",
+      "05/2015/TT-BQP",
+      "11/2014/TTLT-BQP-BNV-BLĐTBXH-BTC",
+      "32/2013/NĐ-CP",
+      "116/2015/TT-BQP"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện một số tiêu chuẩn vật chất hậu cần và chế độ chăm sóc y tế đối với người làm công tác cơ yếu",
+      "Luật Cơ yếu",
+      "Thông tư Quy định tiêu chuẩn trang bị nhà ăn, nhà bếp, dụng cụ cấp dưỡng; định mức sử dụng điện năng tại các kho, khu kỹ thuật; tiêu chuẩn, trang bị máy phát điện đối với các đơn vị, tổ chức thuộc lực lượng cơ yếu và doanh cụ trong phòng làm việc cơ yếu",
+      "Thông tư Hướng dẫn thực hiện chế độ, chính sách đối với người làm công tác cơ yếu nghỉ hưu, chuyển ngành, thôi việc, hy sinh, từ trần hoặc chuyển sang làm công tác khác trong tổ chức cơ yếu",
+      "Nghị định Hướng dẫn Luật Cơ yếu về chế độ, chính sách đối với người làm công tác cơ yếu",
+      "Thông tư Quy định tiêu chuẩn vật chất hậu cần đối với học viên cơ yếu"
+    ],
+    "provision_count": 490,
+    "relations_count": {
+      "REFERENCES": 72
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "05/2011/QH13 > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Luật này quy định về hoạt động cơ yếu; nhiệm vụ, quyền hạn, nguyên tắc tổ chức và hoạt động của lực lượng cơ yếu; chế độ, chính sách đối với người làm việc trong tổ chức cơ yếu; quyền, nghĩa vụ, trách"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "05/2011/QH13 > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Luật này áp dụng đối với tổ chức cơ yếu, người làm việc trong tổ chức cơ yếu và cơ quan, tổ chức, cá nhân liên quan đến hoạt động cơ yếu."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Nguyên tắc tổ chức và hoạt động của lực lượng cơ yếu",
+        "structural_path": "05/2011/QH13 > Chương I > Điều 5. Nguyên tắc tổ chức và hoạt động của lực lượng cơ yếu",
+        "snippet": "1. Đặt dưới sự lãnh đạo tuyệt đối, trực tiếp về mọi mặt của Đảng Cộng sản Việt Nam, sự quản lý thống nhất của Nhà nước.\n2. Tuân thủ Hiến pháp và pháp luật, bảo vệ lợi ích của Nhà nước, quyền và lợi íc"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 20. Vị trí, chức năng, nhiệm vụ của lực lượng cơ yếu",
+        "structural_path": "05/2011/QH13 > Chương III > Điều 20. Vị trí, chức năng, nhiệm vụ của lực lượng cơ yếu",
+        "snippet": "Lực lượng cơ yếu là một trong những lực lượng chuyên trách bảo vệ bí mật nhà nước, có chức năng tham mưu cho Đảng, Nhà nước về công tác cơ yếu, thực hiện hoạt động cơ yếu; góp phần bảo đảm tuyệt đối b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 21. Nhiệm vụ, quyền hạn của Ban Cơ yếu Chính phủ",
+        "structural_path": "05/2011/QH13 > Chương III > Điều 21. Nhiệm vụ, quyền hạn của Ban Cơ yếu Chính phủ",
+        "snippet": "1. Tham mưu, đề xuất để Bộ trưởng Bộ Quốc phòng ban hành hoặc trình cơ quan có thẩm quyền ban hành chiến lược, chính sách, văn bản quy phạm pháp luật về cơ yếu.\n2. Giúp Bộ trưởng Bộ Quốc phòng:\na) Tổ "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 26. Tiêu chuẩn người làm công tác cơ yếu",
+        "structural_path": "05/2011/QH13 > Chương V > Điều 26. Tiêu chuẩn người làm công tác cơ yếu",
+        "snippet": "1. Người làm công tác cơ yếu phải có đủ các tiêu chuẩn sau đây:\na) Có bản lĩnh chính trị vững vàng, tuyệt đối trung thành với Tổ quốc và nhân dân, với Đảng Cộng sản Việt Nam và Nhà nước Cộng hoà xã hộ"
+      }
+    ],
+    "level": 0,
+    "weight": 490.0
+  },
+  {
+    "community_id": "COMM_24",
+    "title": "Cụm Quy định giao các khu vực biển nhất định cho tổ chức, cá nhâ (11/2021/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển.\n\n**Văn bản nòng cốt:** Nghị định số 11/2021/NĐ-CP (Nghị định Quy định giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 417 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 11/2021/NĐ-CP: Nghị định Quy định giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển",
+    "doc_ids": [
+      "DOC_11_2021_N_CP"
+    ],
+    "doc_numbers": [
+      "11/2021/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển"
+    ],
+    "provision_count": 417,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "11/2021/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Phạm vi điều chỉnh\na) Nghị định này quy định việc giao các khu vực biển nhất định từ đường mép nước biển thấp nhất trung bình trong nhiều năm ra đến hết các vùng biển Việt Nam cho tổ chức, cá nhân "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc giao khu vực biển",
+        "structural_path": "11/2021/NĐ-CP > Chương I > Điều 4. Nguyên tắc giao khu vực biển",
+        "snippet": "1. Đảm bảo quốc phòng, an ninh, chủ quyền, quyền chủ quyền, quyền tài phán, lợi ích quốc gia trên biển và phù hợp với các điều ước quốc tế liên quan mà Việt Nam là thành viên.\n2. Đảm bảo phù hợp với q"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Thẩm quyền giao, công nhận, cho phép trả lại khu vực biển; gia hạn, sửa đổi, bổ sung Quyết định giao khu vực biển; thu hồi khu vực biển",
+        "structural_path": "11/2021/NĐ-CP > Chương II > Điều 8. Thẩm quyền giao, công nhận, cho phép trả lại khu vực biển; gia hạn, sửa đổi, bổ sung Quyết định giao khu vực biển; thu hồi khu vực biển",
+        "snippet": "1. Thủ tướng Chính phủ quyết định giao khu vực biển cho tổ;chức, cá nhân để thực hiện dự án đầu tư khai thác, sử dụng tài nguyên biển thuộc thẩm quyền chấp thuận hoặc quyết định chủ trương đầu tư của "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 13. Sửa đổi, bổ sung Quyết định giao khu vực biển",
+        "structural_path": "11/2021/NĐ-CP > Chương II > Điều 13. Sửa đổi, bổ sung Quyết định giao khu vực biển",
+        "snippet": "1. Quyết định giao khu vực biển được xem xét sửa đổi, bổ;sung trong các trường hợp sau đây:\na) Thay đổi thông tin của tổ;chức, cá;nhân được giao khu vực biển nhưng không làm thay đổi về sở hữu của tổ "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 23. Hồ sơ đề nghị sửa đổi, bổ sung Quyết định giao khu vực biển",
+        "structural_path": "11/2021/NĐ-CP > Chương II > Điều 23. Hồ sơ đề nghị sửa đổi, bổ sung Quyết định giao khu vực biển",
+        "snippet": "1. Đơn đề nghị sửa đổi, bổ sung Quyết định giao khu vực biển theo Mẫu số 04 ban hành kèm theo Nghị định này.\n2. Quyết định giao khu vực biển đã được cấp (bản chính).\n3. Bản sao văn bản của cơ quan nhà"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 24. Trình tự, thủ tục giải quyết;hồ sơ đề nghị sửa đổi, bổ;sung Quyết định giao khu vực biển",
+        "structural_path": "11/2021/NĐ-CP > Chương II > Điều 24. Trình tự, thủ tục giải quyết;hồ sơ đề nghị sửa đổi, bổ;sung Quyết định giao khu vực biển",
+        "snippet": "1. Việc tiếp nhận hồ sơ thực hiện như sau:\na) Tổ chức, cá nhân đề nghị sửa đổi, bổ;sung Quyết định giao khu vực biển nộp 01 bộ hồ sơ theo quy định tại Điều 23 Nghị định này đến cơ quan tiếp nhận hồ sơ"
+      }
+    ],
+    "level": 0,
+    "weight": 417.0
+  },
+  {
+    "community_id": "COMM_17",
+    "title": "Cụm (Văn bản sửa đổi, bổ sung) (44/2018/TT-BQP, 34/2023/NĐ-CP, 09/2016/TT-BQP (+1 VB))",
+    "summary": "**Cụm chủ đề:** (Văn bản sửa đổi, bổ sung).\n\n**Văn bản nòng cốt:** Nghị định số 34/2023/NĐ-CP (Nghị định số 34/2023/NĐ-CP (Văn bản sửa đổi, bổ sung)).\n\n**Quy mô:** Bao gồm 4 văn bản QPPL liên quan với tổng cộng 411 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** SUPPLEMENTS: 14, AMENDS: 4, REPEALS: 1.\n\n**Danh mục văn bản chính:**\n- Thông tư 44/2018/TT-BQP: Thông tư số 44/2018/TT-BQP (Văn bản sửa đổi, bổ sung)\n- Nghị định 34/2023/NĐ-CP: Nghị định số 34/2023/NĐ-CP (Văn bản sửa đổi, bổ sung)\n- Thông tư 09/2016/TT-BQP: Thông tư Quy định chi tiết và hướng dẫn thi hành một số điều của Nghị định số 112/2014/NĐ-CP ngày 21 tháng 11 năm 2014 của Chính phủ quy định về quản lý cửa khẩu biên giới đất liền\n- Nghị định 112/2014/NĐ-CP: Nghị định Quy định về quản lý cửa khẩu biên giới đất liền",
+    "doc_ids": [
+      "DOC_44_2018_TT_BQP",
+      "DOC_34_2023_N_CP",
+      "DOC_09_2016_TT_BQP",
+      "DOC_112_2014_N_CP"
+    ],
+    "doc_numbers": [
+      "44/2018/TT-BQP",
+      "34/2023/NĐ-CP",
+      "09/2016/TT-BQP",
+      "112/2014/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Thông tư số 44/2018/TT-BQP (Văn bản sửa đổi, bổ sung)",
+      "Nghị định số 34/2023/NĐ-CP (Văn bản sửa đổi, bổ sung)",
+      "Thông tư Quy định chi tiết và hướng dẫn thi hành một số điều của Nghị định số 112/2014/NĐ-CP ngày 21 tháng 11 năm 2014 của Chính phủ quy định về quản lý cửa khẩu biên giới đất liền",
+      "Nghị định Quy định về quản lý cửa khẩu biên giới đất liền"
+    ],
+    "provision_count": 411,
+    "relations_count": {
+      "SUPPLEMENTS": 14,
+      "AMENDS": 4,
+      "REPEALS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "112/2014/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định:\n1. Hoạt động kiểm tra, kiểm soát, giám sát của các cơ quan quản lý nhà nước chuyên ngành tại cửa khẩu, lối mở biên giới đất liền.\n2. Hoạt động xuất cảnh, nhập cảnh đối với ngườ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "112/2014/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Tổ chức, cá nhân Việt Nam và nước ngoài xuất, nhập qua cửa khẩu; ra, vào, lưu trú, hoạt động trong khu vực cửa khẩu, lối mở biên giới đất liền.\n2. Cơ quan quản lý nhà nước chuyên ngành và các cơ qu"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Nguyên tắc xuất, nhập qua cửa khẩu biên giới",
+        "structural_path": "112/2014/NĐ-CP > Chương I > Điều 5. Nguyên tắc xuất, nhập qua cửa khẩu biên giới",
+        "snippet": "1. Người, phương tiện, hàng hóa, vật phẩm xuất, nhập qua cửa khẩu biên giới phải có đầy đủ giấy tờ hợp lệ, thực hiện các nguyên tắc, thủ tục theo quy định về xuất cảnh, nhập cảnh, xuất khẩu, nhập khẩu"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 12. Thẩm quyền xác định phạm vi khu vực cửa khẩu; lối mở biên giới; lối thông quan, đường chuyên dụng vận chuyển hàng hóa và quy hoạch xây dựng khu vực cửa khẩu, lối mở biên giới",
+        "structural_path": "112/2014/NĐ-CP > Chương II > Điều 12. Thẩm quyền xác định phạm vi khu vực cửa khẩu; lối mở biên giới; lối thông quan, đường chuyên dụng vận chuyển hàng hóa và quy hoạch xây dựng khu vực cửa khẩu, lối mở biên giới",
+        "snippet": "1. Chính phủ quyết định phê duyệt phạm vi khu vực cửa khẩu quốc tế, cửa khẩu chính (cửa khẩu song phương); lối thông quan, đường chuyên dụng vận chuyển hàng hóa.\n2. Ủy ban nhân dân tỉnh biên giới\na) Q"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 19. Nguyên tắc, thẩm quyền mở, nâng cấp cửa khẩu biên giới",
+        "structural_path": "112/2014/NĐ-CP > Chương III > Điều 19. Nguyên tắc, thẩm quyền mở, nâng cấp cửa khẩu biên giới",
+        "snippet": "1. Nguyên tắc mở, nâng cấp cửa khẩu biên giới:\na) Được sự thống nhất của chính quyền cấp tỉnh có cửa khẩu hai bên; sự đồng ý của Chính phủ nước Cộng hòa xã hội chủ nghĩa Việt Nam và Chính phủ nước lán"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "09/2016/TT-BQP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định chi tiết và hướng dẫn thi hành các nội dung sau:\n1. Xác định tính chất cửa khẩu biên giới đất liền.\n2. Mẫu các loại biển báo, biển chỉ dẫn, bảng niêm yết tại cửa khẩu biên giới đ"
+      }
+    ],
+    "level": 0,
+    "weight": 411.0
+  },
+  {
+    "community_id": "COMM_59",
+    "title": "Cụm Bảo vệ dữ liệu cá nhân (13/2023/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Bảo vệ dữ liệu cá nhân.\n\n**Văn bản nòng cốt:** Nghị định số 13/2023/NĐ-CP (Nghị định Bảo vệ dữ liệu cá nhân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 363 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 13/2023/NĐ-CP: Nghị định Bảo vệ dữ liệu cá nhân",
+    "doc_ids": [
+      "DOC_13_2023_N_CP"
+    ],
+    "doc_numbers": [
+      "13/2023/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Bảo vệ dữ liệu cá nhân"
+    ],
+    "provision_count": 363,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng",
+        "structural_path": "13/2023/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng",
+        "snippet": "1. Nghị định này quy định về bảo vệ dữ liệu cá nhân và trách nhiệm bảo vệ dữ liệu cá nhân của cơ quan, tổ chức, cá nhân có liên quan.\n2. Nghị định này áp dụng đối với:\na) Cơ quan, tổ chức, cá nhân Việ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc bảo vệ dữ liệu cá nhân",
+        "structural_path": "13/2023/NĐ-CP > Chương I > Điều 3. Nguyên tắc bảo vệ dữ liệu cá nhân",
+        "snippet": "1. Dữ liệu cá nhân được xử lý theo quy định của pháp luật.\n\n\t2. Chủ thể dữ liệu được biết về hoạt động liên quan tới xử lý dữ liệu cá nhân của mình, trừ trường hợp luật có quy định khác.\n\n\t3. Dữ liệu "
+      }
+    ],
+    "level": 0,
+    "weight": 363.0
+  },
+  {
+    "community_id": "COMM_18",
+    "title": "Cụm Về thực hiện thủ tục biên phòng điện tử cảng biển (10/2016/QĐ-TTg, 49/2017/TT-BQP)",
+    "summary": "**Cụm chủ đề:** Về thực hiện thủ tục biên phòng điện tử cảng biển.\n\n**Văn bản nòng cốt:** Quyết định số 10/2016/QĐ-TTg (Quyết định Về thực hiện thủ tục biên phòng điện tử cảng biển).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 252 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 5.\n\n**Danh mục văn bản chính:**\n- Quyết định 10/2016/QĐ-TTg: Quyết định Về thực hiện thủ tục biên phòng điện tử cảng biển\n- Thông tư 49/2017/TT-BQP: Thông tư Hướng dẫn thực hiện Quyết định số 10/2016/QĐ-TTg ngày 03 tháng 3 năm 2016 của Thủ tướng Chính phủ về thực hiện thủ tục biên phòng điện tử cảng biển.",
+    "doc_ids": [
+      "DOC_10_2016_Q_TTg",
+      "DOC_49_2017_TT_BQP"
+    ],
+    "doc_numbers": [
+      "10/2016/QĐ-TTg",
+      "49/2017/TT-BQP"
+    ],
+    "doc_titles": [
+      "Quyết định Về thực hiện thủ tục biên phòng điện tử cảng biển",
+      "Thông tư Hướng dẫn thực hiện Quyết định số 10/2016/QĐ-TTg ngày 03 tháng 3 năm 2016 của Thủ tướng Chính phủ về thực hiện thủ tục biên phòng điện tử cảng biển."
+    ],
+    "provision_count": 252,
+    "relations_count": {
+      "REFERENCES": 5
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "10/2016/QĐ-TTg > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Quyết định này quy định thực hiện thủ tục biên phòng điện tử tại các cảng biển do Bộ đội Biên phòng thuộc Bộ Quốc phòng quản lý."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "10/2016/QĐ-TTg > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Quyết định này áp dụng đối với:\na) Ban chỉ huy Biên phòng cửa khẩu cảng, đồn Biên phòng cửa khẩu cảng và trạm Biên phòng cửa khẩu cảng thuộc đồn Biên phòng (sau đây gọi chung là Biên phòng cửa khẩu"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc thực hiện thủ tục biên phòng điện tử",
+        "structural_path": "10/2016/QĐ-TTg > Điều 4. Nguyên tắc thực hiện thủ tục biên phòng điện tử",
+        "snippet": "Phải đảm bảo sự bình đẳng, an toàn, công khai, minh bạch, nhanh chóng, thuận tiện và tuân thủ các quy định của pháp luật Việt Nam về giao dịch điện tử và xuất nhập cảnh và phù hợp với các điều ước quố"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "49/2017/TT-BQP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này hướng dẫn chi tiết:\n1. Thực hiện thủ tục biên phòng điện tử cảng biển (sau đây viết gọn là thủ tục biên phòng điện tử), kiểm tra biên phòng trong và sau khi thực hiện thủ tục biên phòng đ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "49/2017/TT-BQP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Thông tư này áp dụng đối với các đối tượng quy định tại Khoản 1, Điều 2 Quyết định số 10/2016/QĐ-TTg ngày 03 tháng 3 năm 2016 của Thủ tướng Chính phủ về thực hiện thủ tục biên phòng điện tử cảng bi"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 15. Sửa chữa, bổ sung hồ sơ điện tử",
+        "structural_path": "49/2017/TT-BQP > Chương II > Mục 2 > Điều 15. Sửa chữa, bổ sung hồ sơ điện tử",
+        "snippet": "1. Người làm thủ tục được sửa chữa, bổ sung hồ sơ điện tử trong các trường hợp:\na) Phát hiện sai sót hoặc cập nhật được thông tin cần khai báo bổ sung trong hồ sơ điện tử sau thời điểm đã nhận được xá"
+      }
+    ],
+    "level": 0,
+    "weight": 252.0
+  },
+  {
+    "community_id": "COMM_10",
+    "title": "Cụm Quy định về công tác bảo vệ bí mật nhà nước trong Công an nh (104/2021/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về công tác bảo vệ bí mật nhà nước trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 104/2021/TT-BCA (Thông tư Quy định về công tác bảo vệ bí mật nhà nước trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 170 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 104/2021/TT-BCA: Thông tư Quy định về công tác bảo vệ bí mật nhà nước trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_104_2021_TT_BCA"
+    ],
+    "doc_numbers": [
+      "104/2021/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về công tác bảo vệ bí mật nhà nước trong Công an nhân dân"
+    ],
+    "provision_count": 170,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "104/2021/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về xác định bí mật nhà nước và độ mật của bí mật nhà nước; sao, chụp, thống kê, lưu giữ, bảo quản, vận chuyển, giao, nhận, mang ra khỏi nơi lưu giữ, tiêu hủy tài liệu, vật chứa b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "104/2021/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với sĩ quan, hạ sĩ quan, chiến sĩ, học viên Công an nhân dân (sau đây gọi chung là cán bộ, chiến sĩ); đơn vị Công an cấp đội, đồn, trạm, tiểu đoàn, xã, phường, thị trấn trở lê"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước",
+        "structural_path": "104/2021/TT-BCA > Chương II > Điều 8. Cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước",
+        "snippet": "1. Thẩm quyền quyết định việc cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước được quy định như sau:\n\n\ta"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 16. Phân công cán bộ thực hiện nhiệm vụ bảo vệ bí mật nhà nước",
+        "structural_path": "104/2021/TT-BCA > Chương II > Điều 16. Phân công cán bộ thực hiện nhiệm vụ bảo vệ bí mật nhà nước",
+        "snippet": "1. Tại cơ quan Bộ\n\n\ta) Cục An ninh chính trị nội bộ có trách nhiệm phân công cán bộ chuyên trách thực hiện nhiệm vụ bảo vệ bí mật nhà nước trong Công an nhân dân;\n\n\tb) Các đơn vị trực thuộc Bộ, đơn vị"
+      }
+    ],
+    "level": 0,
+    "weight": 170.0
+  },
+  {
+    "community_id": "COMM_09",
+    "title": "Cụm Quy định về công tác bảo vệ bí mật nhà nước thuộc lĩnh vực k (07/2020/TT-BKHĐT)",
+    "summary": "**Cụm chủ đề:** Quy định về công tác bảo vệ bí mật nhà nước thuộc lĩnh vực kế hoạch, đầu tư và thống kê.\n\n**Văn bản nòng cốt:** Thông tư số 07/2020/TT-BKHĐT (Thông tư Quy định về công tác bảo vệ bí mật nhà nước thuộc lĩnh vực kế hoạch, đầu tư và thống kê).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 165 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 07/2020/TT-BKHĐT: Thông tư Quy định về công tác bảo vệ bí mật nhà nước thuộc lĩnh vực kế hoạch, đầu tư và thống kê",
+    "doc_ids": [
+      "DOC_07_2020_TT_BKH_T"
+    ],
+    "doc_numbers": [
+      "07/2020/TT-BKHĐT"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về công tác bảo vệ bí mật nhà nước thuộc lĩnh vực kế hoạch, đầu tư và thống kê"
+    ],
+    "provision_count": 165,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "07/2020/TT-BKHĐT > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về xác định bí mật nhà nước và độ mật của bí mật nhà nước; sao, chụp, thống kê, lưu giữ, bảo quản tài liệu, vật chứa bí mật nhà nước; vận chuyển, giao, nhận tài liệu, vật chứa bí"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "07/2020/TT-BKHĐT > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với các cơ quan, đơn vị, tổ chức, cá nhân có liên quan đến công tác bảo vệ bí mật nhà nước thuộc lĩnh vực kế hoạch, đầu tư và thống kê."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước",
+        "structural_path": "07/2020/TT-BKHĐT > Điều 8. Cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước",
+        "snippet": "1. Thẩm quyền quyết định việc cung cấp, chuyển giao bí mật nhà nước cho cơ quan, tổ chức, người Việt Nam được giao thực hiện nhiệm vụ liên quan trực tiếp đến bí mật nhà nước được quy định như sau:\na) "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 14. Phân công công chức (viên chức) thực hiện nhiệm vụ bảo vệ bí mật nhà nước",
+        "structural_path": "07/2020/TT-BKHĐT > Điều 14. Phân công công chức (viên chức) thực hiện nhiệm vụ bảo vệ bí mật nhà nước",
+        "snippet": "1. Bộ Kế hoạch và Đầu tư có trách nhiệm phân công công chức thực hiện nhiệm vụ chuyên trách bảo vệ bí mật nhà nước tại cơ quan Bộ,\n2. Các đơn vị thuộc và trực thuộc Bộ có trách nhiệm phân công công ch"
+      }
+    ],
+    "level": 0,
+    "weight": 165.0
+  },
+  {
+    "community_id": "COMM_13",
+    "title": "Cụm Về việc thực hiện thủ tục biên phòng điện tử tại các cửa khẩ (15/2019/QĐ-TTg)",
+    "summary": "**Cụm chủ đề:** Về việc thực hiện thủ tục biên phòng điện tử tại các cửa khẩu do Bộ Quốc phòng quản lý.\n\n**Văn bản nòng cốt:** Quyết định số 15/2019/QĐ-TTg (Quyết định Về việc thực hiện thủ tục biên phòng điện tử tại các cửa khẩu do Bộ Quốc phòng quản lý).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 161 điều khoản.\n\n**Danh mục văn bản chính:**\n- Quyết định 15/2019/QĐ-TTg: Quyết định Về việc thực hiện thủ tục biên phòng điện tử tại các cửa khẩu do Bộ Quốc phòng quản lý",
+    "doc_ids": [
+      "DOC_15_2019_Q_TTg"
+    ],
+    "doc_numbers": [
+      "15/2019/QĐ-TTg"
+    ],
+    "doc_titles": [
+      "Quyết định Về việc thực hiện thủ tục biên phòng điện tử tại các cửa khẩu do Bộ Quốc phòng quản lý"
+    ],
+    "provision_count": 161,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "15/2019/QĐ-TTg > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Quyết định này quy định thực hiện thủ tục biên phòng điện tử đối với người, người điều khiển, người đi trên phương tiện, phương tiện xuất cảnh, nhập cảnh tại cửa khẩu quốc tế, cửa khẩu chính trên b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "15/2019/QĐ-TTg > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Đồn Biên phòng cửa khẩu quốc tế, đồn Biên phòng cửa khẩu và trạm kiểm soát Biên phòng cửa khẩu quốc tế, cửa khẩu chính thuộc Đồn Biên phòng cửa khẩu quốc tế, đồn Biên phòng cửa khẩu trên biên giới "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc thực hiện thủ tục biên phòng điện tử",
+        "structural_path": "15/2019/QĐ-TTg > Chương I > Điều 4. Nguyên tắc thực hiện thủ tục biên phòng điện tử",
+        "snippet": "1. Đảm bảo sự bình đẳng, công khai, minh bạch, nhanh chóng, an toàn, thuận tiện; tuân thủ các quy định của pháp luật Việt Nam về giao dịch điện tử, xuất nhập cảnh và phù hợp với các điều ước quốc tế c"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 11. Sửa đổi, bổ sung hồ sơ biên phòng điện tử cửa khẩu biên giới đất liền",
+        "structural_path": "15/2019/QĐ-TTg > Điều 11. Sửa đổi, bổ sung hồ sơ biên phòng điện tử cửa khẩu biên giới đất liền",
+        "snippet": "1. Người làm thủ tục được sửa đổi, bổ sung hồ sơ điện tử trong các trường hợp\na) Phát hiện sai sót hoặc cập nhật được thông tin cần khai báo bổ sung trong hồ sơ điện tử sau thời điểm đã nhận được Xác "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 14. Sửa đổi, bổ sung hồ sơ điện tử biên phòng đối với tàu biển Việt Nam hoạt động tuyến nội địa đến, rời cửa khẩu cảng",
+        "structural_path": "15/2019/QĐ-TTg > Chương III > Điều 14. Sửa đổi, bổ sung hồ sơ điện tử biên phòng đối với tàu biển Việt Nam hoạt động tuyến nội địa đến, rời cửa khẩu cảng",
+        "snippet": "1. Người làm thủ tục được sửa đổi, bổ sung hồ sơ điện tử trong các trường hợp:\na) Phát hiện sai sót hoặc cập nhật được thông tin cần khai báo bổ sung trong hồ sơ điện tử sau thời điểm đã nhận được xác"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 17. Sửa đổi, bổ sung hồ sơ biên phòng điện tử đối với người nhận thị thực tại cửa khẩu",
+        "structural_path": "15/2019/QĐ-TTg > Chương IV > Điều 17. Sửa đổi, bổ sung hồ sơ biên phòng điện tử đối với người nhận thị thực tại cửa khẩu",
+        "snippet": "1. Người làm thủ tục được sửa đổi, bổ sung hồ sơ biên phòng điện tử đối với người nhận thị thực tại cửa khẩu trong các trường hợp theo quy định tại điểm a, b khoản 1 Điều 11 và điểm a, b khoản 1 Điều "
+      }
+    ],
+    "level": 0,
+    "weight": 161.0
+  },
+  {
+    "community_id": "COMM_29",
+    "title": "Cụm Quy định về công nghiệp an ninh (63/2020/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về công nghiệp an ninh.\n\n**Văn bản nòng cốt:** Nghị định số 63/2020/NĐ-CP (Nghị định Quy định về công nghiệp an ninh).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 138 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 63/2020/NĐ-CP: Nghị định Quy định về công nghiệp an ninh",
+    "doc_ids": [
+      "DOC_63_2020_N_CP"
+    ],
+    "doc_numbers": [
+      "63/2020/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định về công nghiệp an ninh"
+    ],
+    "provision_count": 138,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "63/2020/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định chi tiết thi hành Điều 34 Luật Công an nhân dân năm 2018 về công nghiệp an ninh, bao gồm nguyên tắc xây dựng và phát triển công nghiệp an ninh; nhiệm vụ, tổ chức, hoạt động công"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "63/2020/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, tổ chức, cá nhân Việt Nam, tổ chức, cá nhân nước ngoài tham gia các hoạt động liên quan đến công nghiệp an ninh của Việt Nam."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc xây dựng, phát triển công nghiệp an ninh",
+        "structural_path": "63/2020/NĐ-CP > Chương I > Điều 4. Nguyên tắc xây dựng, phát triển công nghiệp an ninh",
+        "snippet": "1. Bám sát mục tiêu, nhiệm vụ, chiến lược bảo vệ an ninh quốc gia, bảo đảm trật tự, an toàn xã hội, đáp ứng yêu cầu trang bị cho lực lượng Công an nhân dân và lực lượng thực thi pháp luật khác.\n\n\t2. G"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Tổ chức, nhiệm vụ của cơ sở công nghiệp an ninh",
+        "structural_path": "63/2020/NĐ-CP > Chương II > Điều 7. Tổ chức, nhiệm vụ của cơ sở công nghiệp an ninh",
+        "snippet": "1. Nhà nước đầu tư hoặc tham gia đầu tư xây dựng các cơ sở công nghiệp an ninh, Bộ Công an là đại diện chủ sở hữu. Căn cứ quy mô, tính chất hoạt động của cơ sở công nghiệp an ninh, Bộ trưởng Bộ Công a"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 12. Cơ chế đặt hàng, giao kế hoạch, giao nhiệm vụ và ủy thác nhập khẩu hàng hóa phục vụ an ninh",
+        "structural_path": "63/2020/NĐ-CP > Chương III > Điều 12. Cơ chế đặt hàng, giao kế hoạch, giao nhiệm vụ và ủy thác nhập khẩu hàng hóa phục vụ an ninh",
+        "snippet": "1. Hằng năm, Bộ trưởng Bộ Công an quyết định đặt hàng, giao kế hoạch, giao nhiệm vụ và ủy thác nhập khẩu hàng hóa phục vụ an ninh cho các cơ sở công nghiệp an ninh đảm bảo điều kiện và năng lực theo q"
+      }
+    ],
+    "level": 0,
+    "weight": 138.0
+  },
+  {
+    "community_id": "COMM_05",
+    "title": "Cụm Quy định về bảo vệ cơ quan, doanh nghiệp (46/2014/TT-BCA, 06/2013/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về bảo vệ cơ quan, doanh nghiệp.\n\n**Văn bản nòng cốt:** Nghị định số 06/2013/NĐ-CP (Nghị định Quy định về bảo vệ cơ quan, doanh nghiệp).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 137 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** DETAILS: 1.\n\n**Danh mục văn bản chính:**\n- Thông tư 46/2014/TT-BCA: Thông tư Quy định chi tiết một số điều của Nghị định số 06/2013/NĐ-CP ngày 09 tháng 01 năm 2013 quy định về bảo vệ cơ quan, doanh nghiệp\n- Nghị định 06/2013/NĐ-CP: Nghị định Quy định về bảo vệ cơ quan, doanh nghiệp",
+    "doc_ids": [
+      "DOC_46_2014_TT_BCA",
+      "DOC_06_2013_N_CP"
+    ],
+    "doc_numbers": [
+      "46/2014/TT-BCA",
+      "06/2013/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định chi tiết một số điều của Nghị định số 06/2013/NĐ-CP ngày 09 tháng 01 năm 2013 quy định về bảo vệ cơ quan, doanh nghiệp",
+      "Nghị định Quy định về bảo vệ cơ quan, doanh nghiệp"
+    ],
+    "provision_count": 137,
+    "relations_count": {
+      "DETAILS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "06/2013/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định về chức năng, nhiệm vụ, quyền hạn, tổ chức, hoạt động, chế độ, chính sách đối với lực lượng bảo vệ tại các cơ quan nhà nước, doanh nghiệp, tổ chức chính trị, tổ chức chính trị -"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "06/2013/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, doanh nghiệp Việt Nam; doanh nghiệp, tổ chức nước ngoài hoạt động trên lãnh thổ nước Cộng hòa xã hội chủ nghĩa Việt Nam và cơ quan, tổ chức, cá nhân có liên quan"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc tổ chức và hoạt động của lực lượng bảo vệ cơ quan, doanh nghiệp",
+        "structural_path": "06/2013/NĐ-CP > Chương I > Điều 3. Nguyên tắc tổ chức và hoạt động của lực lượng bảo vệ cơ quan, doanh nghiệp",
+        "snippet": "1. Tổ chức bảo vệ cơ quan, doanh nghiệp do người đứng đầu cơ quan, doanh nghiệp quyết định thành lập; chịu sự chỉ đạo, điều hành trực tiếp của người đứng đầu cơ quan, doanh nghiệp và hướng dẫn, kiểm t"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Tiêu chuẩn nhân viên bảo vệ",
+        "structural_path": "06/2013/NĐ-CP > Chương I > Điều 6. Tiêu chuẩn nhân viên bảo vệ",
+        "snippet": "Công dân Việt Nam đủ 18 tuổi trở lên; có lý lịch rõ ràng; phẩm chất chính trị, đạo đức tốt; có trình độ học vấn tốt nghiệp trung học phổ thông trở lên (đối với miền núi, biên giới, hải đảo, vùng sâu, "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 10. Nhiệm vụ của lực lượng bảo vệ cơ quan, doanh nghiệp",
+        "structural_path": "06/2013/NĐ-CP > Chương II > Điều 10. Nhiệm vụ của lực lượng bảo vệ cơ quan, doanh nghiệp",
+        "snippet": "1. Lực lượng bảo vệ cơ quan, doanh nghiệp nhà nước, tổ chức chính trị có nhiệm vụ:\n\n\ta) Thực hiện các biện pháp nghiệp vụ theo quy định của pháp luật và hướng dẫn nghiệp vụ bảo vệ của lực lượng Công a"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "46/2014/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định chi tiết thi hành một số điều của Nghị định số 06/2013/NĐ-CP gồm: Nội dung các biện pháp nghiệp vụ bảo vệ; tổ chức, đơn vị sử dụng ngân sách nhà nước được thuê dịch vụ bảo vệ thư"
+      }
+    ],
+    "level": 0,
+    "weight": 137.0
+  },
+  {
+    "community_id": "COMM_11",
+    "title": "Cụm Quy định trang phục cho lực lượng bảo vệ cơ quan, doanh nghi (08/2016/TT-BCA, 72/2009/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định trang phục cho lực lượng bảo vệ cơ quan, doanh nghiệp.\n\n**Văn bản nòng cốt:** Thông tư số 08/2016/TT-BCA (Thông tư Quy định trang phục cho lực lượng bảo vệ cơ quan, doanh nghiệp).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 135 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 2.\n\n**Danh mục văn bản chính:**\n- Thông tư 08/2016/TT-BCA: Thông tư Quy định trang phục cho lực lượng bảo vệ cơ quan, doanh nghiệp\n- Thông tư 72/2009/TT-BCA: Thông tư Quy định cụ thể thi hành Nghị định số 126/2008/NĐ-CP ngày 11 tháng 12 năm 2008 quy định chi tiết và hướng dẫn thi hành một số điều của Pháp lệnh bảo vệ công trình quan trọng liên quan đến an ninh quốc gia",
+    "doc_ids": [
+      "DOC_08_2016_TT_BCA",
+      "DOC_72_2009_TT_BCA"
+    ],
+    "doc_numbers": [
+      "08/2016/TT-BCA",
+      "72/2009/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định trang phục cho lực lượng bảo vệ cơ quan, doanh nghiệp",
+      "Thông tư Quy định cụ thể thi hành Nghị định số 126/2008/NĐ-CP ngày 11 tháng 12 năm 2008 quy định chi tiết và hướng dẫn thi hành một số điều của Pháp lệnh bảo vệ công trình quan trọng liên quan đến an ninh quốc gia"
+    ],
+    "provision_count": 135,
+    "relations_count": {
+      "REFERENCES": 2
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "08/2016/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định chi tiết về mẫu, cấu tạo, màu sắc, kiểu dáng trang phục, sao hiệu, cấp hiệu, phù hiệu, ký hiệu, biển hiệu (sau đây gọi chung là trang phục); niên hạn, cấp phát và sử dụng trang p"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "08/2016/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Thông tư này áp dụng đối với:\na) Lực lượng bảo vệ tại các cơ quan, doanh nghiệp;\nb) Cơ quan, doanh nghiệp Việt Nam; doanh nghiệp, tổ chức nước ngoài hoạt động trên lãnh thổ nước Cộng hòa xã hội chủ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "72/2009/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định cụ thể về lập hồ sơ, thẩm định hồ sơ đề nghị đưa vào và đưa ra khỏi danh mục công trình quan trọng liên quan đến an ninh quốc gia (viết gọn là công trình); về tổ chức, trách nhiệ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "72/2009/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Thông tư này áp dụng đối với các cơ quan, tổ chức, cá nhân Việt Nam; tổ chức, cá nhân nước ngoài, tổ chức quốc tế có liên quan đến việc thành lập, tổ chức, hoạt động và bảo vệ công trình tại Việt N"
+      }
+    ],
+    "level": 0,
+    "weight": 135.0
+  },
+  {
+    "community_id": "COMM_45",
+    "title": "Cụm Quy định về xử lý vi phạm điều lệnh Công an nhân dân (02/2021/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về xử lý vi phạm điều lệnh Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 02/2021/TT-BCA (Thông tư Quy định về xử lý vi phạm điều lệnh Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 134 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 02/2021/TT-BCA: Thông tư Quy định về xử lý vi phạm điều lệnh Công an nhân dân",
+    "doc_ids": [
+      "DOC_02_2021_TT_BCA"
+    ],
+    "doc_numbers": [
+      "02/2021/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về xử lý vi phạm điều lệnh Công an nhân dân"
+    ],
+    "provision_count": 134,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "02/2021/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định việc xử lý vi phạm điều lệnh Công an nhân dân (sau đây gọi chung là vi phạm điều lệnh), bao gồm: nguyên tắc, căn cứ, thời gian, hình thức, trình tự, thẩm quyền, hồ sơ xử lý đơn v"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc xử lý",
+        "structural_path": "02/2021/TT-BCA > Chương I > Điều 3. Nguyên tắc xử lý",
+        "snippet": "1. Mọi hành vi vi phạm điều lệnh của đơn vị, cán bộ, chiến sĩ đều phải xử lý theo quy định của Thông tư này và các quy định khác có liên quan đến điều lệnh Công an nhân dân.\n\n\t2. Căn cứ nội dung, tính"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 11. Trình tự, thẩm quyền, hồ sơ xử lý vi phạm điều lệnh",
+        "structural_path": "02/2021/TT-BCA > Chương II > Điều 11. Trình tự, thẩm quyền, hồ sơ xử lý vi phạm điều lệnh",
+        "snippet": "1. Trình tự xử lý\n\n\ta) Đối với đơn vị vi phạm điều lệnh:\n\n\tĐơn vị quản lý cấp trên trực tiếp yêu cầu đơn vị vi phạm kiểm điểm, báo cáo về hành vi vi phạm và tự nhận hình thức xử lý; tổ chức thẩm tra, "
+      }
+    ],
+    "level": 0,
+    "weight": 134.0
+  },
+  {
+    "community_id": "COMM_25",
+    "title": "Cụm Quy định phương pháp tính, phương pháp thu, chế độ quản lý v (198/2015/TTLT-BTC-BTNMT)",
+    "summary": "**Cụm chủ đề:** Quy định phương pháp tính, phương pháp thu, chế độ quản lý và sử dụng tiền sử dụng khu vực biển.\n\n**Văn bản nòng cốt:** Thông tư số 198/2015/TTLT-BTC-BTNMT (Thông tư Quy định phương pháp tính, phương pháp thu, chế độ quản lý và sử dụng tiền sử dụng khu vực biển).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 115 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 198/2015/TTLT-BTC-BTNMT: Thông tư Quy định phương pháp tính, phương pháp thu, chế độ quản lý và sử dụng tiền sử dụng khu vực biển",
+    "doc_ids": [
+      "DOC_198_2015_TTLT_BTC_BTNMT"
+    ],
+    "doc_numbers": [
+      "198/2015/TTLT-BTC-BTNMT"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định phương pháp tính, phương pháp thu, chế độ quản lý và sử dụng tiền sử dụng khu vực biển"
+    ],
+    "provision_count": 115,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "198/2015/TTLT-BTC-BTNMT > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Thông tư này quy định phương pháp tính, phương thức thu, chế độ quản lý và sử dụng tiền sử dụng khu vực biển khi tổ chức, cá nhân được cơ quan quản lý nhà nước hoặc cấp có thẩm quyền giao khu vực b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "198/2015/TTLT-BTC-BTNMT > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Tổ chức, cá nhân được giao khu vực biển để khai thác, sử dụng tài nguyên biển theo quy định tại Nghị định số 51/2014/NĐ-CP.\n2. Cơ quan quản lý nhà nước, cấp có thẩm quyền giao khu vực biển.\n3. Các "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Chế độ quản lý, sử dụng tiền sử dụng khu vực biển và kinh phí cho nhiệm vụ giao khu vực biển",
+        "structural_path": "198/2015/TTLT-BTC-BTNMT > Chương II > Điều 8. Chế độ quản lý, sử dụng tiền sử dụng khu vực biển và kinh phí cho nhiệm vụ giao khu vực biển",
+        "snippet": "1. Tiền sử dụng khu vực biển là một khoản thu của ngân sách nhà nước và được quản lý, sử dụng theo quy định của pháp luật về ngân sách nhà nước. Tiền sử dụng khu vực biển được nộp ngân sách trung ương"
+      }
+    ],
+    "level": 0,
+    "weight": 115.0
+  },
+  {
+    "community_id": "COMM_37",
+    "title": "Cụm Quy định về tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn  (45/2019/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 45/2019/TT-BCA (Thông tư Quy định về tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 107 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 45/2019/TT-BCA: Thông tư Quy định về tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân",
+    "doc_ids": [
+      "DOC_45_2019_TT_BCA"
+    ],
+    "doc_numbers": [
+      "45/2019/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân"
+    ],
+    "provision_count": 107,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "45/2019/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định tiêu chuẩn sức khỏe và khám sức khỏe tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân, bao gồm: Tiêu chuẩn, kiểm tra, sơ tuyển, khám sức khỏe, phúc tra, giám định"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "45/2019/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Công dân được khám sức khỏe tuyển chọn thực hiện nghĩa vụ tham gia Công an nhân dân, gồm:\na) Công dân nam trong độ tuổi gọi nhập ngũ đã đăng ký nghĩa vụ quân sự theo quy định của Luật Nghĩa vụ quân"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Tiêu chuẩn sức khỏe",
+        "structural_path": "45/2019/TT-BCA > Chương I > Điều 5. Tiêu chuẩn sức khỏe",
+        "snippet": "1. Tiêu chuẩn thể lực để tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân thực hiện theo quy định tại Bảng số 1 Phụ lục 1 ban hành kèm theo Thông tư này.\n\n\t2. Tiêu chuẩn sức khỏe về lâ"
+      }
+    ],
+    "level": 0,
+    "weight": 107.0
+  },
+  {
+    "community_id": "COMM_06",
+    "title": "Cụm Quy định về phối hợp công tác bảo vệ an ninh quốc gia và bảo (85/2016/TTLT-BTC-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về phối hợp công tác bảo vệ an ninh quốc gia và bảo đảm trật tự, an toàn xã hội trong lĩnh vực tài chính.\n\n**Văn bản nòng cốt:** Thông tư số 85/2016/TTLT-BTC-BCA (Thông tư Quy định về phối hợp công tác bảo vệ an ninh quốc gia và bảo đảm trật tự, an toàn xã hội trong lĩnh vực tài chính).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 105 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 85/2016/TTLT-BTC-BCA: Thông tư Quy định về phối hợp công tác bảo vệ an ninh quốc gia và bảo đảm trật tự, an toàn xã hội trong lĩnh vực tài chính",
+    "doc_ids": [
+      "DOC_85_2016_TTLT_BTC_BCA"
+    ],
+    "doc_numbers": [
+      "85/2016/TTLT-BTC-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về phối hợp công tác bảo vệ an ninh quốc gia và bảo đảm trật tự, an toàn xã hội trong lĩnh vực tài chính"
+    ],
+    "provision_count": 105,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "85/2016/TTLT-BTC-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định nguyên tắc, nội dung, phạm vi và trách nhiệm phối hợp ở các cơ quan, đơn vị thuộc và trực thuộc Bộ Tài chính và Bộ Công an trong thực hiện nhiệm vụ bảo vệ an ninh quốc gia và bảo"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "85/2016/TTLT-BTC-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với các cơ quan, đơn vị thuộc và trực thuộc Bộ Tài chính và Bộ Công an ở Trung ương và địa phương (sau đây gọi chung là hai bên) trong việc thực hiện nhiệm vụ bảo vệ an ninh q"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc phối hợp",
+        "structural_path": "85/2016/TTLT-BTC-BCA > Chương I > Điều 3. Nguyên tắc phối hợp",
+        "snippet": "1. Tuân thủ đường lối, chủ trương của Đảng, chính sách pháp luật của nhà nước, phù hợp với phạm vi chức năng, nhiệm vụ và quyền hạn của hai bên và tạo điều kiện thuận lợi để hoàn thành tốt nhiệm vụ đư"
+      }
+    ],
+    "level": 0,
+    "weight": 105.0
+  },
+  {
+    "community_id": "COMM_46",
+    "title": "Cụm Quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nh (09/2021/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 09/2021/TT-BCA (Thông tư Quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 104 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 09/2021/TT-BCA: Thông tư Quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân",
+    "doc_ids": [
+      "DOC_09_2021_TT_BCA"
+    ],
+    "doc_numbers": [
+      "09/2021/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân"
+    ],
+    "provision_count": 104,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "09/2021/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân (sau đây viết chung là kiểm tra điều lệnh Công an nhân dân) gồm: Tiêu chuẩn, số lượng cán bộ làm công tác kiểm tra điều "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "09/2021/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Đơn vị trực thuộc Bộ Công an, Công an tỉnh, thành phố trực thuộc Trung ương (sau đây gọi chung là Công an đơn vị, địa phương).\n2. Sĩ quan, hạ sĩ quan, chiến sĩ nghĩa v"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Tiêu chuẩn, số lượng cán bộ làm công tác kiểm tra điều lệnh Công an nhân dân",
+        "structural_path": "09/2021/TT-BCA > Chương I > Điều 3. Tiêu chuẩn, số lượng cán bộ làm công tác kiểm tra điều lệnh Công an nhân dân",
+        "snippet": "1. Tiêu chuẩn\n\n\ta) Tiêu chuẩn chung\n\n\tCó phẩm chất chính trị, đạo đức tốt, chấp hành nghiêm điều lệnh Công an nhân dân; có trình độ, năng lực nghiệp vụ, pháp luật; nắm vững và thực hiện đúng các quy đ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nhiệm vụ của cán bộ kiểm tra điều lệnh Công an nhân dân",
+        "structural_path": "09/2021/TT-BCA > Chương II > Điều 4. Nhiệm vụ của cán bộ kiểm tra điều lệnh Công an nhân dân",
+        "snippet": "1. Thực hiện kiểm tra điều lệnh Công an nhân dân theo quy định tại thông tư này.\n\n\t2. Thực hiện chỉ đạo của Bộ Công an, Cục Công tác đảng và công tác chính trị và Thủ trưởng Công an các đơn vị, địa ph"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Bố trí lực lượng, phân công nhiệm vụ kiểm tra điều lệnh Công an nhân dân",
+        "structural_path": "09/2021/TT-BCA > Chương II > Điều 7. Bố trí lực lượng, phân công nhiệm vụ kiểm tra điều lệnh Công an nhân dân",
+        "snippet": "1. Bố trí lực lượng\n\n\tViệc kiểm tra điều lệnh Công an nhân dân phải thành lập tổ kiểm tra. Mỗi tổ kiểm tra có từ 02 đến 04 đồng chí, do 01 đồng chí làm Tổ trưởng. Trường hợp cần nhiều cán bộ hơn do Th"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 9. Thẩm quyền, đối tượng, hồ sơ cấp Giấy kiểm tra điều lệnh Công an nhân dân",
+        "structural_path": "09/2021/TT-BCA > Chương III > Điều 9. Thẩm quyền, đối tượng, hồ sơ cấp Giấy kiểm tra điều lệnh Công an nhân dân",
+        "snippet": "1. Thẩm quyền, đối tượng cấp mới, cấp đổi, cấp lại Giấy kiểm tra điều lệnh Công an nhân dân\n\n\ta) Lãnh đạo Bộ Công an phụ trách công tác đảng và công tác chính trị ký cấp mới, cấp đổi, cấp lại Giấy kiể"
+      }
+    ],
+    "level": 0,
+    "weight": 104.0
+  },
+  {
+    "community_id": "COMM_52",
+    "title": "Cụm Hướng dẫn thực hiện chế độ tiền lương đối với người làm việc (07/2017/TT-BNV)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn thực hiện chế độ tiền lương đối với người làm việc trong tổ chức cơ yếu hưởng lương và phụ cấp từ ngân sách nhà nước.\n\n**Văn bản nòng cốt:** Thông tư số 07/2017/TT-BNV (Thông tư Hướng dẫn thực hiện chế độ tiền lương đối với người làm việc trong tổ chức cơ yếu hưởng lương và phụ cấp từ ngân sách nhà nước).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 104 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 07/2017/TT-BNV: Thông tư Hướng dẫn thực hiện chế độ tiền lương đối với người làm việc trong tổ chức cơ yếu hưởng lương và phụ cấp từ ngân sách nhà nước",
+    "doc_ids": [
+      "DOC_07_2017_TT_BNV"
+    ],
+    "doc_numbers": [
+      "07/2017/TT-BNV"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện chế độ tiền lương đối với người làm việc trong tổ chức cơ yếu hưởng lương và phụ cấp từ ngân sách nhà nước"
+    ],
+    "provision_count": 104,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "07/2017/TT-BNV > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này hướng dẫn thực hiện chế độ tiền lương (gồm: Nguyên tắc xếp lương, các bảng lương, chế độ nâng bậc lương, các chế độ phụ cấp, chuyển xếp lương khi thay đổi công việc, thẩm quyền quyết định"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "07/2017/TT-BNV > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Đối tượng áp dụng:\nNgười làm việc trong tổ chức cơ yếu thuộc biên chế hưởng lương từ ngân sách nhà nước, gồm:\na) Người làm công tác cơ yếu là quân nhân, công an nhân dân;\nb) Người làm công tác cơ y"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc xếp lương và thực hiện chế độ tiền lương",
+        "structural_path": "07/2017/TT-BNV > Điều 3. Nguyên tắc xếp lương và thực hiện chế độ tiền lương",
+        "snippet": "1. Đối với người làm công tác cơ yếu là quân nhân, công an nhân dân thực hiện nguyên tắc xếp lương và chế độ tiền lương theo hướng dẫn của Bộ trưởng Bộ Quốc phòng, Bộ trưởng Bộ Công an và hưởng phụ cấ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Chuyển xếp lương đối với người đang hưởng lương cấp hàm cơ yếu, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "structural_path": "07/2017/TT-BNV > Điều 8. Chuyển xếp lương đối với người đang hưởng lương cấp hàm cơ yếu, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "snippet": "1. Trường hợp được chuyển vị trí công tác sang đối tượng thuộc diện xếp lương chuyên môn kỹ thuật cơ yếu:\n\n\tNgười làm công tác cơ yếu đang hưởng lương cấp hàm cơ yếu khi chuyển vị trí công tác sang đố"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 9. Chuyển xếp lương đối với người đang hưởng lương chuyên môn kỹ thuật cơ yếu, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "structural_path": "07/2017/TT-BNV > Điều 9. Chuyển xếp lương đối với người đang hưởng lương chuyên môn kỹ thuật cơ yếu, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "snippet": "1. Trường hợp được bổ nhiệm giữ chức danh thuộc diện xếp lương cấp hàm cơ yếu quy định tại Thông tư này, thì căn cứ vào hệ số lương chuyên môn kỹ thuật cơ yếu hiện hưởng để chuyển xếp vào hệ số lương "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 10. Chuyển xếp lương đối với người làm công tác khác trong tổ chức cơ yếu đang hưởng lương theo ngạch, bậc công chức, chức danh nghề nghiệp viên chức, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "structural_path": "07/2017/TT-BNV > Điều 10. Chuyển xếp lương đối với người làm công tác khác trong tổ chức cơ yếu đang hưởng lương theo ngạch, bậc công chức, chức danh nghề nghiệp viên chức, do yêu cầu nhiệm vụ được thay đổi công việc",
+        "snippet": "1. Người làm công tác khác trong tổ chức cơ yếu đã được đào tạo chuyên môn kỹ thuật và quản lý nhà nước về cơ yếu theo quy hoạch, theo yêu cầu công việc được bổ nhiệm giữ chức danh thuộc diện xếp lươn"
+      }
+    ],
+    "level": 0,
+    "weight": 104.0
+  },
+  {
+    "community_id": "COMM_02",
+    "title": "Cụm Về Bảo vệ dân phố (38/2006/NĐ-CP, 02/2007/TTLT-BCA-BLĐTBXH-BTC)",
+    "summary": "**Cụm chủ đề:** Về Bảo vệ dân phố.\n\n**Văn bản nòng cốt:** Nghị định số 38/2006/NĐ-CP (Nghị định Về Bảo vệ dân phố).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 98 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** REFERENCES: 4.\n\n**Danh mục văn bản chính:**\n- Nghị định 38/2006/NĐ-CP: Nghị định Về Bảo vệ dân phố\n- Thông tư 02/2007/TTLT-BCA-BLĐTBXH-BTC: Thông tư Thông tư hướng dẫn thực hiện Nghị định số 38/2006/NĐ-CP ngày 17 tháng 4 năm 2006 của Chính phủ về bảo vệ dân phố",
+    "doc_ids": [
+      "DOC_38_2006_N_CP",
+      "DOC_02_2007_TTLT_BCA_BL_TBXH_BTC"
+    ],
+    "doc_numbers": [
+      "38/2006/NĐ-CP",
+      "02/2007/TTLT-BCA-BLĐTBXH-BTC"
+    ],
+    "doc_titles": [
+      "Nghị định Về Bảo vệ dân phố",
+      "Thông tư Thông tư hướng dẫn thực hiện Nghị định số 38/2006/NĐ-CP ngày 17 tháng 4 năm 2006 của Chính phủ về bảo vệ dân phố"
+    ],
+    "provision_count": 98,
+    "relations_count": {
+      "REFERENCES": 4
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "38/2006/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "Nghị định này quy định về chức năng, nhiệm vụ, quyền hạn, nguyên tắc tổ chức, hoạt động và chế độ, chính sách đối với Bảo vệ dân phố."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc hoạt động của Bảo vệ dân phố",
+        "structural_path": "38/2006/NĐ-CP > Chương I > Điều 3. Nguyên tắc hoạt động của Bảo vệ dân phố",
+        "snippet": "Bảo vệ dân phố chịu sự lãnh đạo toàn diện của Đảng uỷ phường, sự giám sát của Hội đồng nhân dân phường, sự quản lý điều hành của Ủy ban nhân dân phường và sự chỉ đạo, hướng dẫn trực tiếp công tác của "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Nhiệm vụ của Bảo vệ dân phố",
+        "structural_path": "38/2006/NĐ-CP > Chương II > Điều 5. Nhiệm vụ của Bảo vệ dân phố",
+        "snippet": "1. Nắm tình hình an ninh, trật tự, phát hiện các vụ việc mâu thuẫn, tranh chấp trong nội bộ nhân dân, các vụ vi phạm hành chính, vi phạm trật tự an toàn xã hội trên địa bàn phường; phản ánh cho cơ qua"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Điều kiện, tiêu chuẩn của Bảo vệ dân phố",
+        "structural_path": "38/2006/NĐ-CP > Chương II > Điều 8. Điều kiện, tiêu chuẩn của Bảo vệ dân phố",
+        "snippet": "1. Công dân Việt Nam từ đủ 18 tuổi trở lên, cư trú ổn định tại địa bàn.\n2. Có lý lịch rõ ràng, bản thân và gia đình gương mẫu chấp hành các chủ trương, chính sách của Đảng, pháp luật của Nhà nước.\n3. "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng",
+        "structural_path": "02/2007/TTLT-BCA-BLĐTBXH-BTC > Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng",
+        "snippet": "Thông tư này hướng dẫn về nhiệm vụ, quyền hạn, tổ chức hoạt động và chế độ chính sách đối với Bảo vệ dân phố.\nTổ chức, cá nhân Việt Nam và tổ chức, cá nhân nước ngoài cư trú, hoạt động trên lãnh thổ n"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Nhiệm vụ của bảo vệ dân phố",
+        "structural_path": "02/2007/TTLT-BCA-BLĐTBXH-BTC > Điều 2. Nhiệm vụ của bảo vệ dân phố",
+        "snippet": "1. Nắm tình hình an ninh trật tự, phát hiện các vụ việc mâu thuẫn, tranh chấp trong nội bộ nhân dân, các vụ vi phạm hành chính, vi phạm trật tự an toàn xã hội trên địa bàn phường, phản ánh cho cơ quan"
+      }
+    ],
+    "level": 0,
+    "weight": 98.0
+  },
+  {
+    "community_id": "COMM_31",
+    "title": "Cụm Quy định về công tác quản lý, chăm sóc sức khỏe cán bộ,\nchiế (55/2010/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về công tác quản lý, chăm sóc sức khỏe cán bộ,\nchiến sĩ trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 55/2010/TT-BCA (Thông tư Quy định về công tác quản lý, chăm sóc sức khỏe cán bộ,\nchiến sĩ trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 98 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 55/2010/TT-BCA: Thông tư Quy định về công tác quản lý, chăm sóc sức khỏe cán bộ,\nchiến sĩ trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_55_2010_TT_BCA"
+    ],
+    "doc_numbers": [
+      "55/2010/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về công tác quản lý, chăm sóc sức khỏe cán bộ,\nchiến sĩ trong Công an nhân dân"
+    ],
+    "provision_count": 98,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "55/2010/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về công tác quản lý, theo dõi, chăm sóc sức khoẻ; phân cấp quản lý sức khoẻ và truyền thông, giáo dục, tư vấn về sức khoẻ cán bộ, chiến sĩ trong Công an nhân dân."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "55/2010/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Sĩ quan, hạ sĩ quan nghiệp vụ, sĩ quan, hạ sĩ quan chuyên môn kỹ thuật, chiến sĩ phục vụ có thời hạn, công nhân, viên chức Công an nhân dân, học sinh, sinh viên trong "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc quản lý, chăm sóc sức khoẻ cán bộ, chiến sĩ",
+        "structural_path": "55/2010/TT-BCA > Điều 3. Nguyên tắc quản lý, chăm sóc sức khoẻ cán bộ, chiến sĩ",
+        "snippet": "1. Tiến hành chủ động, thường xuyên, kịp thời, có sự phân cấp rõ ràng và tuân thủ đúng quy định về chuyên môn kỹ thuật nhằm bảo đảm và nâng cao sức khoẻ cho cán bộ, chiến sĩ phục vụ công tác và chiến "
+      }
+    ],
+    "level": 0,
+    "weight": 98.0
+  },
+  {
+    "community_id": "COMM_23",
+    "title": "Cụm Về việc công bố tuyến hàng hải và phân luồng giao thông tron (16/2018/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Về việc công bố tuyến hàng hải và phân luồng giao thông trong lãnh hải Việt Nam..\n\n**Văn bản nòng cốt:** Nghị định số 16/2018/NĐ-CP (Nghị định Về việc công bố tuyến hàng hải và phân luồng giao thông trong lãnh hải Việt Nam.).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 94 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 16/2018/NĐ-CP: Nghị định Về việc công bố tuyến hàng hải và phân luồng giao thông trong lãnh hải Việt Nam.",
+    "doc_ids": [
+      "DOC_16_2018_N_CP"
+    ],
+    "doc_numbers": [
+      "16/2018/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Về việc công bố tuyến hàng hải và phân luồng giao thông trong lãnh hải Việt Nam."
+    ],
+    "provision_count": 94,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "16/2018/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định về việc công bố tuyến hàng hải và phân luồng giao thông trong lãnh hải Việt Nam phục vụ cho việc tàu thuyền đi qua không gây hại nhằm bảo đảm an toàn hàng hải, an ninh hàng hải "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "16/2018/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, tổ chức, cá nhân liên quan đến công bố tuyến hàng hải, phân luồng giao thông và tàu thuyền tham gia giao thông trong lãnh hải Việt Nam."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 12. Nguyên tắc và trách nhiệm phối hợp hoạt động quản lý",
+        "structural_path": "16/2018/NĐ-CP > Chương III > Điều 12. Nguyên tắc và trách nhiệm phối hợp hoạt động quản lý",
+        "snippet": "1. Cục Hàng hải Việt Nam chủ trì, phối hợp hoạt động giữa các cơ quan quản lý nhà nước chuyên ngành trong quản lý tuyến hàng hải và luồng giao thông trong lãnh hải Việt Nam. Các cơ quan quản lý nhà nư"
+      }
+    ],
+    "level": 0,
+    "weight": 94.0
+  },
+  {
+    "community_id": "COMM_01",
+    "title": "Cụm Quy định về việc khôi phục danh dự, đền bù, trợ cấp cho cơ q (16/2006/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về việc khôi phục danh dự, đền bù, trợ cấp cho cơ quan, tổ chức, cá nhân bị thiệt hại do tham gia bảo vệ an ninh quốc gia.\n\n**Văn bản nòng cốt:** Nghị định số 16/2006/NĐ-CP (Nghị định Quy định về việc khôi phục danh dự, đền bù, trợ cấp cho cơ quan, tổ chức, cá nhân bị thiệt hại do tham gia bảo vệ an ninh quốc gia).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 92 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 16/2006/NĐ-CP: Nghị định Quy định về việc khôi phục danh dự, đền bù, trợ cấp cho cơ quan, tổ chức, cá nhân bị thiệt hại do tham gia bảo vệ an ninh quốc gia",
+    "doc_ids": [
+      "DOC_16_2006_N_CP"
+    ],
+    "doc_numbers": [
+      "16/2006/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định về việc khôi phục danh dự, đền bù, trợ cấp cho cơ quan, tổ chức, cá nhân bị thiệt hại do tham gia bảo vệ an ninh quốc gia"
+    ],
+    "provision_count": 92,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "16/2006/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định việc khôi phục danh dự đối với cơ quan, tổ chức, cá nhân bị tổn hại về danh dự; đền bù thiệt hại đối với cơ quan, tổ chức, cá nhân bị thiệt hại về tài sản; chế độ trợ cấp đối vớ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Thẩm quyền quyết định và thủ tục giải quyết khôi phục danh dự",
+        "structural_path": "16/2006/NĐ-CP > Chương II > Điều 7. Thẩm quyền quyết định và thủ tục giải quyết khôi phục danh dự",
+        "snippet": "1. Cơ quan chuyên trách bảo vệ an ninh quốc gia các cấp có trách nhiệm xem xét, quyết định việc khôi phục danh dự cho đối tượng bị tổn hại về danh dự do cơ quan mình quản lý. Trường hợp đối tượng bị t"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 10. Thẩm quyền quyết định đền bù thiệt hại về tài sản",
+        "structural_path": "16/2006/NĐ-CP > Chương III > Điều 10. Thẩm quyền quyết định đền bù thiệt hại về tài sản",
+        "snippet": "1. Những người sau đây có thẩm quyền quyết định đền bù thiệt hại về tài sản có giá trị đến dưới 5.000.000 (năm triệu) đồng đối với đối tượng bị thiệt hại về tài sản do đơn vị mình quản lý:\n\n\ta) Trưởng"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 12. Thẩm quyền quyết định trợ cấp cho người bị thiệt hại về sức khoẻ",
+        "structural_path": "16/2006/NĐ-CP > Chương V > Điều 12. Thẩm quyền quyết định trợ cấp cho người bị thiệt hại về sức khoẻ",
+        "snippet": "1. Cơ quan chuyên trách bảo vệ an ninh quốc gia có trách nhiệm xem xét, quyết định việc trợ cấp đối với người bị thiệt hại về sức khoẻ do cơ quan mình quản lý. Trường hợp vụ việc do cơ quan, tổ chức k"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 14. Thẩm quyền quyết định trợ cấp cho trường hợp người bị thiệt hại về tính mạng",
+        "structural_path": "16/2006/NĐ-CP > Chương V > Điều 14. Thẩm quyền quyết định trợ cấp cho trường hợp người bị thiệt hại về tính mạng",
+        "snippet": "1. Theo đề nghị của Thủ trưởng cơ quan chuyên trách bảo vệ an ninh quốc gia, Giám đốc Sở Lao động - Thương binh và Xã hội nơi có người bị thiệt hại về tính mạng xem xét, quyết định trợ cấp cho người b"
+      }
+    ],
+    "level": 0,
+    "weight": 92.0
+  },
+  {
+    "community_id": "COMM_34",
+    "title": "Cụm Quy định về lấy phiếu tín nhiệm đối với cán bộ lãnh đạo, chỉ (45/2015/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về lấy phiếu tín nhiệm đối với cán bộ lãnh đạo, chỉ huy trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 45/2015/TT-BCA (Thông tư Quy định về lấy phiếu tín nhiệm đối với cán bộ lãnh đạo, chỉ huy trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 87 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 45/2015/TT-BCA: Thông tư Quy định về lấy phiếu tín nhiệm đối với cán bộ lãnh đạo, chỉ huy trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_45_2015_TT_BCA"
+    ],
+    "doc_numbers": [
+      "45/2015/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về lấy phiếu tín nhiệm đối với cán bộ lãnh đạo, chỉ huy trong Công an nhân dân"
+    ],
+    "provision_count": 87,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "45/2015/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định đối tượng, nguyên tắc, nơi lấy phiếu, thời điểm lấy phiếu, nội dung lấy phiếu, trách nhiệm của tập thể, cá nhân trong việc lấy phiếu và quy trình lấy phiếu tín nhiệm đối với cán "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "45/2015/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với Công an các đơn vị, địa phương."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Đối tượng lấy phiếu tín nhiệm",
+        "structural_path": "45/2015/TT-BCA > Điều 3. Đối tượng lấy phiếu tín nhiệm",
+        "snippet": "1. Thứ trưởng.\n\n\t2. Tổng Cục trưởng, Phó Tổng Cục trưởng và tương đương.\n\n\t3. Cục trưởng, Phó Cục trưởng và tương đương của các đơn vị trực thuộc Bộ và thuộc Tổng cục.\n\n\t4. Giám đốc, Phó Giám đốc Công"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc",
+        "structural_path": "45/2015/TT-BCA > Điều 4. Nguyên tắc",
+        "snippet": "1. Việc lấy phiếu tín nhiệm (bằng hình thức bỏ phiếu kín) được thực hiện định kỳ vào giữa nhiệm kỳ đại hội đảng bộ, bảo đảm nguyên tắc Đảng thống nhất lãnh đạo công tác cán bộ và quản lý đội ngũ cán b"
+      }
+    ],
+    "level": 0,
+    "weight": 87.0
+  },
+  {
+    "community_id": "COMM_50",
+    "title": "Cụm Hướng dẫn trình tự, thủ tục cấp giấy phép sản xuất, kinh doa (08/2008/TT-BNV)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn trình tự, thủ tục cấp giấy phép sản xuất, kinh doanh sản phẩm mật mã dân sự và cấp giấy chứng nhận hợp chuẩn, giấy chứng nhận hợp quy sản phẩm mật mã dân sự.\n\n**Văn bản nòng cốt:** Thông tư số 08/2008/TT-BNV (Thông tư Hướng dẫn trình tự, thủ tục cấp giấy phép sản xuất, kinh doanh sản phẩm mật mã dân sự và cấp giấy chứng nhận hợp chuẩn, giấy chứng nhận hợp quy sản phẩm mật mã dân sự).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 85 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 08/2008/TT-BNV: Thông tư Hướng dẫn trình tự, thủ tục cấp giấy phép sản xuất, kinh doanh sản phẩm mật mã dân sự và cấp giấy chứng nhận hợp chuẩn, giấy chứng nhận hợp quy sản phẩm mật mã dân sự",
+    "doc_ids": [
+      "DOC_08_2008_TT_BNV"
+    ],
+    "doc_numbers": [
+      "08/2008/TT-BNV"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn trình tự, thủ tục cấp giấy phép sản xuất, kinh doanh sản phẩm mật mã dân sự và cấp giấy chứng nhận hợp chuẩn, giấy chứng nhận hợp quy sản phẩm mật mã dân sự"
+    ],
+    "provision_count": 85,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "08/2008/TT-BNV > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Phạm vi điều chỉnh\nThông tư này hướng dẫn trình tự, thủ tục cấp Giấy phép sản xuất, kinh doanh sản phẩm mật mã dân sự và cấp Giấy chứng nhận hợp chuẩn, Giấy chứng nhận hợp quy sản phẩm mật mã dân s"
+      }
+    ],
+    "level": 0,
+    "weight": 85.0
+  },
+  {
+    "community_id": "COMM_61",
+    "title": "Cụm (Văn bản sửa đổi, bổ sung) (14/2016/TT-BCA, 33/2012/TT-BCA)",
+    "summary": "**Cụm chủ đề:** (Văn bản sửa đổi, bổ sung).\n\n**Văn bản nòng cốt:** Thông tư số 14/2016/TT-BCA (Thông tư số 14/2016/TT-BCA (Văn bản sửa đổi, bổ sung)).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 85 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** SUPPLEMENTS: 4, AMENDS: 1.\n\n**Danh mục văn bản chính:**\n- Thông tư 14/2016/TT-BCA: Thông tư số 14/2016/TT-BCA (Văn bản sửa đổi, bổ sung)\n- Thông tư 33/2012/TT-BCA: Thông tư Quy định về chế độ thanh toán tiền nghỉ phép hằng năm trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_14_2016_TT_BCA",
+      "DOC_33_2012_TT_BCA"
+    ],
+    "doc_numbers": [
+      "14/2016/TT-BCA",
+      "33/2012/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư số 14/2016/TT-BCA (Văn bản sửa đổi, bổ sung)",
+      "Thông tư Quy định về chế độ thanh toán tiền nghỉ phép hằng năm trong Công an nhân dân"
+    ],
+    "provision_count": 85,
+    "relations_count": {
+      "SUPPLEMENTS": 4,
+      "AMENDS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "33/2012/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về nguyên tắc, đối tượng, điều kiện, mức, thủ tục, thời hạn thanh toán tiền nghỉ phép hằng năm đối với sĩ quan, hạ sĩ quan, chiến sĩ, công nhân, viên chức, lao động hợp đồng tron"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "33/2012/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Cán bộ, chiến sĩ Công an nhân dân.\n2. Công an các đơn vị, địa phương."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc thực hiện chế độ thanh toán tiền nghỉ phép hằng năm",
+        "structural_path": "33/2012/TT-BCA > Chương I > Điều 4. Nguyên tắc thực hiện chế độ thanh toán tiền nghỉ phép hằng năm",
+        "snippet": "1. Tuân thủ quy định tại Luật Ngân sách nhà nước, Thông tư này và các quy định khác của pháp luật có liên quan.\n2. Bảo đảm đúng đối tượng, đúng tiêu chuẩn, đúng chế độ.\n3. Nghiêm cấm việc lạm dụng và "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Đối tượng được hưởng chế độ thanh toán tiền phương tiện đi lại, tiền phụ cấp đi đường khi đi nghỉ phép hằng năm",
+        "structural_path": "33/2012/TT-BCA > Chương II > Điều 6. Đối tượng được hưởng chế độ thanh toán tiền phương tiện đi lại, tiền phụ cấp đi đường khi đi nghỉ phép hằng năm",
+        "snippet": "1. Cán bộ, chiến sĩ là người miền xuôi công tác tại vùng cao, vùng sâu, vùng xa, biên giới, hải đảo có hệ số phụ cấp khu vực từ mức 0,5 trở lên (theo quy định tại Thông tư liên tịch số 11/2005/TTLT-BN"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Đối tượng được hưởng chế độ thanh toán tiền lương hoặc tiền bồi dưỡng",
+        "structural_path": "33/2012/TT-BCA > Chương II > Điều 8. Đối tượng được hưởng chế độ thanh toán tiền lương hoặc tiền bồi dưỡng",
+        "snippet": "1. Đối tượng được thanh toán tiền lương:\na) Sĩ quan nghỉ chờ hưu; sĩ quan, hạ sĩ quan, chiến sĩ nghỉ bệnh binh, xuất ngũ về địa phương, chết hoặc vì các lý do khác mà chưa nghỉ hàng năm hoặc chưa nghỉ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Sửa đổi, bổ sung theo Thông tư số 14/2016/TT-BCA",
+        "structural_path": "14/2016/TT-BCA > Điều 1",
+        "snippet": "Quy định sửa đổi, bổ sung đối với Điều 6. Đối tượng được hưởng chế độ thanh toán tiền phương tiện đi lại, tiền phụ cấp đi đường khi đi nghỉ phép hằng năm (Thông tư Quy định về chế độ thanh toán tiền n"
+      }
+    ],
+    "level": 0,
+    "weight": 85.0
+  },
+  {
+    "community_id": "COMM_47",
+    "title": "Cụm Quy định khu dân cư, xã, phường, thị trấn, cơ quan, doanh ng (124/2021/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”.\n\n**Văn bản nòng cốt:** Thông tư số 124/2021/TT-BCA (Thông tư Quy định khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 83 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 124/2021/TT-BCA: Thông tư Quy định khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+    "doc_ids": [
+      "DOC_124_2021_TT_BCA"
+    ],
+    "doc_numbers": [
+      "124/2021/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”"
+    ],
+    "provision_count": 83,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "124/2021/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Phạm vi điều chỉnh\nThông tư này quy định về nguyên tắc, tiêu chí, trình tự, thủ tục, thẩm quyền xét duyệt, công nhận khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc chung",
+        "structural_path": "124/2021/TT-BCA > Chương I > Điều 3. Nguyên tắc chung",
+        "snippet": "1. Việc xét duyệt, công nhận khu dân cư, xã, phường, thị trấn, cơ quan, doanh nghiệp, cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự” được thực hiện mỗi năm một lần.\n\n\t2. Việc xét duyệt, c"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Tiêu chí công nhận khu dân cư đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "structural_path": "124/2021/TT-BCA > Chương II > Điều 4. Tiêu chí công nhận khu dân cư đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "snippet": "Khu dân cư được công nhận đạt tiêu chuẩn “An toàn về an ninh, trật tự” khi đạt đủ các tiêu chí sau:\n\n\t1. Quý I hằng năm, chi bộ có nghị quyết, khu dân cư có đăng ký phấn đấu đạt tiêu chuẩn “An toàn về"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Tiêu chí công nhận xã, phường, thị trấn đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "structural_path": "124/2021/TT-BCA > Chương II > Điều 5. Tiêu chí công nhận xã, phường, thị trấn đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "snippet": "Xã, phường, thị trấn được công nhận đạt tiêu chuẩn “An toàn về an ninh, trật tự” khi đạt đủ các tiêu chí sau:\n\n\t1. Quý I hằng năm, Đảng ủy có nghị quyết; Ủy ban nhân dân xã, phường, thị trấn có kế hoạ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Tiêu chí công nhận cơ quan, doanh nghiệp đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "structural_path": "124/2021/TT-BCA > Chương II > Điều 6. Tiêu chí công nhận cơ quan, doanh nghiệp đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "snippet": "Cơ quan, doanh nghiệp được công nhận đạt tiêu chuẩn “An toàn về an ninh, trật tự” khi đạt đủ các tiêu chí sau:\n\n\t1. Quý I hằng năm, tổ chức Đảng có nghị quyết chuyên đề riêng hoặc lồng ghép công tác b"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Tiêu chí công nhận cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "structural_path": "124/2021/TT-BCA > Chương II > Điều 7. Tiêu chí công nhận cơ sở giáo dục đạt tiêu chuẩn “An toàn về an ninh, trật tự”",
+        "snippet": "Cơ sở giáo dục được công nhận đạt tiêu chuẩn “An toàn về an ninh, trật tự” khi đạt đủ các tiêu chí sau:\n\n\t1. Quý I hằng năm, tổ chức Đảng có nghị quyết chuyên đề riêng hoặc lồng ghép công tác bảo đảm "
+      }
+    ],
+    "level": 0,
+    "weight": 83.0
+  },
+  {
+    "community_id": "COMM_36",
+    "title": "Cụm Quy định về phân công công tác đối với học sinh, sinh viên t (39/2018/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về phân công công tác đối với học sinh, sinh viên tốt nghiệp, kết thúc khóa học tại các trường Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 39/2018/TT-BCA (Thông tư Quy định về phân công công tác đối với học sinh, sinh viên tốt nghiệp, kết thúc khóa học tại các trường Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 82 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 39/2018/TT-BCA: Thông tư Quy định về phân công công tác đối với học sinh, sinh viên tốt nghiệp, kết thúc khóa học tại các trường Công an nhân dân",
+    "doc_ids": [
+      "DOC_39_2018_TT_BCA"
+    ],
+    "doc_numbers": [
+      "39/2018/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về phân công công tác đối với học sinh, sinh viên tốt nghiệp, kết thúc khóa học tại các trường Công an nhân dân"
+    ],
+    "provision_count": 82,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "39/2018/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Thông tư này quy định phân công công tác đối với học sinh, sinh viên (sau đây gọi chung là học viên) tốt nghiệp, kết thúc khóa học tại các học viện, trường đại học, trường trung cấp Công an nhân dâ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Nguyên tắc phân công công tác đối với học viên",
+        "structural_path": "39/2018/TT-BCA > Chương I > Điều 2. Nguyên tắc phân công công tác đối với học viên",
+        "snippet": "1. Căn cứ mục tiêu đào tạo, nhu cầu sử dụng và biên chế ấn định của từng Bộ Tư lệnh, Cục và tương đương, Công an tỉnh, thành phố trực thuộc trung ương (sau đây gọi chung là Công an đơn vị, địa phương)"
+      }
+    ],
+    "level": 0,
+    "weight": 82.0
+  },
+  {
+    "community_id": "COMM_16",
+    "title": "Cụm Hướng dẫn thực hiện một số điều của Nghị định số 34/2014/NĐ- (43/2015/TT-BQP)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn thực hiện một số điều của Nghị định số 34/2014/NĐ-CP ngày 29 tháng 4 năm 2014 của Chính phủ về quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam.\n\n**Văn bản nòng cốt:** Thông tư số 43/2015/TT-BQP (Thông tư Hướng dẫn thực hiện một số điều của Nghị định số 34/2014/NĐ-CP ngày 29 tháng 4 năm 2014 của Chính phủ về quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 79 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 43/2015/TT-BQP: Thông tư Hướng dẫn thực hiện một số điều của Nghị định số 34/2014/NĐ-CP ngày 29 tháng 4 năm 2014 của Chính phủ về quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam",
+    "doc_ids": [
+      "DOC_43_2015_TT_BQP"
+    ],
+    "doc_numbers": [
+      "43/2015/TT-BQP"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện một số điều của Nghị định số 34/2014/NĐ-CP ngày 29 tháng 4 năm 2014 của Chính phủ về quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam"
+    ],
+    "provision_count": 79,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "43/2015/TT-BQP > Chương I > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Thông tư này hướng dẫn một số điều của Nghị định số 34/2014/NĐ-CP ngày 29 tháng 4 năm 2014 của Chính phủ về Quy chế khu vực biên giới đất liền nước Cộng hòa xã hội chủ nghĩa Việt Nam (sau đây viết "
+      }
+    ],
+    "level": 0,
+    "weight": 79.0
+  },
+  {
+    "community_id": "COMM_38",
+    "title": "Cụm Quy định xét chuyển sang chế độ chuyên nghiệp đối với hạ sĩ  (70/2019/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định xét chuyển sang chế độ chuyên nghiệp đối với hạ sĩ quan nghĩa vụ hết hạn phục vụ tại ngũ trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 70/2019/TT-BCA (Thông tư Quy định xét chuyển sang chế độ chuyên nghiệp đối với hạ sĩ quan nghĩa vụ hết hạn phục vụ tại ngũ trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 79 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 70/2019/TT-BCA: Thông tư Quy định xét chuyển sang chế độ chuyên nghiệp đối với hạ sĩ quan nghĩa vụ hết hạn phục vụ tại ngũ trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_70_2019_TT_BCA"
+    ],
+    "doc_numbers": [
+      "70/2019/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định xét chuyển sang chế độ chuyên nghiệp đối với hạ sĩ quan nghĩa vụ hết hạn phục vụ tại ngũ trong Công an nhân dân"
+    ],
+    "provision_count": 79,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "70/2019/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về xét chuyển sang chế độ chuyên nghiệp (sau đây gọi tắt là chuyển chuyên nghiệp) đối với hạ sĩ quan nghĩa vụ hết hạn phục vụ tại ngũ trong Công an nhân dân."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng xét chuyển chuyên nghiệp",
+        "structural_path": "70/2019/TT-BCA > Điều 2. Đối tượng xét chuyển chuyên nghiệp",
+        "snippet": "Hạ sĩ quan nghĩa vụ hết thời hạn phục vụ tại ngũ trong Công an nhân dân theo quy định tại khoản 3 Điều 4 Nghị định số 70/2019/NĐ-CP ngày 23 tháng 8 năm 2019 của Chính phủ quy định về thực hiện nghĩa v"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc xét chuyển chuyên nghiệp",
+        "structural_path": "70/2019/TT-BCA > Điều 4. Nguyên tắc xét chuyển chuyên nghiệp",
+        "snippet": "1. Thực hiện nguyên tắc tập trung dân chủ; đề cao trách nhiệm của cấp ủy và lãnh đạo, chỉ huy Công an đơn vị, địa phương.\n\n\t2. Bảo đảm đúng đối tượng, đủ điều kiện, tiêu chuẩn đáp ứng yêu cầu nhiệm vụ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Điều kiện, tiêu chuẩn và tỷ lệ chuyển chuyên nghiệp",
+        "structural_path": "70/2019/TT-BCA > Điều 5. Điều kiện, tiêu chuẩn và tỷ lệ chuyển chuyên nghiệp",
+        "snippet": "1. Điều kiện, tiêu chuẩn\n\n\tThực hiện theo quy định tại khoản 2 Điều 9 Nghị định số 70/2019/NĐ-CP và các quy định sau:\n\n\t a) Tiêu chuẩn chính trị:\n\n\tCó phẩm chất, tư cách đạo đức tốt, được cán bộ, chiế"
+      }
+    ],
+    "level": 0,
+    "weight": 79.0
+  },
+  {
+    "community_id": "COMM_43",
+    "title": "Cụm Quy định về biển hiệu, biển chức danh, băng trực ban, băng k (123/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về biển hiệu, biển chức danh, băng trực ban, băng kiểm tra điều lệnh trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 123/2020/TT-BCA (Thông tư Quy định về biển hiệu, biển chức danh, băng trực ban, băng kiểm tra điều lệnh trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 79 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 123/2020/TT-BCA: Thông tư Quy định về biển hiệu, biển chức danh, băng trực ban, băng kiểm tra điều lệnh trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_123_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "123/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về biển hiệu, biển chức danh, băng trực ban, băng kiểm tra điều lệnh trong Công an nhân dân"
+    ],
+    "provision_count": 79,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "123/2020/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về biển hiệu, biển chức danh, băng trực ban, băng kiểm tra điều lệnh trong Công an nhân dân, gồm: Biển hiệu trụ sở cơ quan, đơn vị; biển chỉ dẫn; biển hiệu phòng làm việc; biển c"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "123/2020/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Đơn vị trực thuộc Bộ Công an, học viện, trường Công an nhân dân, cơ quan, đơn vị, doanh nghiệp an ninh, bệnh viện; Công an tỉnh, thành phố trực thuộc Trung ương (sau đ"
+      }
+    ],
+    "level": 0,
+    "weight": 79.0
+  },
+  {
+    "community_id": "COMM_55",
+    "title": "Cụm Quy định về tạm ngừng lưu thông, phong tỏa, niêm phong, tạm  (122/2013/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ và xử lý đối với tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố.\n\n**Văn bản nòng cốt:** Nghị định số 122/2013/NĐ-CP (Nghị định Quy định về tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ và xử lý đối với tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 78 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 122/2013/NĐ-CP: Nghị định Quy định về tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ và xử lý đối với tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố",
+    "doc_ids": [
+      "DOC_122_2013_N_CP"
+    ],
+    "doc_numbers": [
+      "122/2013/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định về tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ và xử lý đối với tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố"
+    ],
+    "provision_count": 78,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "122/2013/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Nghị định này quy định điều kiện, thủ tục, hình thức, thẩm quyền quyết định tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lậ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "122/2013/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, tổ chức, cá nhân liên quan đến việc tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập da"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố",
+        "structural_path": "122/2013/NĐ-CP > Chương I > Điều 4. Nguyên tắc tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; xác lập danh sách tổ chức, cá nhân liên quan đến khủng bố, tài trợ khủng bố",
+        "snippet": "1. Bảo đảm đúng điều kiện, trình tự, thủ tục, hình thức, thẩm quyền theo quy định của pháp luật và phù hợp với điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên.\n2. Bảo đảm kịp"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Thẩm quyền tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố",
+        "structural_path": "122/2013/NĐ-CP > Chương II > Điều 7. Thẩm quyền tạm ngừng lưu thông, phong tỏa, niêm phong, tạm giữ, xử lý tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố",
+        "snippet": "1. Bộ trưởng Bộ Công an có quyền quyết định tịch thu sung quỹ nhà nước hoặc tiêu hủy tiền, tài sản liên quan đến khủng bố, tài trợ khủng bố; trả lại tiền, tài sản liên quan đến khủng bố, tài trợ khủng"
+      }
+    ],
+    "level": 0,
+    "weight": 78.0
+  },
+  {
+    "community_id": "COMM_03",
+    "title": "Cụm Quy định về bảo đảm điều kiện cho hoạt động bảo vệ an ninh q (127/2006/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về bảo đảm điều kiện cho hoạt động bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội.\n\n**Văn bản nòng cốt:** Nghị định số 127/2006/NĐ-CP (Nghị định Quy định về bảo đảm điều kiện cho hoạt động bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 75 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 127/2006/NĐ-CP: Nghị định Quy định về bảo đảm điều kiện cho hoạt động bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội",
+    "doc_ids": [
+      "DOC_127_2006_N_CP"
+    ],
+    "doc_numbers": [
+      "127/2006/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định về bảo đảm điều kiện cho hoạt động bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội"
+    ],
+    "provision_count": 75,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "127/2006/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định chi tiết thi hành một số điều của Luật An ninh quốc gia và Luật Công an nhân dân về việc bảo đảm điều kiện về ngân sách, cơ sở vật chất, huy động thành tựu khoa học và công nghệ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "127/2006/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng với cá nhân, tổ chức Việt Nam; cá nhân, tổ chức nước ngoài, tổ chức quốc tế đang hoạt động trên lãnh thổ Việt Nam. Trường hợp điều ước quốc tế mà nước Cộng hoà xã hội chủ nghĩa V"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc bảo đảm điều kiện cho hoạt động bảo vệ an ninh, trật tự",
+        "structural_path": "127/2006/NĐ-CP > Chương I > Điều 3. Nguyên tắc bảo đảm điều kiện cho hoạt động bảo vệ an ninh, trật tự",
+        "snippet": "1. Căn cứ vào khả năng cân đối của ngân sách, Nhà nước bảo đảm điều kiện về ngân sách và cơ sở vật chất đáp ứng yêu cầu bào vệ an ninh, trật tự trong mọi tình huống, trong đó ưu tiên cho các địa bàn c"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 10. Thẩm quyền trưng thu, trưng mua, trưng dụng cơ sở vật chất phục vụ hoạt động bảo vệ an ninh, trật tự",
+        "structural_path": "127/2006/NĐ-CP > Chương II > Điều 10. Thẩm quyền trưng thu, trưng mua, trưng dụng cơ sở vật chất phục vụ hoạt động bảo vệ an ninh, trật tự",
+        "snippet": "1. Thủ tướng Chính phủ có thẩm quyền quyết định trưng thu, trưng mua, trưng dụng đối với đất đai, công trình, thiết bị, phương tiện giao thông, thông tin liên lạc và người điều khiển sử dụng các phươn"
+      }
+    ],
+    "level": 0,
+    "weight": 75.0
+  },
+  {
+    "community_id": "COMM_28",
+    "title": "Cụm Quy định về thực hiện nghĩa vụ tham gia Công an nhân dân (70/2019/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định về thực hiện nghĩa vụ tham gia Công an nhân dân.\n\n**Văn bản nòng cốt:** Nghị định số 70/2019/NĐ-CP (Nghị định Quy định về thực hiện nghĩa vụ tham gia Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 72 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 70/2019/NĐ-CP: Nghị định Quy định về thực hiện nghĩa vụ tham gia Công an nhân dân",
+    "doc_ids": [
+      "DOC_70_2019_N_CP"
+    ],
+    "doc_numbers": [
+      "70/2019/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định về thực hiện nghĩa vụ tham gia Công an nhân dân"
+    ],
+    "provision_count": 72,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "70/2019/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định về đối tượng, tiêu chuẩn, trình tự, thủ tục tuyển chọn và chế độ, chính sách đối với công dân thực hiện nghĩa vụ tham gia Công an nhân dân; trách nhiệm của các cơ quan, tổ chức,"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "70/2019/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, tổ chức và công dân nước Cộng hòa xã hội chủ nghĩa Việt Nam."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc tuyển chọn",
+        "structural_path": "70/2019/NĐ-CP > Chương I > Điều 3. Nguyên tắc tuyển chọn",
+        "snippet": "1. Thực hiện đúng đường lối, chủ trương của Đảng, chính sách pháp luật của Nhà nước và quy trình, quy định trong công tác tuyển chọn công dân thực hiện nghĩa vụ tham gia Công an nhân dân.\n2. Tuyển đủ "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Đối tượng tuyển chọn và thời gian phục vụ",
+        "structural_path": "70/2019/NĐ-CP > Chương II > Điều 4. Đối tượng tuyển chọn và thời gian phục vụ",
+        "snippet": "1. Công dân nam trong độ tuổi gọi nhập ngũ đã đăng ký nghĩa vụ quân sự theo quy định của Luật Nghĩa vụ quân sự năm 2015. Công dân nữ trong độ tuổi gọi nhập ngũ đã đăng ký nghĩa vụ quân sự theo quy địn"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Tiêu chuẩn tuyển chọn",
+        "structural_path": "70/2019/NĐ-CP > Chương II > Điều 5. Tiêu chuẩn tuyển chọn",
+        "snippet": "Công dân được tuyển chọn thực hiện nghĩa vụ tham gia Công an nhân dân khi có đủ các tiêu chuẩn sau đây:\n1. Có lý lịch rõ ràng.\n2. Nghiêm chỉnh chấp hành đường lối, chủ trương của Đảng, chính sách, phá"
+      }
+    ],
+    "level": 0,
+    "weight": 72.0
+  },
+  {
+    "community_id": "COMM_35",
+    "title": "Cụm Quy định về quy tắc ứng xử của Công an nhân dân (27/2017/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về quy tắc ứng xử của Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 27/2017/TT-BCA (Thông tư Quy định về quy tắc ứng xử của Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 72 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 27/2017/TT-BCA: Thông tư Quy định về quy tắc ứng xử của Công an nhân dân",
+    "doc_ids": [
+      "DOC_27_2017_TT_BCA"
+    ],
+    "doc_numbers": [
+      "27/2017/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về quy tắc ứng xử của Công an nhân dân"
+    ],
+    "provision_count": 72,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "27/2017/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định nguyên tắc ứng xử; quy tắc ứng xử chung của cán bộ, chiến sĩ Công an nhân dân; quy tắc ứng xử khi thực hiện chức trách, nhiệm vụ; ứng xử trong nội bộ, trong quan hệ xã hội và với"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "27/2017/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với: Sĩ quan, hạ sĩ quan, chiến sĩ nghĩa vụ, học viên các học viện, nhà trường, công nhân Công an (gọi chung là cán bộ, chiến sĩ Công an nhân dân)."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc ứng xử",
+        "structural_path": "27/2017/TT-BCA > Chương I > Điều 3. Nguyên tắc ứng xử",
+        "snippet": "1. Tuân thủ Hiến pháp, pháp luật và điều lệnh Công an nhân dân.\n\n\t2. Tôn trọng, bảo vệ quyền, lợi ích của nhà nước; quyền, lợi ích hợp pháp của cá nhân, cơ quan, tổ chức.\n\n\t3. Phù hợp với đạo đức, văn"
+      }
+    ],
+    "level": 0,
+    "weight": 72.0
+  },
+  {
+    "community_id": "COMM_44",
+    "title": "Cụm Quy định về chế độ chi tập huấn và hội thi điều lệnh, quân s (128/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về chế độ chi tập huấn và hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 128/2020/TT-BCA (Thông tư Quy định về chế độ chi tập huấn và hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 71 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 128/2020/TT-BCA: Thông tư Quy định về chế độ chi tập huấn và hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_128_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "128/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về chế độ chi tập huấn và hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân"
+    ],
+    "provision_count": 71,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "128/2020/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về nội dung chi; định mức chi; thời gian chi; thành phần chi; số lượng chi và kinh phí chi tập huấn và hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "128/2020/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Đơn vị trực thuộc Bộ Công an, Công an tỉnh, thành phố trực thuộc Trung ương (sau đây gọi chung là Công an đơn vị, địa phương).\n2. Sĩ quan, hạ sĩ quan, chiến sĩ nghĩa v"
+      }
+    ],
+    "level": 0,
+    "weight": 71.0
+  },
+  {
+    "community_id": "COMM_64",
+    "title": "Cụm Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của (14/2018/TT-BCA, 89/2021/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của lực lượng Cảnh vệ.\n\n**Văn bản nòng cốt:** Thông tư số 14/2018/TT-BCA (Thông tư Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của lực lượng Cảnh vệ).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 69 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** SUPPLEMENTS: 3, AMENDS: 1.\n\n**Danh mục văn bản chính:**\n- Thông tư 14/2018/TT-BCA: Thông tư Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của lực lượng Cảnh vệ\n- Thông tư 89/2021/TT-BCA: Thông tư số 89/2021/TT-BCA (Văn bản sửa đổi, bổ sung)",
+    "doc_ids": [
+      "DOC_14_2018_TT_BCA",
+      "DOC_89_2021_TT_BCA"
+    ],
+    "doc_numbers": [
+      "14/2018/TT-BCA",
+      "89/2021/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của lực lượng Cảnh vệ",
+      "Thông tư số 89/2021/TT-BCA (Văn bản sửa đổi, bổ sung)"
+    ],
+    "provision_count": 69,
+    "relations_count": {
+      "SUPPLEMENTS": 3,
+      "AMENDS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "14/2018/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về mẫu Giấy bảo vệ đặc biệt; đối tượng, thẩm quyền, thủ tục cấp, đổi, cấp lại Giấy bảo vệ đặc biệt; giao, thu hồi, quản lý, tiêu hủy Giấy bảo vệ đặc biệt; quyền hạn v"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Nguyên tắc cấp, quản lý và sử dụng Giấy Bảo vệ đặc biệt",
+        "structural_path": "14/2018/TT-BCA > Chương I > Điều 2. Nguyên tắc cấp, quản lý và sử dụng Giấy Bảo vệ đặc biệt",
+        "snippet": "1. Giấy Bảo vệ đặc biệt do Bộ trưởng Bộ Công an cấp cho các đối tượng theo quy định tại Thông tư này để thực hiện công tác cảnh vệ. Thời hạn sử dụng của Giấy Bảo vệ đặc biệt là 5 năm, kể từ ngày ký.\n2"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Đối tượng được cấp Giấy bảo vệ đặc biệt",
+        "structural_path": "14/2018/TT-BCA > Chương II > Điều 5. Đối tượng được cấp Giấy bảo vệ đặc biệt",
+        "snippet": "1. Tư lệnh và các Phó Tư lệnh Bộ Tư lệnh Cảnh vệ Bộ Công an; Cục trưởng và các Phó Cục trưởng Cục Bảo vệ an ninh Quân đội Bộ Quốc phòng.\n2. Chỉ huy các đơn vị thuộc Bộ Tư lệnh Cảnh vệ, Bộ Công an là"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Thẩm quyền cấp, đổi, cấp lại, giao, thu hồi, tiêu hủy Giấy bảo vệ đặc biệt",
+        "structural_path": "14/2018/TT-BCA > Chương II > Điều 7. Thẩm quyền cấp, đổi, cấp lại, giao, thu hồi, tiêu hủy Giấy bảo vệ đặc biệt",
+        "snippet": "1. Bộ trưởng Bộ Công an quyết định cấp, đổi, cấp lại, tiêu hủy Giấy bảo vệ đặc biệt.\n2. Tư lệnh Bộ Tư lệnh Cảnh vệ, Cục trưởng Cục Bảo vệ an ninh Quân đội quyết định giao, thu hồi Giấy "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Sửa đổi, bổ sung theo Thông tư số 89/2021/TT-BCA",
+        "structural_path": "89/2021/TT-BCA > Điều 1",
+        "snippet": "Quy định sửa đổi, bổ sung đối với Điều 2. Nguyên tắc cấp, quản lý và sử dụng Giấy Bảo vệ đặc biệt (Thông tư Quy định về mẫu, quản lý và sử dụng Giấy bảo vệ đặc biệt của lực lượng Cảnh vệ) có hiệu lực "
+      }
+    ],
+    "level": 0,
+    "weight": 69.0
+  },
+  {
+    "community_id": "COMM_40",
+    "title": "Cụm Quy định trình tự thực hiện khi cán bộ Công an nhân dân nghỉ (33/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định trình tự thực hiện khi cán bộ Công an nhân dân nghỉ hưu.\n\n**Văn bản nòng cốt:** Thông tư số 33/2020/TT-BCA (Thông tư Quy định trình tự thực hiện khi cán bộ Công an nhân dân nghỉ hưu).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 64 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 33/2020/TT-BCA: Thông tư Quy định trình tự thực hiện khi cán bộ Công an nhân dân nghỉ hưu",
+    "doc_ids": [
+      "DOC_33_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "33/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định trình tự thực hiện khi cán bộ Công an nhân dân nghỉ hưu"
+    ],
+    "provision_count": 64,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "33/2020/TT-BCA > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Thông tư này quy định về trình tự thực hiện khi cán bộ Công an nhân dân nghỉ hưu, bao gồm: Thông báo nghỉ chờ hưu, công bố quyết định nghỉ công tác chờ hưởng chế độ hưu trí (sau đây viết gọn là quy"
+      }
+    ],
+    "level": 0,
+    "weight": 64.0
+  },
+  {
+    "community_id": "COMM_33",
+    "title": "Cụm Quy định xếp lương và phong, thăng cấp bậc hàm đối với công  (69/2013/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định xếp lương và phong, thăng cấp bậc hàm đối với công dân được tuyển dụng vào Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 69/2013/TT-BCA (Thông tư Quy định xếp lương và phong, thăng cấp bậc hàm đối với công dân được tuyển dụng vào Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 62 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 69/2013/TT-BCA: Thông tư Quy định xếp lương và phong, thăng cấp bậc hàm đối với công dân được tuyển dụng vào Công an nhân dân",
+    "doc_ids": [
+      "DOC_69_2013_TT_BCA"
+    ],
+    "doc_numbers": [
+      "69/2013/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định xếp lương và phong, thăng cấp bậc hàm đối với công dân được tuyển dụng vào Công an nhân dân"
+    ],
+    "provision_count": 62,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "69/2013/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định xếp lương và phong, thăng cấp bậc hàm đối với công dân được tuyển dụng vào Công an nhân dân thuộc diện bố trí sĩ quan, hạ sĩ quan nghiệp vụ hoặc sĩ quan nghiệp vụ hoặc sĩ quan, h"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "69/2013/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Thông tư này áp dụng đối với:\na) Cán bộ, công chức, viên chức, công nhân, nhân viên công tác ở các ngành và lao động hợp đồng trong Công an nhân dân (sau đây gọi chung là cán bộ, công nhân viên);\nb"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Điều kiện, nguyên tắc xếp lương và phong, thăng cấp bậc hàm",
+        "structural_path": "69/2013/TT-BCA > Điều 3. Điều kiện, nguyên tắc xếp lương và phong, thăng cấp bậc hàm",
+        "snippet": "1. Chỉ xem xét xếp lương và phong, thăng cấp bậc hàm đối với các trường hợp được tuyển dụng theo đúng quy định của Bộ Công an về tuyển chọn công dân vào Công an nhân dân.\n\n\tNhững trường hợp được tuyển"
+      }
+    ],
+    "level": 0,
+    "weight": 62.0
+  },
+  {
+    "community_id": "COMM_39",
+    "title": "Cụm Quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự,  (27/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 27/2020/TT-BCA (Thông tư Quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 57 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 27/2020/TT-BCA: Thông tư Quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_27_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "27/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân"
+    ],
+    "provision_count": 57,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "27/2020/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về tập huấn và tổ chức hội thi điều lệnh, quân sự, võ thuật trong Công an nhân dân, bao gồm: đối tượng, nội dung, thời gian; các trường hợp được miễn, hoãn tập huấn; kiểm tra đán"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "27/2020/TT-BCA > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với:\n1. Công an các đơn vị, địa phương.\n2. Sỹ quan, hạ sĩ quan, chiến sĩ nghĩa vụ, học sinh, sinh viên, công nhân Công an nhân dân.\n3. Cơ quan, tổ chức, cá nhân có liên quan.\n"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Đối tượng, nội dung, thời gian",
+        "structural_path": "27/2020/TT-BCA > Điều 3. Đối tượng, nội dung, thời gian",
+        "snippet": "1. Lãnh đạo cấp Cục và tương đương.\n\n\ta) Nội dung tập huấn:\n\n\tLý thuyết: Quán triệt văn bản của Bộ Công an về công tác điều lệnh, quân sự, võ thuật trong Công an nhân dân; đánh giá tình hình, kết quả "
+      }
+    ],
+    "level": 0,
+    "weight": 57.0
+  },
+  {
+    "community_id": "COMM_56",
+    "title": "Cụm Quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp củ (07/2014/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp của Ban Chỉ đạo phòng, chống khủng bố các cấp.\n\n**Văn bản nòng cốt:** Nghị định số 07/2014/NĐ-CP (Nghị định Quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp của Ban Chỉ đạo phòng, chống khủng bố các cấp).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 55 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 07/2014/NĐ-CP: Nghị định Quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp của Ban Chỉ đạo phòng, chống khủng bố các cấp",
+    "doc_ids": [
+      "DOC_07_2014_N_CP"
+    ],
+    "doc_numbers": [
+      "07/2014/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp của Ban Chỉ đạo phòng, chống khủng bố các cấp"
+    ],
+    "provision_count": 55,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "07/2014/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định tổ chức, nhiệm vụ, quyền hạn và quan hệ phối hợp của Ban Chỉ đạo phòng, chống khủng bố các cấp."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "07/2014/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với Ban Chỉ đạo phòng, chống khủng bố các cấp; cơ quan, tổ chức, công dân Việt Nam; cơ quan, tổ chức, cá nhân nước ngoài, tổ chức quốc tế cư trú, hoạt động trên lãnh thổ Việt"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố quốc gia",
+        "structural_path": "07/2014/NĐ-CP > Chương III > Điều 6. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố quốc gia",
+        "snippet": "1. Thực hiện các nhiệm vụ, quyền hạn quy định tại Khoản 1 Điều 13 Luật phòng, chống khủng bố.\n\n\t2. Kiểm tra, đôn đốc, hướng dẫn Ban Chỉ đạo phòng, chống khủng bố Bộ, ngành, tỉnh, thành phố trực thuộc "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ Công an",
+        "structural_path": "07/2014/NĐ-CP > Chương III > Điều 7. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ Công an",
+        "snippet": "1. Giúp Bộ trưởng Bộ Công an tổ chức, chỉ đạo công tác phòng, chống khủng bố của Bộ Công an; phối hợp với các Bộ, ngành, Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương thực hiện công tác phòng,"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ Quốc phòng",
+        "structural_path": "07/2014/NĐ-CP > Chương III > Điều 8. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ Quốc phòng",
+        "snippet": "1. Giúp Bộ trưởng Bộ Quốc phòng tổ chức, chỉ đạo công tác phòng, chống khủng bố của Bộ Quốc phòng; phối hợp với các Bộ, ngành, Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương thực hiện công tác "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 9. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ, ngành",
+        "structural_path": "07/2014/NĐ-CP > Chương III > Điều 9. Nhiệm vụ, quyền hạn của Ban Chỉ đạo phòng, chống khủng bố Bộ, ngành",
+        "snippet": "1. Thực hiện các nhiệm vụ, quyền hạn quy định tại Khoản 3 Điều 13 Luật phòng, chống khủng bố.\n\n\t2. Phối hợp với Ban Chỉ đạo phòng, chống khủng bố Bộ Công an, Bộ Quốc phòng, Ban Chỉ đạo phòng, chống kh"
+      }
+    ],
+    "level": 0,
+    "weight": 55.0
+  },
+  {
+    "community_id": "COMM_57",
+    "title": "Cụm Hướng dẫn thực hiện đào tạo, bồi dưỡng cán bộ làm công tác p (02/2016/TTLT-BCA-BQP-BGTVT)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn thực hiện đào tạo, bồi dưỡng cán bộ làm công tác phòng, chống khủng bố.\n\n**Văn bản nòng cốt:** Thông tư số 02/2016/TTLT-BCA-BQP-BGTVT (Thông tư Hướng dẫn thực hiện đào tạo, bồi dưỡng cán bộ làm công tác phòng, chống khủng bố).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 55 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 02/2016/TTLT-BCA-BQP-BGTVT: Thông tư Hướng dẫn thực hiện đào tạo, bồi dưỡng cán bộ làm công tác phòng, chống khủng bố",
+    "doc_ids": [
+      "DOC_02_2016_TTLT_BCA_BQP_BGTVT"
+    ],
+    "doc_numbers": [
+      "02/2016/TTLT-BCA-BQP-BGTVT"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện đào tạo, bồi dưỡng cán bộ làm công tác phòng, chống khủng bố"
+    ],
+    "provision_count": 55,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "02/2016/TTLT-BCA-BQP-BGTVT > Chương I > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Thông tư này quy định về đào tạo, bồi dưỡng học viên, sinh viên, cán bộ làm công tác phòng, chống khủng bố.\n2. Thông tư này áp dụng đối với các cơ quan, đơn vị, cá nhân liên quan đến công tác đào t"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Đối tượng đào tạo, bồi dưỡng",
+        "structural_path": "02/2016/TTLT-BCA-BQP-BGTVT > Chương II > Điều 4. Đối tượng đào tạo, bồi dưỡng",
+        "snippet": "1. Đối tượng đào tạo là học viên, sinh viên các trường Công an nhân dân, Quân đội nhân dân.\n2. Đối tượng bồi dưỡng là cán bộ làm công tác tham mưu, trực tiếp thực hiện nhiệm vụ phòng, chống khủng bố t"
+      }
+    ],
+    "level": 0,
+    "weight": 55.0
+  },
+  {
+    "community_id": "COMM_41",
+    "title": "Cụm Quy định chế độ điều dưỡng trong Công an nhân dân (105/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định chế độ điều dưỡng trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 105/2020/TT-BCA (Thông tư Quy định chế độ điều dưỡng trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 54 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 105/2020/TT-BCA: Thông tư Quy định chế độ điều dưỡng trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_105_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "105/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định chế độ điều dưỡng trong Công an nhân dân"
+    ],
+    "provision_count": 54,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "105/2020/TT-BCA > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định về đối tượng, nguyên tắc áp dụng, tiêu chuẩn, thời gian, chế độ điều dưỡng, phương tiện đi lại, trình tự cấp phiếu, quy trình điều dưỡng và kinh phí thực hiện chế độ điề"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "105/2020/TT-BCA > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Sĩ quan, hạ sĩ quan nghiệp vụ; sĩ quan, hạ sĩ quan chuyên môn kỹ thuật; hạ sĩ quan, chiến sĩ nghĩa vụ công an nhân dân; công nhân Công an, hợp đồng lao động không xác định thời hạn (sau đây g"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc áp dụng chế độ điều dưỡng",
+        "structural_path": "105/2020/TT-BCA > Chương I > Điều 3. Nguyên tắc áp dụng chế độ điều dưỡng",
+        "snippet": "1. Bảo đảm phục hồi chức năng, nâng cao sức khỏe cho cán bộ, chiến sĩ.\n\n\t2. Đúng đối tượng, đúng tiêu chuẩn theo quy định tại Thông tư này.\n\n\t3. Việc điều dưỡng tại chỗ (tại nhà) hoặc tại cơ sở điều d"
+      }
+    ],
+    "level": 0,
+    "weight": 54.0
+  },
+  {
+    "community_id": "COMM_63",
+    "title": "Cụm (Văn bản sửa đổi, bổ sung) (75/2013/NĐ-CP, 27/2011/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** (Văn bản sửa đổi, bổ sung).\n\n**Văn bản nòng cốt:** Nghị định số 75/2013/NĐ-CP (Nghị định số 75/2013/NĐ-CP (Văn bản sửa đổi, bổ sung)).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 50 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** AMENDS: 1.\n\n**Danh mục văn bản chính:**\n- Nghị định 75/2013/NĐ-CP: Nghị định số 75/2013/NĐ-CP (Văn bản sửa đổi, bổ sung)\n- Nghị định 27/2011/NĐ-CP: Nghị định Về cung cấp, khai thác, xử lý, sử dụng thông tin về hành khách trước khi nhập cảnh Việt Nam qua đường hàng không",
+    "doc_ids": [
+      "DOC_75_2013_N_CP",
+      "DOC_27_2011_N_CP"
+    ],
+    "doc_numbers": [
+      "75/2013/NĐ-CP",
+      "27/2011/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định số 75/2013/NĐ-CP (Văn bản sửa đổi, bổ sung)",
+      "Nghị định Về cung cấp, khai thác, xử lý, sử dụng thông tin về hành khách trước khi nhập cảnh Việt Nam qua đường hàng không"
+    ],
+    "provision_count": 50,
+    "relations_count": {
+      "AMENDS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Đối tượng áp dụng và phạm vi điều chỉnh",
+        "structural_path": "27/2011/NĐ-CP > Chương I > Điều 1. Đối tượng áp dụng và phạm vi điều chỉnh",
+        "snippet": "1. Nghị định này quy định trách nhiệm cung cấp trước thông tin về chuyến bay, chi tiết nhân sự của hành khách và tổ bay (gọi chung là thông tin trước về hành khách) của các tổ chức, cá nhân kinh doanh"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc khai thác, xử lý, sử dụng thông tin, dữ liệu API",
+        "structural_path": "27/2011/NĐ-CP > Chương I > Điều 3. Nguyên tắc khai thác, xử lý, sử dụng thông tin, dữ liệu API",
+        "snippet": "Việc khai thác, xử lý, sử dụng thông tin, dữ liệu API theo quy định của Nghị định này phải tuân thủ các nguyên tắc sau:\n1. Chỉ sử dụng thông tin, dữ liệu API vì mục đích phục vụ công tác quản lý nhà n"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 1. Sửa đổi, bổ sung theo Nghị định số 75/2013/NĐ-CP",
+        "structural_path": "75/2013/NĐ-CP > Điều 1",
+        "snippet": "Quy định sửa đổi, bổ sung đối với Điều 14. Hiệu lực thi hành (Nghị định Về cung cấp, khai thác, xử lý, sử dụng thông tin về hành khách trước khi nhập cảnh Việt Nam qua đường hàng không) có hiệu lực từ"
+      }
+    ],
+    "level": 0,
+    "weight": 50.0
+  },
+  {
+    "community_id": "COMM_42",
+    "title": "Cụm Quy định trang trí khánh tiết theo nghi lễ Công an nhân dân (119/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định trang trí khánh tiết theo nghi lễ Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 119/2020/TT-BCA (Thông tư Quy định trang trí khánh tiết theo nghi lễ Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 49 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 119/2020/TT-BCA: Thông tư Quy định trang trí khánh tiết theo nghi lễ Công an nhân dân",
+    "doc_ids": [
+      "DOC_119_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "119/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định trang trí khánh tiết theo nghi lễ Công an nhân dân"
+    ],
+    "provision_count": 49,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "119/2020/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định trang trí khánh tiết theo nghi lễ Công an nhân dân, trừ các nghi lễ: Lễ chào cờ Tổ quốc; lễ đón tiếp các đồng chí lãnh đạo Đảng, Nhà nước, Bộ Công an và các đoàn khách quốc tế; l"
+      }
+    ],
+    "level": 0,
+    "weight": 49.0
+  },
+  {
+    "community_id": "COMM_26",
+    "title": "Cụm Quy định mức thu tiền sử dụng khu vực biển thuộc thẩm quyền  (18/2021/TT-BTNMT)",
+    "summary": "**Cụm chủ đề:** Quy định mức thu tiền sử dụng khu vực biển thuộc thẩm quyền giao của Thủ tướng Chính phủ và Bộ Tài nguyên và Môi trường.\n\n**Văn bản nòng cốt:** Thông tư số 18/2021/TT-BTNMT (Thông tư Quy định mức thu tiền sử dụng khu vực biển thuộc thẩm quyền giao của Thủ tướng Chính phủ và Bộ Tài nguyên và Môi trường).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 48 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 18/2021/TT-BTNMT: Thông tư Quy định mức thu tiền sử dụng khu vực biển thuộc thẩm quyền giao của Thủ tướng Chính phủ và Bộ Tài nguyên và Môi trường",
+    "doc_ids": [
+      "DOC_18_2021_TT_BTNMT"
+    ],
+    "doc_numbers": [
+      "18/2021/TT-BTNMT"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định mức thu tiền sử dụng khu vực biển thuộc thẩm quyền giao của Thủ tướng Chính phủ và Bộ Tài nguyên và Môi trường"
+    ],
+    "provision_count": 48,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "18/2021/TT-BTNMT > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Phạm vi điều chỉnh\nThông tư này quy định mức thu tiền sử dụng khu vực biển cụ thể thuộc thẩm quyền giao khu vực biển của Thủ tướng Chính phủ và Bộ Tài nguyên và Môi trường.\n2. Đối tượng áp dụng\nThô"
+      }
+    ],
+    "level": 0,
+    "weight": 48.0
+  },
+  {
+    "community_id": "COMM_20",
+    "title": "Cụm Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức củ (10/2019/QĐ-TTg)",
+    "summary": "**Cụm chủ đề:** Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ủy ban Biên giới quốc gia trực thuộc Bộ Ngoại giao.\n\n**Văn bản nòng cốt:** Quyết định số 10/2019/QĐ-TTg (Quyết định Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ủy ban Biên giới quốc gia trực thuộc Bộ Ngoại giao).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 43 điều khoản.\n\n**Danh mục văn bản chính:**\n- Quyết định 10/2019/QĐ-TTg: Quyết định Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ủy ban Biên giới quốc gia trực thuộc Bộ Ngoại giao",
+    "doc_ids": [
+      "DOC_10_2019_Q_TTg"
+    ],
+    "doc_numbers": [
+      "10/2019/QĐ-TTg"
+    ],
+    "doc_titles": [
+      "Quyết định Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ủy ban Biên giới quốc gia trực thuộc Bộ Ngoại giao"
+    ],
+    "provision_count": 43,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 2. Nhiệm vụ và quyền hạn",
+        "structural_path": "10/2019/QĐ-TTg > Điều 2. Nhiệm vụ và quyền hạn",
+        "snippet": "1. Tham mưu giúp Bộ trưởng Bộ Ngoại giao trình Chính phủ, Thủ tướng Chính phủ và các cơ quan có thẩm quyền:\na) Dự án luật, dự thảo nghị quyết của Quốc hội; dự án pháp lệnh, dự thảo nghị quyết của Ủy b"
+      }
+    ],
+    "level": 0,
+    "weight": 43.0
+  },
+  {
+    "community_id": "COMM_04",
+    "title": "Cụm Về biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật (35/2011/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Về biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội.\n\n**Văn bản nòng cốt:** Nghị định số 35/2011/NĐ-CP (Nghị định Về biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 40 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 35/2011/NĐ-CP: Nghị định Về biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội",
+    "doc_ids": [
+      "DOC_35_2011_N_CP"
+    ],
+    "doc_numbers": [
+      "35/2011/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Về biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội"
+    ],
+    "provision_count": 40,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "35/2011/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định nội dung, nguyên tắc, thẩm quyền, trách nhiệm và bảo đảm điều kiện cho việc áp dụng biện pháp pháp luật bảo vệ an ninh quốc gia, giữ gìn trật tự, an toàn xã hội (trong Nghị định"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "35/2011/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với cơ quan, cán bộ chuyên trách bảo vệ an ninh, trật tự; cơ quan, tổ chức, công dân Việt Nam; cơ quan, tổ chức, cá nhân nước ngoài, tổ chức quốc tế cư trú, hoạt động trên lã"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc áp dụng biện pháp pháp luật  bảo vệ an ninh, trật tự",
+        "structural_path": "35/2011/NĐ-CP > Chương I > Điều 4. Nguyên tắc áp dụng biện pháp pháp luật  bảo vệ an ninh, trật tự",
+        "snippet": "1. Cơ quan, cán bộ chuyên trách bảo vệ an ninh, trật tự khi thực hiện biện pháp pháp luật bảo vệ an ninh, trật tự phải:\na) Tuân thủ Hiến pháp, pháp luật nước Cộng hòa xã hội chủ nghĩa Việt Nam, điều ư"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Thẩm quyền, trách nhiệm của cơ quan, tổ  chức, cá nhân trong áp dụng biện pháp pháp luật bảo vệ an ninh, trật tự",
+        "structural_path": "35/2011/NĐ-CP > Chương II > Điều 6. Thẩm quyền, trách nhiệm của cơ quan, tổ  chức, cá nhân trong áp dụng biện pháp pháp luật bảo vệ an ninh, trật tự",
+        "snippet": "1. Trong phạm vi nhiệm vụ, quyền hạn của mình tổ chức thực hiện các nội dung biện pháp pháp luật bảo vệ an ninh, trật tự quy định tại Điều 5 Nghị định này và các quy định khác của pháp luật có liên qu"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 7. Thẩm quyền, trách nhiệm của cơ quan  chuyên trách bảo vệ an ninh, trật tự trong áp dụng biện pháp pháp luật bảo vệ an  ninh, trật tự",
+        "structural_path": "35/2011/NĐ-CP > Chương II > Điều 7. Thẩm quyền, trách nhiệm của cơ quan  chuyên trách bảo vệ an ninh, trật tự trong áp dụng biện pháp pháp luật bảo vệ an  ninh, trật tự",
+        "snippet": "1. Thu thập thông tin, phân tích, đánh giá tình hình, tham mưu và xây dựng chiến lược, chủ trương, chính sách, pháp luật, giải pháp, phương pháp về sử dụng biện pháp pháp luật bảo vệ an ninh, trật tự."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 8. Thẩm quyền, trách nhiệm của thủ trưởng,  cán bộ chuyên trách bảo vệ an ninh, trật tự trong áp dụng biện pháp pháp luật  bảo vệ an ninh, trật tự",
+        "structural_path": "35/2011/NĐ-CP > Chương II > Điều 8. Thẩm quyền, trách nhiệm của thủ trưởng,  cán bộ chuyên trách bảo vệ an ninh, trật tự trong áp dụng biện pháp pháp luật  bảo vệ an ninh, trật tự",
+        "snippet": "1. Thủ trưởng cơ quan chuyên trách bảo vệ an ninh, trật tự trong phạm vi nhiệm vụ, quyền hạn của mình quyết định việc sử dụng thẩm quyền, trách nhiệm của cơ quan chuyên trách bảo vệ an ninh, trật tự t"
+      }
+    ],
+    "level": 0,
+    "weight": 40.0
+  },
+  {
+    "community_id": "COMM_60",
+    "title": "Cụm Hướng dẫn thực hiện chế độ phụ cấp dặc thù đối với lực lượng (162/2018/TT-BQP)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn thực hiện chế độ phụ cấp dặc thù đối với lực lượng Cảnh vệ thuộc Bộ Quốc phòng.\n\n**Văn bản nòng cốt:** Thông tư số 162/2018/TT-BQP (Thông tư Hướng dẫn thực hiện chế độ phụ cấp dặc thù đối với lực lượng Cảnh vệ thuộc Bộ Quốc phòng).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 36 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 162/2018/TT-BQP: Thông tư Hướng dẫn thực hiện chế độ phụ cấp dặc thù đối với lực lượng Cảnh vệ thuộc Bộ Quốc phòng",
+    "doc_ids": [
+      "DOC_162_2018_TT_BQP"
+    ],
+    "doc_numbers": [
+      "162/2018/TT-BQP"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện chế độ phụ cấp dặc thù đối với lực lượng Cảnh vệ thuộc Bộ Quốc phòng"
+    ],
+    "provision_count": 36,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "162/2018/TT-BQP > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này hướng dẫn thực hiện chế độ phụ cấp đặc thù đối với lực lượng Cảnh vệ thuộc Bộ Quốc phòng; nguồn kinh phí bảo đảm và trách nhiệm tổ chức thực hiện của các cơ quan, đơn vị."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "162/2018/TT-BQP > Điều 2. Đối tượng áp dụng",
+        "snippet": "1. Sĩ quan, quân nhân chuyên nghiệp biên chế tại Phòng Cảnh vệ thuộc Cục Bảo vệ An ninh Quân đội, Tổng cục Chính trị.\n2. Sĩ quan, quân nhân chuyên nghiệp được cấp có thẩm quyền quyết định tăng cường l"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc thực hiện",
+        "structural_path": "162/2018/TT-BQP > Điều 4. Nguyên tắc thực hiện",
+        "snippet": "1. Phụ cấp đặc thù hướng dẫn tại Thông tư này được chi trả cùng kỳ lương hàng tháng và không dùng để tính đóng, hưởng chế độ bảo hiểm xã hội và bảo hiểm y tế.\n\n\t2. Sĩ quan, quân nhân chuyên nghiệp cản"
+      }
+    ],
+    "level": 0,
+    "weight": 36.0
+  },
+  {
+    "community_id": "COMM_30",
+    "title": "Cụm Nghị định quy định việc xây dựng Công an xã, trị trấn chính  (42/2021/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Nghị định quy định việc xây dựng Công an xã, trị trấn chính quy.\n\n**Văn bản nòng cốt:** Nghị định số 42/2021/NĐ-CP (Nghị định Nghị định quy định việc xây dựng Công an xã, trị trấn chính quy).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 35 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 42/2021/NĐ-CP: Nghị định Nghị định quy định việc xây dựng Công an xã, trị trấn chính quy",
+    "doc_ids": [
+      "DOC_42_2021_N_CP"
+    ],
+    "doc_numbers": [
+      "42/2021/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Nghị định quy định việc xây dựng Công an xã, trị trấn chính quy"
+    ],
+    "provision_count": 35,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "42/2021/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định vị trí, thẩm quyền quyết định của tổ chức Công an xã, thị trấn chính quy (sau đây gọi chung là Công an xã chính quy); lộ trình thực hiện; quan hệ công tác, điều kiện bảo đảm hoạ"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "42/2021/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với Công an xã chính quy; các cơ quan, tổ chức, cá nhân có liên quan đến việc xây dựng Công an xã chính quy."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc xây dựng Công an xã chính quy",
+        "structural_path": "42/2021/NĐ-CP > Chương I > Điều 4. Nguyên tắc xây dựng Công an xã chính quy",
+        "snippet": "1. Việc xây dựng Công an xã chính quy bảo đảm không tăng biên chế của Bộ Công an đến năm 2021, có lộ trình và phù hợp với tình hình thực tế của địa phương.\n2. Xây dựng Công an xã chính quy tại các địa"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Thẩm quyền quyết định tổ chức Công an xã chính quy và lộ trình xây dựng Công an xã chính quy",
+        "structural_path": "42/2021/NĐ-CP > Chương II > Điều 6. Thẩm quyền quyết định tổ chức Công an xã chính quy và lộ trình xây dựng Công an xã chính quy",
+        "snippet": "1. Bộ trưởng Bộ Công an quyết định tổ chức Công an xã chính quy.\n2. Giám đốc Công an tỉnh, thành phố trực thuộc Trung ương trao đổi, thống nhất với Chủ tịch Ủy ban nhân dân cấp huyện trước khi báo cáo"
+      }
+    ],
+    "level": 0,
+    "weight": 35.0
+  },
+  {
+    "community_id": "COMM_62",
+    "title": "Cụm Về Giấy chứng minh Công an nhân dân (59/2008/NĐ-CP, 49/2019/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Về Giấy chứng minh Công an nhân dân.\n\n**Văn bản nòng cốt:** Nghị định số 59/2008/NĐ-CP (Nghị định Về Giấy chứng minh Công an nhân dân).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 34 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** SUPPLEMENTS: 1.\n\n**Danh mục văn bản chính:**\n- Nghị định 59/2008/NĐ-CP: Nghị định Về Giấy chứng minh Công an nhân dân\n- Nghị định 49/2019/NĐ-CP: Nghị định số 49/2019/NĐ-CP (Văn bản sửa đổi, bổ sung)",
+    "doc_ids": [
+      "DOC_59_2008_N_CP",
+      "DOC_49_2019_N_CP"
+    ],
+    "doc_numbers": [
+      "59/2008/NĐ-CP",
+      "49/2019/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Về Giấy chứng minh Công an nhân dân",
+      "Nghị định số 49/2019/NĐ-CP (Văn bản sửa đổi, bổ sung)"
+    ],
+    "provision_count": 34,
+    "relations_count": {
+      "SUPPLEMENTS": 1
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng được cấp Giấy chứng minh Công an nhân dân",
+        "structural_path": "59/2008/NĐ-CP > Chương I > Điều 2. Đối tượng được cấp Giấy chứng minh Công an nhân dân",
+        "snippet": "1. Giấy chứng minh Công an nhân dân cấp cho sĩ quan, hạ sĩ quan Công an nhân dân đang phục vụ tại ngũ trong lực lượng Công an nhân dân theo chế độ chuyên nghiệp.\n\n\t2. Giấy chứng nhận cấp cho hạ sĩ qua"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 6. Trách nhiệm sản xuất, trình tự, thủ tục, thẩm quyền cấp, đổi, thu hồi Giấy chứng minh Công an nhân dân",
+        "structural_path": "59/2008/NĐ-CP > Chương II > Điều 6. Trách nhiệm sản xuất, trình tự, thủ tục, thẩm quyền cấp, đổi, thu hồi Giấy chứng minh Công an nhân dân",
+        "snippet": "Bộ Công an chịu trách nhiệm tổ chức sản xuất, cấp phát phôi, hướng dẫn trình tự, thủ tục, thẩm quyền cấp, đổi, thu hồi Giấy chứng minh Công an nhân dân theo quy định của pháp luật."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 17. Sửa đổi, bổ sung theo Nghị định số 49/2019/NĐ-CP",
+        "structural_path": "49/2019/NĐ-CP > Điều 17",
+        "snippet": "Quy định sửa đổi, bổ sung đối với Điều 4. Mẫu Giấy chứng minh Công an nhân dân (Nghị định Về Giấy chứng minh Công an nhân dân) có hiệu lực từ ngày 2019-07-25."
+      }
+    ],
+    "level": 0,
+    "weight": 34.0
+  },
+  {
+    "community_id": "COMM_08",
+    "title": "Cụm Ban hành biểu mẫu sử dụng trong công tác bảo vệ bí mật nhà n (24/2020/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Ban hành biểu mẫu sử dụng trong công tác bảo vệ bí mật nhà nước.\n\n**Văn bản nòng cốt:** Thông tư số 24/2020/TT-BCA (Thông tư Ban hành biểu mẫu sử dụng trong công tác bảo vệ bí mật nhà nước).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 33 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 24/2020/TT-BCA: Thông tư Ban hành biểu mẫu sử dụng trong công tác bảo vệ bí mật nhà nước",
+    "doc_ids": [
+      "DOC_24_2020_TT_BCA"
+    ],
+    "doc_numbers": [
+      "24/2020/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Ban hành biểu mẫu sử dụng trong công tác bảo vệ bí mật nhà nước"
+    ],
+    "provision_count": 33,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "structural_path": "24/2020/TT-BCA > Điều 1. Phạm vi điều chỉnh, đối tượng áp dụng",
+        "snippet": "1. Thông tư này quy định về biểu mẫu và việc sử dụng biểu mẫu trong công tác bảo vệ bí mật nhà nước.\n2. Thông tư này áp dụng đối với cơ quan, tổ chức, cá nhân có liên quan đến việc thực hiện công tác "
+      }
+    ],
+    "level": 0,
+    "weight": 33.0
+  },
+  {
+    "community_id": "COMM_32",
+    "title": "Cụm Hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhâ (24/2012/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 24/2012/TT-BCA (Thông tư Hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 32 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 24/2012/TT-BCA: Thông tư Hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_24_2012_TT_BCA"
+    ],
+    "doc_numbers": [
+      "24/2012/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhân dân"
+    ],
+    "provision_count": 32,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "24/2012/TT-BCA > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này hướng dẫn thực hiện chế độ phụ cấp công vụ trong Công an nhân dân theo quy định tại Nghị định số 34/2012/NĐ-CP ngày 15-4-2012 của Chính phủ."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng",
+        "structural_path": "24/2012/TT-BCA > Điều 2. Đối tượng",
+        "snippet": "1. Đối tượng áp dụng\nThông tư này áp dụng đối với sĩ quan, hạ sĩ quan, chiến sĩ, công nhân, nhân viên Công an và lao động hợp đồng hưởng lương, phụ cấp từ ngân sách nhà nước trong Công an nhân dân, ba"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 4. Nguyên tắc, cách tính hưởng phụ cấp",
+        "structural_path": "24/2012/TT-BCA > Điều 4. Nguyên tắc, cách tính hưởng phụ cấp",
+        "snippet": "1. Phụ cấp công vụ được chi trả cùng kỳ lương hàng tháng và không tính để đóng, hưởng chế độ bảo hiểm xã hội, bảo hiểm y tế.\n\n\t2. Đối tượng được hưởng phụ cấp công vụ nếu chuyển sang đối tượng không đ"
+      }
+    ],
+    "level": 0,
+    "weight": 32.0
+  },
+  {
+    "community_id": "COMM_07",
+    "title": "Cụm Quy định việc lập dự toán, quản lý, sử dụng và quyết toán ki (110/2013/TT-BTC)",
+    "summary": "**Cụm chủ đề:** Quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn thuộc công tác bảo vệ bí mật nhà nước.\n\n**Văn bản nòng cốt:** Thông tư số 110/2013/TT-BTC (Thông tư Quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn thuộc công tác bảo vệ bí mật nhà nước).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 31 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 110/2013/TT-BTC: Thông tư Quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn thuộc công tác bảo vệ bí mật nhà nước",
+    "doc_ids": [
+      "DOC_110_2013_TT_BTC"
+    ],
+    "doc_numbers": [
+      "110/2013/TT-BTC"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn thuộc công tác bảo vệ bí mật nhà nước"
+    ],
+    "provision_count": 31,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi và đối tượng áp dụng",
+        "structural_path": "110/2013/TT-BTC > Điều 1. Phạm vi và đối tượng áp dụng",
+        "snippet": "1. Thông tư này quy định việc lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn thuộc công tác bảo vệ bí mật nhà nước.\n2. Đối tượng áp dụng "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nội dung chi phục vụ nhiệm vụ chuyên môn công tác bảo vệ bí mật nhà nước",
+        "structural_path": "110/2013/TT-BTC > Điều 3. Nội dung chi phục vụ nhiệm vụ chuyên môn công tác bảo vệ bí mật nhà nước",
+        "snippet": "1. Chi soạn thảo các văn bản quy phạm pháp luật về bảo vệ bí mật nhà nước.\n\n\t2. Chi kiểm tra, xử lý, rà soát, hệ thống hóa văn bản quy phạm pháp luật có nội dung thuộc bí mật nhà nước.\n\n\t3. Chi tuyên "
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 5. Lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn cho công tác bảo vệ bí mật nhà nước",
+        "structural_path": "110/2013/TT-BTC > Điều 5. Lập dự toán, quản lý, sử dụng và quyết toán kinh phí ngân sách nhà nước bảo đảm thực hiện nhiệm vụ chuyên môn cho công tác bảo vệ bí mật nhà nước",
+        "snippet": "1. Hàng năm, căn cứ vào yêu cầu công tác bảo vệ bí mật nhà nước và căn cứ nội dung chi, mức chi quy định tại Thông tư này, các cơ quan, đơn vị được giao thực hiện nhiệm vụ chuyên môn thuộc công tác bả"
+      }
+    ],
+    "level": 0,
+    "weight": 31.0
+  },
+  {
+    "community_id": "COMM_15",
+    "title": "Cụm Quy định chi tiết một số nội dung của quy chế điều hành hoạt (22/2014/TT-BCT)",
+    "summary": "**Cụm chủ đề:** Quy định chi tiết một số nội dung của quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền ban hành kèm theo Quyết định số 45/2013/QĐ-TTg ngày 25 tháng 7 năm 2013 của Thủ tướng Chính phủ.\n\n**Văn bản nòng cốt:** Thông tư số 22/2014/TT-BCT (Thông tư Quy định chi tiết một số nội dung của quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền ban hành kèm theo Quyết định số 45/2013/QĐ-TTg ngày 25 tháng 7 năm 2013 của Thủ tướng Chính phủ).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 31 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 22/2014/TT-BCT: Thông tư Quy định chi tiết một số nội dung của quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền ban hành kèm theo Quyết định số 45/2013/QĐ-TTg ngày 25 tháng 7 năm 2013 của Thủ tướng Chính phủ",
+    "doc_ids": [
+      "DOC_22_2014_TT_BCT"
+    ],
+    "doc_numbers": [
+      "22/2014/TT-BCT"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định chi tiết một số nội dung của quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền ban hành kèm theo Quyết định số 45/2013/QĐ-TTg ngày 25 tháng 7 năm 2013 của Thủ tướng Chính phủ"
+    ],
+    "provision_count": 31,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "22/2014/TT-BCT > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Thông tư này quy định chi tiết một số nội dung về Ban Quản lý cửa khẩu, Trưởng ban Ban Quản lý cửa khẩu, Văn phòng Ban Quản lý cửa khẩu, Nội quy cửa khẩu, phí, lệ phí của Quy chế điều hành hoạt động t"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "22/2014/TT-BCT > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thông tư này áp dụng đối với Ban Quản lý cửa khẩu, Trưởng ban Ban Quản lý cửa khẩu (sau đây gọi tắt là Trưởng cửa khẩu), các cơ quan, tổ chức, cá nhân có liên quan đến công tác quản lý và điều hành ho"
+      }
+    ],
+    "level": 0,
+    "weight": 31.0
+  },
+  {
+    "community_id": "COMM_49",
+    "title": "Cụm (Văn bản sửa đổi, bổ sung) (29/2016/NĐ-CP, 160/2007/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** (Văn bản sửa đổi, bổ sung).\n\n**Văn bản nòng cốt:** Nghị định số 29/2016/NĐ-CP (Nghị định số 29/2016/NĐ-CP (Văn bản sửa đổi, bổ sung)).\n\n**Quy mô:** Bao gồm 2 văn bản QPPL liên quan với tổng cộng 30 điều khoản.\n\n**Các liên kết pháp lý nội cụm:** SUPPLEMENTS: 4.\n\n**Danh mục văn bản chính:**\n- Nghị định 29/2016/NĐ-CP: Nghị định số 29/2016/NĐ-CP (Văn bản sửa đổi, bổ sung)\n- Nghị định 160/2007/NĐ-CP: Nghị định Quy định Cờ truyền thống, Công an hiệu, cấp hiệu, phù hiệu và trang phục của lực lượng Công an nhân dân",
+    "doc_ids": [
+      "DOC_29_2016_N_CP",
+      "DOC_160_2007_N_CP"
+    ],
+    "doc_numbers": [
+      "29/2016/NĐ-CP",
+      "160/2007/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định số 29/2016/NĐ-CP (Văn bản sửa đổi, bổ sung)",
+      "Nghị định Quy định Cờ truyền thống, Công an hiệu, cấp hiệu, phù hiệu và trang phục của lực lượng Công an nhân dân"
+    ],
+    "provision_count": 30,
+    "relations_count": {
+      "SUPPLEMENTS": 4
+    },
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Sửa đổi, bổ sung theo Nghị định số 29/2016/NĐ-CP",
+        "structural_path": "29/2016/NĐ-CP > Điều 1",
+        "snippet": "Quy định sửa đổi, bổ sung đối với Điều 2. Công an hiệu (Nghị định Quy định Cờ truyền thống, Công an hiệu, cấp hiệu, phù hiệu và trang phục của lực lượng Công an nhân dân) có hiệu lực từ ngày 2016-06-0"
+      }
+    ],
+    "level": 0,
+    "weight": 30.0
+  },
+  {
+    "community_id": "COMM_14",
+    "title": "Cụm Hướng dẫn trình tự, thủ tục mở chính thức, mở mới, nâng cấp  (04/2012/TT-BNG)",
+    "summary": "**Cụm chủ đề:** Hướng dẫn trình tự, thủ tục mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại biên giới trên đất liền Việt Nam - Trung Quốc.\n\n**Văn bản nòng cốt:** Thông tư số 04/2012/TT-BNG (Thông tư Hướng dẫn trình tự, thủ tục mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại biên giới trên đất liền Việt Nam - Trung Quốc).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 26 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 04/2012/TT-BNG: Thông tư Hướng dẫn trình tự, thủ tục mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại biên giới trên đất liền Việt Nam - Trung Quốc",
+    "doc_ids": [
+      "DOC_04_2012_TT_BNG"
+    ],
+    "doc_numbers": [
+      "04/2012/TT-BNG"
+    ],
+    "doc_titles": [
+      "Thông tư Hướng dẫn trình tự, thủ tục mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại biên giới trên đất liền Việt Nam - Trung Quốc"
+    ],
+    "provision_count": 26,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Đối tượng điều chỉnh",
+        "structural_path": "04/2012/TT-BNG > Điều 1. Đối tượng điều chỉnh",
+        "snippet": "Toàn bộ hệ thống cửa khẩu bao gồm: cửa khẩu quốc tế, cửa khẩu song phương và đường qua lại trên tuyến biên giới đất liền Việt Nam - Trung Quốc."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Nguyên tắc mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại",
+        "structural_path": "04/2012/TT-BNG > Điều 3. Nguyên tắc mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại",
+        "snippet": "Việc mở chính thức, mở mới, nâng cấp cửa khẩu, đường qua lại tuân thủ các nguyên tắc sau:\n\n\t1. Việc mở chính thức áp dụng cho 13 cặp cửa khẩu sau đây:\n\n\n\n\n\nSTT\n\n\n\nTên cửa khẩu Việt Nam\n\n\n\nTên cửa khẩu"
+      }
+    ],
+    "level": 0,
+    "weight": 26.0
+  },
+  {
+    "community_id": "COMM_54",
+    "title": "Cụm Nghị quyết Nghị quyết về thực hiện thí điểm cấp thị thực điệ (30/2016/QH14)",
+    "summary": "**Cụm chủ đề:** Nghị quyết Nghị quyết về thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam.\n\n**Văn bản nòng cốt:** Nghị quyết số 30/2016/QH14 (Nghị quyết Nghị quyết về thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 20 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị quyết 30/2016/QH14: Nghị quyết Nghị quyết về thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam",
+    "doc_ids": [
+      "DOC_30_2016_QH14"
+    ],
+    "doc_numbers": [
+      "30/2016/QH14"
+    ],
+    "doc_titles": [
+      "Nghị quyết Nghị quyết về thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam"
+    ],
+    "provision_count": 20,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1",
+        "structural_path": "30/2016/QH14 > Điều 1",
+        "snippet": "Giao Chính phủ thực hiện thí điểm cấp thị thực điện tử cho người nước ngoài nhập cảnh Việt Nam."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2",
+        "structural_path": "30/2016/QH14 > Điều 2",
+        "snippet": "1. Thị thực điện tử là loại thị thực do cơ quan quản lý xuất nhập cảnh cấp cho người nước ngoài đang ở nước ngoài có nhu cầu nhập cảnh Việt Nam.\n2. Thị thực điện tử được cấp qua hệ thống giao dịch điệ"
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 1",
+        "structural_path": "30/2016/QH14 > Điều 2 > Khoản 1",
+        "snippet": "1. Thị thực điện tử là loại thị thực do cơ quan quản lý xuất nhập cảnh cấp cho người nước ngoài đang ở nước ngoài có nhu cầu nhập cảnh Việt Nam."
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 2",
+        "structural_path": "30/2016/QH14 > Điều 2 > Khoản 2",
+        "snippet": "2. Thị thực điện tử được cấp qua hệ thống giao dịch điện tử, có giá trị nhập cảnh một lần, thời hạn không quá 30 ngày."
+      }
+    ],
+    "level": 0,
+    "weight": 20.0
+  },
+  {
+    "community_id": "COMM_27",
+    "title": "Cụm Quy định chế độ, chính sách đối với thân nhân hạ sĩ quan, ch (05/2016/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định chế độ, chính sách đối với thân nhân hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Nghị định số 05/2016/NĐ-CP (Nghị định Quy định chế độ, chính sách đối với thân nhân hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 18 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 05/2016/NĐ-CP: Nghị định Quy định chế độ, chính sách đối với thân nhân hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_05_2016_N_CP"
+    ],
+    "doc_numbers": [
+      "05/2016/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định chế độ, chính sách đối với thân nhân hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân"
+    ],
+    "provision_count": 18,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "05/2016/NĐ-CP > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "Nghị định này quy định chế độ trợ cấp khó khăn đột xuất đối với thân nhân hạ sĩ quan, chiến sĩ nghĩa vụ trong Công an nhân dân (sau đây gọi là hạ sĩ quan, chiến sĩ)."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "05/2016/NĐ-CP > Điều 2. Đối tượng áp dụng",
+        "snippet": "Thân nhân hạ sĩ quan, chiến sĩ gồm: Bố đẻ, mẹ đẻ; bố vợ, mẹ vợ hoặc bố chồng, mẹ chồng; người nuôi dưỡng hợp pháp của vợ hoặc chồng; vợ hoặc chồng; con đẻ, con nuôi hợp pháp của hạ sĩ quan, chiến sĩ."
+      }
+    ],
+    "level": 0,
+    "weight": 18.0
+  },
+  {
+    "community_id": "COMM_12",
+    "title": "Cụm Về tiêu chí xác định công trình viễn thông quan trọng liên q (45/2012/QĐ-TTg)",
+    "summary": "**Cụm chủ đề:** Về tiêu chí xác định công trình viễn thông quan trọng liên quan đến an ninh quốc gia.\n\n**Văn bản nòng cốt:** Quyết định số 45/2012/QĐ-TTg (Quyết định Về tiêu chí xác định công trình viễn thông quan trọng liên quan đến an ninh quốc gia).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 11 điều khoản.\n\n**Danh mục văn bản chính:**\n- Quyết định 45/2012/QĐ-TTg: Quyết định Về tiêu chí xác định công trình viễn thông quan trọng liên quan đến an ninh quốc gia",
+    "doc_ids": [
+      "DOC_45_2012_Q_TTg"
+    ],
+    "doc_numbers": [
+      "45/2012/QĐ-TTg"
+    ],
+    "doc_titles": [
+      "Quyết định Về tiêu chí xác định công trình viễn thông quan trọng liên quan đến an ninh quốc gia"
+    ],
+    "provision_count": 11,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Ban hành tiêu chí xác định danh mục các công trình viễn thông quan trọng liên quan đến an ninh quốc gia như sau:",
+        "structural_path": "45/2012/QĐ-TTg > Điều 1. Ban hành tiêu chí xác định danh mục các công trình viễn thông quan trọng liên quan đến an ninh quốc gia như sau:",
+        "snippet": "1. Các công trình viễn thông của các doanh nghiệp viễn thông thống lĩnh thị trường, có hạ tầng mạng có tầm quan trọng đặc biệt đối với hoạt động của toàn bộ cơ sở hạ tầng viễn thông quốc gia, ảnh hưởn"
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 1",
+        "structural_path": "45/2012/QĐ-TTg > Điều 1. Ban hành tiêu chí xác định danh mục các công trình viễn thông quan trọng liên quan đến an ninh quốc gia như sau: > Khoản 1",
+        "snippet": "1. Các công trình viễn thông của các doanh nghiệp viễn thông thống lĩnh thị trường, có hạ tầng mạng có tầm quan trọng đặc biệt đối với hoạt động của toàn bộ cơ sở hạ tầng viễn thông quốc gia, ảnh hưởn"
+      },
+      {
+        "provision_id": "",
+        "title": "Điểm a",
+        "structural_path": "45/2012/QĐ-TTg > Điều 1. Ban hành tiêu chí xác định danh mục các công trình viễn thông quan trọng liên quan đến an ninh quốc gia như sau: > Khoản 1 > Điểm a",
+        "snippet": "a) Các công trình hệ thống truyền dẫn viễn thông quốc tế đường dài liên tỉnh và khu vực:\n- Vệ tinh viễn thông do Việt Nam quản lý và khai thác;\n- Trạm vệ tinh mặt đất điều khiển (TT&C), khai thác vệ t"
+      },
+      {
+        "provision_id": "",
+        "title": "Điểm b",
+        "structural_path": "45/2012/QĐ-TTg > Điều 1. Ban hành tiêu chí xác định danh mục các công trình viễn thông quan trọng liên quan đến an ninh quốc gia như sau: > Khoản 1 > Điểm b",
+        "snippet": "b) Các công trình hệ thống quản lý, điều khiển, định tuyến, chuyển mạch viễn thông quốc tế, đường dài liên tỉnh và khu vực tại Hà Nội, Đà Nẵng, thành phố Hồ Chí Minh:\n- Hệ thống chuyển mạch quốc tế (G"
+      }
+    ],
+    "level": 0,
+    "weight": 11.0
+  },
+  {
+    "community_id": "COMM_22",
+    "title": "Cụm Quy định việc giao các khu vực biển nhất định cho tổ chức, c (51/2014/NĐ-CP)",
+    "summary": "**Cụm chủ đề:** Quy định việc giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển.\n\n**Văn bản nòng cốt:** Nghị định số 51/2014/NĐ-CP (Nghị định Quy định việc giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 10 điều khoản.\n\n**Danh mục văn bản chính:**\n- Nghị định 51/2014/NĐ-CP: Nghị định Quy định việc giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển",
+    "doc_ids": [
+      "DOC_51_2014_N_CP"
+    ],
+    "doc_numbers": [
+      "51/2014/NĐ-CP"
+    ],
+    "doc_titles": [
+      "Nghị định Quy định việc giao các khu vực biển nhất định cho tổ chức, cá nhân khai thác, sử dụng tài nguyên biển"
+    ],
+    "provision_count": 10,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Phạm vi điều chỉnh",
+        "structural_path": "51/2014/NĐ-CP > Chương I > Điều 1. Phạm vi điều chỉnh",
+        "snippet": "1. Nghị định này quy định việc giao khu vực biển nhất định trên các vùng biển Việt Nam cho tổ chức, cá nhân để khai thác, sử dụng tài nguyên biển theo giấy chứng nhận đầu tư, giấy phép hoặc quyết định"
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Đối tượng áp dụng",
+        "structural_path": "51/2014/NĐ-CP > Chương I > Điều 2. Đối tượng áp dụng",
+        "snippet": "Nghị định này áp dụng đối với các cơ quan, tổ chức, cá nhân liên quan đến việc giao khu vực biển, khai thác, sử dụng tài nguyên biển."
+      }
+    ],
+    "level": 0,
+    "weight": 10.0
+  },
+  {
+    "community_id": "COMM_48",
+    "title": "Cụm Quy định về lao động hợp đồng trong Công an nhân dân (22/2022/TT-BCA)",
+    "summary": "**Cụm chủ đề:** Quy định về lao động hợp đồng trong Công an nhân dân.\n\n**Văn bản nòng cốt:** Thông tư số 22/2022/TT-BCA (Thông tư Quy định về lao động hợp đồng trong Công an nhân dân).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 5 điều khoản.\n\n**Danh mục văn bản chính:**\n- Thông tư 22/2022/TT-BCA: Thông tư Quy định về lao động hợp đồng trong Công an nhân dân",
+    "doc_ids": [
+      "DOC_22_2022_TT_BCA"
+    ],
+    "doc_numbers": [
+      "22/2022/TT-BCA"
+    ],
+    "doc_titles": [
+      "Thông tư Quy định về lao động hợp đồng trong Công an nhân dân"
+    ],
+    "provision_count": 5,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 2. Giải thích từ ngữ",
+        "structural_path": "22/2022/TT-BCA > Chương I > Điều 2. Giải thích từ ngữ",
+        "snippet": "Trong Thông tư này, các từ ngữ dưới đây được hiểu như sau:\n\n\t1. Tuyển lao động hợp đồng là quá trình đơn vị sử dụng lao động tiến hành nghiên cứu, lựa chọn người lao động có đủ tiêu chuẩn, điều kiện đ"
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 1",
+        "structural_path": "22/2022/TT-BCA > Chương I > Điều 2. Giải thích từ ngữ > Khoản 1",
+        "snippet": "1. Tuyển lao động hợp đồng là quá trình đơn vị sử dụng lao động tiến hành nghiên cứu, lựa chọn người lao động có đủ tiêu chuẩn, điều kiện để tiến hành giao kết hợp đồng lao động lần đầu."
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 2",
+        "structural_path": "22/2022/TT-BCA > Chương I > Điều 2. Giải thích từ ngữ > Khoản 2",
+        "snippet": "2. Chuyển loại hợp đồng lao động là việc chấm dứt hợp đồng lao động xác định thời hạn để giao kết hợp đồng lao động không xác định thời hạn."
+      },
+      {
+        "provision_id": "",
+        "title": "Khoản 3",
+        "structural_path": "22/2022/TT-BCA > Chương I > Điều 2. Giải thích từ ngữ > Khoản 3",
+        "snippet": "3. Đơn vị trực tiếp sử dụng người lao động là đơn vị được giao thẩm quyền quản lý, sử dụng người lao động theo hợp đồng lao động đã giao kết."
+      }
+    ],
+    "level": 0,
+    "weight": 5.0
+  },
+  {
+    "community_id": "COMM_19",
+    "title": "Cụm Về việc ban hành Quy chế điều hành hoạt động tại các cửa khẩ (45/2013/QĐ-TTg)",
+    "summary": "**Cụm chủ đề:** Về việc ban hành Quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền.\n\n**Văn bản nòng cốt:** Quyết định số 45/2013/QĐ-TTg (Quyết định Về việc ban hành Quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 3 điều khoản.\n\n**Danh mục văn bản chính:**\n- Quyết định 45/2013/QĐ-TTg: Quyết định Về việc ban hành Quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền",
+    "doc_ids": [
+      "DOC_45_2013_Q_TTg"
+    ],
+    "doc_numbers": [
+      "45/2013/QĐ-TTg"
+    ],
+    "doc_titles": [
+      "Quyết định Về việc ban hành Quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền"
+    ],
+    "provision_count": 3,
+    "relations_count": {},
+    "key_provisions": [
+      {
+        "provision_id": "",
+        "title": "Điều 1. Quy định",
+        "structural_path": "45/2013/QĐ-TTg > Điều 1. Quy định",
+        "snippet": "Ban hành kèm theo Quyết định này Quy chế điều hành hoạt động tại các cửa khẩu biên giới đất liền."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 2. Quy định",
+        "structural_path": "45/2013/QĐ-TTg > Điều 2. Quy định",
+        "snippet": "Quyết định này có hiệu lực thi hành kể từ ngày 01 tháng 10 năm 2013."
+      },
+      {
+        "provision_id": "",
+        "title": "Điều 3. Quy định",
+        "structural_path": "45/2013/QĐ-TTg > Điều 3. Quy định",
+        "snippet": "Bộ trưởng các Bộ: Ngoại giao, Quốc phòng, Công an, Công Thương, Tài chính, Y tế, Nông nghiệp và Phát triển nông thôn và các Bộ có liên quan, Thủ trưởng cơ quan ngang Bộ, Thủ trưởng cơ quan thuộc Chính"
+      }
+    ],
+    "level": 0,
+    "weight": 3.0
+  },
+  {
+    "community_id": "COMM_65",
+    "title": "Cụm Idempotent Test (IDEMP/01)",
+    "summary": "**Cụm chủ đề:** Idempotent Test.\n\n**Văn bản nòng cốt:** Luật số IDEMP/01 (Idempotent Test).\n\n**Quy mô:** Bao gồm 1 văn bản QPPL liên quan với tổng cộng 0 điều khoản.\n\n**Danh mục văn bản chính:**\n- Luật IDEMP/01: Idempotent Test",
+    "doc_ids": [
+      "DOC_IDEMPOTENT_TEST"
+    ],
+    "doc_numbers": [
+      "IDEMP/01"
+    ],
+    "doc_titles": [
+      "Idempotent Test"
+    ],
+    "provision_count": 0,
+    "relations_count": {},
+    "key_provisions": [],
+    "level": 0,
+    "weight": 0.0
+  }
+]
