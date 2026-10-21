@@ -8,6 +8,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from storage.db import DatabaseManager
 from knowledge_graph.builder import KnowledgeGraphBuilder
 from knowledge_graph.expander import GraphExpander
+from knowledge_graph.community import LegalCommunityDetector
 from temporal.validity_filter import TemporalValidityFilter
 from app.tab_search import render_search_tab
 from app.tab_chunking import render_chunking_tab
@@ -29,14 +30,15 @@ def get_system_components():
     builder.build_graph(verified_only=True)
     expander = GraphExpander(builder)
     temporal_filter = TemporalValidityFilter(db)
-    return db, builder, expander, temporal_filter
+    community_detector = LegalCommunityDetector(builder, db)
+    return db, builder, expander, temporal_filter, community_detector
 
 
 def main():
     st.title("⚖️ LEGAL RETRIEVAL LAB")
-    st.caption("Demo chứng minh hiệu quả của **Chunking, Embedding và Knowledge Graph** trong truy xuất văn bản quy phạm pháp luật Việt Nam")
+    st.caption("Demo chứng minh hiệu quả của **Chunking, Embedding và Knowledge Graph** (Local, Global, DRIFT Search) trong truy xuất văn bản quy phạm pháp luật Việt Nam")
 
-    db, builder, expander, temporal_filter = get_system_components()
+    db, builder, expander, temporal_filter, community_detector = get_system_components()
 
     # Sidebar overview
     counts = db.count_summary()
@@ -46,6 +48,7 @@ def main():
     - **Điều / Khoản / Điểm:** `{counts.get('provisions', 0)}`
     - **Chunks đã lập chỉ mục:** `{counts.get('chunks', 0)}`
     - **Quan hệ Knowledge Graph:** `{counts.get('kg_edges', 0)}`
+    - **Cụm cộng đồng (Communities):** `{len(community_detector.get_communities())}`
     - **Phiên bản lịch sử:** `{counts.get('provision_versions', 0)}`
     """)
     st.sidebar.divider()
@@ -109,7 +112,7 @@ def main():
     ])
 
     with tab1:
-        render_search_tab(db, expander, temporal_filter, llm_config=llm_config)
+        render_search_tab(db, expander, temporal_filter, community_detector=community_detector, llm_config=llm_config)
 
     with tab2:
         render_chunking_tab(db)
