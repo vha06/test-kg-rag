@@ -4,11 +4,12 @@ from pydantic import BaseModel, Field, ConfigDict
 
 class LLMConfig(BaseModel):
     provider: str = "gemini"  # "gemini" | "openai_compatible" | "ollama" | "mock"
-    model_name: str = "gemini-2.5-flash"
+    model_name: str = "gemini-1.5-flash"
     api_key: Optional[str] = None
     base_url: Optional[str] = None
     temperature: float = 0.1
     max_tokens: int = 8192
+    timeout: int = 120
 
 
 class CitationItem(BaseModel):

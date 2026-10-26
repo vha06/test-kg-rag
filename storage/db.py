@@ -295,6 +295,75 @@ class DatabaseManager:
                 CREATE INDEX IF NOT EXISTS idx_platform_rel_tgt ON platform_relationships (object_entity_id);
                 CREATE INDEX IF NOT EXISTS idx_platform_evid_domain ON platform_evidences (domain_id);
                 CREATE INDEX IF NOT EXISTS idx_platform_evid_doc ON platform_evidences (document_id);
+
+                -- Microsoft-Inspired GraphRAG Tables
+                CREATE TABLE IF NOT EXISTS graphrag_communities (
+                    community_id TEXT PRIMARY KEY,
+                    namespace TEXT NOT NULL,
+                    level INTEGER NOT NULL,
+                    parent_community_id TEXT,
+                    child_community_ids TEXT,
+                    title TEXT,
+                    entity_ids TEXT NOT NULL,
+                    relationship_ids TEXT NOT NULL,
+                    source_chunk_ids TEXT,
+                    source_document_ids TEXT,
+                    period TEXT,
+                    size INTEGER NOT NULL,
+                    attributes TEXT
+                );
+
+                CREATE TABLE IF NOT EXISTS graphrag_community_reports (
+                    report_id TEXT PRIMARY KEY,
+                    community_id TEXT NOT NULL,
+                    namespace TEXT NOT NULL,
+                    level INTEGER NOT NULL,
+                    title TEXT NOT NULL,
+                    summary TEXT NOT NULL,
+                    full_content TEXT NOT NULL,
+                    key_findings TEXT,
+                    supporting_entity_ids TEXT,
+                    supporting_relationship_ids TEXT,
+                    source_chunk_ids TEXT,
+                    source_document_ids TEXT,
+                    rating REAL DEFAULT 0.0,
+                    generation_model TEXT,
+                    prompt_version TEXT,
+                    created_at TEXT NOT NULL,
+                    attributes TEXT
+                );
+
+                CREATE TABLE IF NOT EXISTS graphrag_index_manifests (
+                    run_id TEXT PRIMARY KEY,
+                    namespace TEXT NOT NULL,
+                    corpus_fingerprint TEXT NOT NULL,
+                    chunking_strategy TEXT NOT NULL,
+                    chunk_size INTEGER NOT NULL,
+                    chunk_overlap INTEGER NOT NULL,
+                    extractor_model TEXT NOT NULL,
+                    extraction_prompt_version TEXT NOT NULL,
+                    embedding_model TEXT NOT NULL,
+                    community_algorithm TEXT NOT NULL,
+                    max_community_levels INTEGER NOT NULL,
+                    created_at TEXT NOT NULL,
+                    artifact_counts TEXT,
+                    status TEXT NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS graphrag_extraction_cache (
+                    cache_key TEXT PRIMARY KEY,
+                    model_name TEXT NOT NULL,
+                    prompt_version TEXT NOT NULL,
+                    parsed_json TEXT NOT NULL,
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                );
+
+                CREATE INDEX IF NOT EXISTS idx_graphrag_comm_ns ON graphrag_communities (namespace);
+                CREATE INDEX IF NOT EXISTS idx_graphrag_comm_level ON graphrag_communities (namespace, level);
+                CREATE INDEX IF NOT EXISTS idx_graphrag_rep_ns ON graphrag_community_reports (namespace);
+                CREATE INDEX IF NOT EXISTS idx_graphrag_rep_comm ON graphrag_community_reports (community_id);
+                CREATE INDEX IF NOT EXISTS idx_graphrag_rep_level ON graphrag_community_reports (namespace, level);
+                CREATE INDEX IF NOT EXISTS idx_graphrag_man_ns ON graphrag_index_manifests (namespace);
             """)
             conn.commit()
 
@@ -408,7 +477,7 @@ class DatabaseManager:
                 "platform_domains", "platform_profiles", "platform_documents",
                 "platform_content_blocks", "platform_chunks", "platform_evidences",
                 "platform_entities", "platform_entity_mentions", "platform_relationships",
-                "platform_entity_mappings"
+                "platform_entity_mappings", "graphrag_communities", "graphrag_community_reports"
             ]:
                 try:
                     cursor.execute(f"SELECT COUNT(*) FROM {table}")
@@ -545,6 +614,10 @@ class DatabaseManager:
             cursor = conn.cursor()
             for c in chunks:
                 data = self._to_dict(c)
+                meta = dict(data.get("metadata", {}))
+                for fld in ("content_hash", "start_char", "end_char", "section_path", "prev_chunk_id", "next_chunk_id"):
+                    if fld in data and data[fld] is not None:
+                        meta[fld] = data[fld]
                 cursor.execute("""
                     INSERT OR REPLACE INTO platform_chunks
                     (chunk_id, document_id, domain_id, source_block_ids, content, chunk_index, chunking_strategy, profile_id, profile_version, token_count, source_location, security_classification, acl, metadata)
@@ -563,7 +636,7 @@ class DatabaseManager:
                     self._to_json(data.get("source_location", {})),
                     data.get("security_classification", "INTERNAL"),
                     self._to_json(data.get("acl", {})),
-                    self._to_json(data.get("metadata", {}))
+                    self._to_json(meta)
                 ))
             conn.commit()
 
@@ -597,6 +670,12 @@ class DatabaseManager:
             cursor = conn.cursor()
             for ent in entities:
                 data = self._to_dict(ent)
+                attrs = dict(data.get("attributes", {}))
+                if "source_chunk_ids" in data and data["source_chunk_ids"]:
+                    attrs["source_chunk_ids"] = data["source_chunk_ids"]
+                if "source_document_ids" in data and data["source_document_ids"]:
+                    attrs["source_document_ids"] = data["source_document_ids"]
+
                 cursor.execute("""
                     INSERT OR REPLACE INTO platform_entities
                     (entity_id, canonical_name, entity_type, aliases, description, domain_id, graph_namespace, extraction_method, extractor_version, verification_status, schema_version, attributes, evidence_refs)
@@ -613,7 +692,7 @@ class DatabaseManager:
                     data.get("extractor_version", "1.0.0"),
                     data.get("verification_status", "UNVERIFIED"),
                     data.get("schema_version", "1.0.0"),
-                    self._to_json(data.get("attributes", {})),
+                    self._to_json(attrs),
                     self._to_json(data.get("evidence_refs", []))
                 ))
             conn.commit()
@@ -646,6 +725,16 @@ class DatabaseManager:
             cursor = conn.cursor()
             for rel in relationships:
                 data = self._to_dict(rel)
+                attrs = dict(data.get("attributes", {}))
+                if "description" in data and data["description"]:
+                    attrs["description"] = data["description"]
+                if "weight" in data and data["weight"] is not None:
+                    attrs["weight"] = data["weight"]
+                if "source_chunk_ids" in data and data["source_chunk_ids"]:
+                    attrs["source_chunk_ids"] = data["source_chunk_ids"]
+                if "source_document_ids" in data and data["source_document_ids"]:
+                    attrs["source_document_ids"] = data["source_document_ids"]
+
                 cursor.execute("""
                     INSERT OR REPLACE INTO platform_relationships
                     (relationship_id, subject_entity_id, predicate, object_entity_id, domain_id, graph_namespace, evidence_refs, extraction_method, extractor_version, confidence, verification_status, recorded_at, schema_version, attributes)
@@ -664,7 +753,7 @@ class DatabaseManager:
                     data.get("verification_status", "UNVERIFIED"),
                     data.get("recorded_at"),
                     data.get("schema_version", "1.0.0"),
-                    self._to_json(data.get("attributes", {}))
+                    self._to_json(attrs)
                 ))
             conn.commit()
 
@@ -917,6 +1006,12 @@ class DatabaseManager:
                 item["source_location"] = json.loads(item["source_location"]) if item.get("source_location") else {}
                 item["acl"] = json.loads(item["acl"]) if item.get("acl") else {}
                 item["metadata"] = json.loads(item["metadata"]) if item.get("metadata") else {}
+                item["content_hash"] = item["metadata"].get("content_hash", "")
+                item["start_char"] = item["metadata"].get("start_char", 0)
+                item["end_char"] = item["metadata"].get("end_char", 0)
+                item["section_path"] = item["metadata"].get("section_path", [])
+                item["prev_chunk_id"] = item["metadata"].get("prev_chunk_id")
+                item["next_chunk_id"] = item["metadata"].get("next_chunk_id")
                 results.append(item)
             return results
 
@@ -925,17 +1020,20 @@ class DatabaseManager:
         domain_id: Optional[str] = None,
         graph_namespace: Optional[str] = None,
         verification_status: Optional[str] = None,
+        namespace: Optional[str] = None,
     ) -> List[Dict[str, Any]]:
+        eff_domain = domain_id
+        eff_ns = graph_namespace or namespace
         with self.get_connection() as conn:
             cursor = conn.cursor()
             query = "SELECT * FROM platform_entities WHERE 1=1"
             params: List[Any] = []
-            if domain_id:
+            if eff_domain:
                 query += " AND domain_id = ?"
-                params.append(domain_id)
-            if graph_namespace:
-                query += " AND graph_namespace = ?"
-                params.append(graph_namespace)
+                params.append(eff_domain)
+            if eff_ns:
+                query += " AND (graph_namespace = ? OR domain_id = ?)"
+                params.extend([eff_ns, eff_ns])
             if verification_status:
                 query += " AND verification_status = ?"
                 params.append(verification_status)
@@ -946,6 +1044,8 @@ class DatabaseManager:
                 item["aliases"] = json.loads(item["aliases"]) if item.get("aliases") else []
                 item["attributes"] = json.loads(item["attributes"]) if item.get("attributes") else {}
                 item["evidence_refs"] = json.loads(item["evidence_refs"]) if item.get("evidence_refs") else []
+                item["source_chunk_ids"] = item["attributes"].get("source_chunk_ids", [])
+                item["source_document_ids"] = item["attributes"].get("source_document_ids", [])
                 results.append(item)
             return results
 
@@ -953,18 +1053,21 @@ class DatabaseManager:
         self,
         domain_id: Optional[str] = None,
         graph_namespace: Optional[str] = None,
+        namespace: Optional[str] = None,
         include_unverified: bool = False,
     ) -> List[Dict[str, Any]]:
+        eff_domain = domain_id
+        eff_ns = graph_namespace or namespace
         with self.get_connection() as conn:
             cursor = conn.cursor()
             query = "SELECT * FROM platform_relationships WHERE 1=1"
             params: List[Any] = []
-            if domain_id:
+            if eff_domain:
                 query += " AND domain_id = ?"
-                params.append(domain_id)
-            if graph_namespace:
-                query += " AND graph_namespace = ?"
-                params.append(graph_namespace)
+                params.append(eff_domain)
+            if eff_ns:
+                query += " AND (graph_namespace = ? OR domain_id = ?)"
+                params.extend([eff_ns, eff_ns])
             if not include_unverified:
                 query += " AND verification_status = 'VERIFIED'"
             cursor.execute(query, tuple(params))
@@ -973,6 +1076,10 @@ class DatabaseManager:
                 item = dict(r)
                 item["evidence_refs"] = json.loads(item["evidence_refs"]) if item.get("evidence_refs") else []
                 item["attributes"] = json.loads(item["attributes"]) if item.get("attributes") else {}
+                item["description"] = item["attributes"].get("description", "")
+                item["weight"] = float(item["attributes"].get("weight", 1.0))
+                item["source_chunk_ids"] = item["attributes"].get("source_chunk_ids", [])
+                item["source_document_ids"] = item["attributes"].get("source_document_ids", [])
                 results.append(item)
             return results
 
@@ -1028,4 +1135,237 @@ class DatabaseManager:
                 item["metadata"] = json.loads(item["metadata"]) if item.get("metadata") else {}
                 results.append(item)
             return results
+
+    # ==========================================
+    # GRAPHRAG PLATFORM CRUD METHODS
+    # ==========================================
+
+    def insert_graphrag_communities(self, communities: List[Any]):
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            for comm in communities:
+                data = self._to_dict(comm)
+                cursor.execute("""
+                    INSERT OR REPLACE INTO graphrag_communities
+                    (community_id, namespace, level, parent_community_id, child_community_ids, title,
+                     entity_ids, relationship_ids, source_chunk_ids, source_document_ids, period, size, attributes)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    data.get("community_id"),
+                    data.get("namespace", "graphrag_default"),
+                    int(data.get("level", 0)),
+                    data.get("parent_community_id"),
+                    self._to_json(data.get("child_community_ids", [])),
+                    data.get("title", ""),
+                    self._to_json(data.get("entity_ids", [])),
+                    self._to_json(data.get("relationship_ids", [])),
+                    self._to_json(data.get("source_chunk_ids", [])),
+                    self._to_json(data.get("source_document_ids", [])),
+                    data.get("period"),
+                    int(data.get("size", len(data.get("entity_ids", [])))),
+                    self._to_json(data.get("attributes", {}))
+                ))
+            conn.commit()
+
+    def get_graphrag_communities(
+        self,
+        namespace: str = "graphrag_default",
+        level: Optional[int] = None,
+    ) -> List[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            query = "SELECT * FROM graphrag_communities WHERE namespace = ?"
+            params: List[Any] = [namespace]
+            if level is not None:
+                query += " AND level = ?"
+                params.append(level)
+            query += " ORDER BY level ASC, size DESC"
+            cursor.execute(query, tuple(params))
+            results = []
+            for r in cursor.fetchall():
+                item = dict(r)
+                item["child_community_ids"] = json.loads(item["child_community_ids"]) if item.get("child_community_ids") else []
+                item["entity_ids"] = json.loads(item["entity_ids"]) if item.get("entity_ids") else []
+                item["relationship_ids"] = json.loads(item["relationship_ids"]) if item.get("relationship_ids") else []
+                item["source_chunk_ids"] = json.loads(item["source_chunk_ids"]) if item.get("source_chunk_ids") else []
+                item["source_document_ids"] = json.loads(item["source_document_ids"]) if item.get("source_document_ids") else []
+                item["attributes"] = json.loads(item["attributes"]) if item.get("attributes") else {}
+                results.append(item)
+            return results
+
+    def insert_graphrag_community_reports(self, reports: List[Any]):
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            for rep in reports:
+                data = self._to_dict(rep)
+                cursor.execute("""
+                    INSERT OR REPLACE INTO graphrag_community_reports
+                    (report_id, community_id, namespace, level, title, summary, full_content,
+                     key_findings, supporting_entity_ids, supporting_relationship_ids,
+                     source_chunk_ids, source_document_ids, rating, generation_model, prompt_version, created_at, attributes)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """, (
+                    data.get("report_id"),
+                    data.get("community_id"),
+                    data.get("namespace", "graphrag_default"),
+                    int(data.get("level", 0)),
+                    data.get("title", ""),
+                    data.get("summary", ""),
+                    data.get("full_content", ""),
+                    self._to_json(data.get("key_findings", [])),
+                    self._to_json(data.get("supporting_entity_ids", [])),
+                    self._to_json(data.get("supporting_relationship_ids", [])),
+                    self._to_json(data.get("source_chunk_ids", [])),
+                    self._to_json(data.get("source_document_ids", [])),
+                    float(data.get("rating", 0.0)),
+                    data.get("generation_model", "unknown"),
+                    data.get("prompt_version", "1.0.0"),
+                    data.get("created_at", ""),
+                    self._to_json(data.get("attributes", {}))
+                ))
+            conn.commit()
+
+    def get_graphrag_community_reports(
+        self,
+        namespace: str = "graphrag_default",
+        level: Optional[int] = None,
+        community_id: Optional[str] = None,
+    ) -> List[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            query = "SELECT * FROM graphrag_community_reports WHERE namespace = ?"
+            params: List[Any] = [namespace]
+            if level is not None:
+                query += " AND level = ?"
+                params.append(level)
+            if community_id is not None:
+                query += " AND community_id = ?"
+                params.append(community_id)
+            query += " ORDER BY level ASC, rating DESC"
+            cursor.execute(query, tuple(params))
+            results = []
+            for r in cursor.fetchall():
+                item = dict(r)
+                item["key_findings"] = json.loads(item["key_findings"]) if item.get("key_findings") else []
+                item["supporting_entity_ids"] = json.loads(item["supporting_entity_ids"]) if item.get("supporting_entity_ids") else []
+                item["supporting_relationship_ids"] = json.loads(item["supporting_relationship_ids"]) if item.get("supporting_relationship_ids") else []
+                item["source_chunk_ids"] = json.loads(item["source_chunk_ids"]) if item.get("source_chunk_ids") else []
+                item["source_document_ids"] = json.loads(item["source_document_ids"]) if item.get("source_document_ids") else []
+                item["attributes"] = json.loads(item["attributes"]) if item.get("attributes") else {}
+                results.append(item)
+            return results
+
+    def save_graphrag_manifest(self, manifest: Any):
+        data = self._to_dict(manifest)
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT OR REPLACE INTO graphrag_index_manifests
+                (run_id, namespace, corpus_fingerprint, chunking_strategy, chunk_size, chunk_overlap,
+                 extractor_model, extraction_prompt_version, embedding_model, community_algorithm,
+                 max_community_levels, created_at, artifact_counts, status)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """, (
+                data.get("run_id"),
+                data.get("namespace", "graphrag_default"),
+                data.get("corpus_fingerprint", ""),
+                data.get("chunking_strategy", "recursive_boundary"),
+                int(data.get("chunk_size", 300)),
+                int(data.get("chunk_overlap", 50)),
+                data.get("extractor_model", "mock"),
+                data.get("extraction_prompt_version", "1.0.0"),
+                data.get("embedding_model", "sentence-transformers"),
+                data.get("community_algorithm", "louvain_hierarchical"),
+                int(data.get("max_community_levels", 3)),
+                data.get("created_at", ""),
+                self._to_json(data.get("artifact_counts", {})),
+                data.get("status", "FRESH")
+            ))
+            conn.commit()
+
+    def get_latest_graphrag_manifest(self, namespace: str = "graphrag_default") -> Optional[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT * FROM graphrag_index_manifests
+                WHERE namespace = ?
+                ORDER BY created_at DESC LIMIT 1
+            """, (namespace,))
+            row = cursor.fetchone()
+            if not row:
+                return None
+            item = dict(row)
+            item["artifact_counts"] = json.loads(item["artifact_counts"]) if item.get("artifact_counts") else {}
+            return item
+
+    def get_extraction_cache(self, cache_key: str) -> Optional[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT parsed_json FROM graphrag_extraction_cache WHERE cache_key = ?", (cache_key,))
+            row = cursor.fetchone()
+            if not row:
+                return None
+            try:
+                return json.loads(row[0])
+            except Exception:
+                return None
+
+    def set_extraction_cache(self, cache_key: str, model_name: str, prompt_version: str, parsed_json: Dict[str, Any]):
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT OR REPLACE INTO graphrag_extraction_cache
+                (cache_key, model_name, prompt_version, parsed_json)
+                VALUES (?, ?, ?, ?)
+            """, (cache_key, model_name, prompt_version, self._to_json(parsed_json)))
+            conn.commit()
+
+    def clear_namespace_artifacts(self, namespace: str):
+        """Clean all entities, relationships, communities, reports for a namespace before rebuild."""
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            ns_clean = (namespace or "").strip()
+            ns_with_prefix = ns_clean if ns_clean.startswith("ns_") else f"ns_{ns_clean}"
+            ns_without_prefix = ns_clean[3:] if ns_clean.startswith("ns_") else ns_clean
+            variants = list(dict.fromkeys([ns_clean, ns_with_prefix, ns_without_prefix]))
+            ph = ",".join("?" for _ in variants)
+
+            cursor.execute(f"DELETE FROM platform_entities WHERE graph_namespace IN ({ph}) OR domain_id IN ({ph})", variants + variants)
+            cursor.execute(f"DELETE FROM platform_relationships WHERE graph_namespace IN ({ph}) OR domain_id IN ({ph})", variants + variants)
+            cursor.execute(f"DELETE FROM platform_chunks WHERE domain_id IN ({ph})", variants)
+            cursor.execute(f"DELETE FROM platform_content_blocks WHERE domain_id IN ({ph})", variants)
+            cursor.execute(f"DELETE FROM platform_documents WHERE domain_id IN ({ph})", variants)
+            cursor.execute(f"DELETE FROM graphrag_communities WHERE namespace IN ({ph})", variants)
+            cursor.execute(f"DELETE FROM graphrag_community_reports WHERE namespace IN ({ph})", variants)
+            cursor.execute(f"DELETE FROM graphrag_index_manifests WHERE namespace IN ({ph})", variants)
+            conn.commit()
+
+    def get_platform_documents(self, domain_id: Optional[str] = None) -> List[Dict[str, Any]]:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            query = "SELECT * FROM platform_documents WHERE 1=1"
+            params: List[Any] = []
+            if domain_id:
+                query += " AND domain_id = ?"
+                params.append(domain_id)
+            query += " ORDER BY ingested_at DESC"
+            cursor.execute(query, tuple(params))
+            results = []
+            for r in cursor.fetchall():
+                item = dict(r)
+                item["acl"] = json.loads(item["acl"]) if item.get("acl") else {}
+                item["metadata"] = json.loads(item["metadata"]) if item.get("metadata") else {}
+                results.append(item)
+            return results
+
+    def delete_platform_document(self, document_id: str) -> bool:
+        with self.get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM platform_content_blocks WHERE document_id = ?", (document_id,))
+            cursor.execute("DELETE FROM platform_chunks WHERE document_id = ?", (document_id,))
+            cursor.execute("DELETE FROM platform_entity_mentions WHERE document_id = ?", (document_id,))
+            cursor.execute("DELETE FROM platform_evidences WHERE document_id = ?", (document_id,))
+            cursor.execute("DELETE FROM platform_documents WHERE document_id = ?", (document_id,))
+            conn.commit()
+            return True
 

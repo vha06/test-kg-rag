@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# key
+key.txt
+
+
+# user_data
+data/user_documents

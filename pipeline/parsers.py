@@ -193,3 +193,90 @@ class ParserRegistry:
     def list_strategies(cls) -> List[str]:
         return list(cls._parsers.keys())
 
+
+import io
+
+
+def extract_text_from_file(file_input: Any, filename: Optional[str] = None) -> str:
+    """
+    Hỗ trợ đọc nội dung văn bản từ các tệp .txt, .md, .docx, .pdf.
+    Hỗ trợ cả đường dẫn tệp (file path), bytes hoặc file-like object (BytesIO).
+    """
+    fn = ""
+    if filename:
+        fn = filename.lower()
+    elif isinstance(file_input, str):
+        fn = file_input.lower()
+
+    # Xử lý input bytes / BytesIO
+    if isinstance(file_input, bytes):
+        raw_bytes = file_input
+    elif hasattr(file_input, "read"):
+        raw_bytes = file_input.read()
+    elif isinstance(file_input, str):
+        raw_bytes = None
+    else:
+        raise ValueError(f"Unsupported file_input type: {type(file_input)}")
+
+    if fn.endswith((".txt", ".md", ".json", ".csv", ".log")):
+        if raw_bytes is not None:
+            for enc in ("utf-8", "utf-8-sig", "latin-1"):
+                try:
+                    return raw_bytes.decode(enc)
+                except UnicodeDecodeError:
+                    continue
+            return raw_bytes.decode("utf-8", errors="ignore")
+        else:
+            for enc in ("utf-8", "utf-8-sig", "latin-1"):
+                try:
+                    with open(file_input, "r", encoding=enc) as f:
+                        return f.read()
+                except UnicodeDecodeError:
+                    continue
+            with open(file_input, "r", errors="ignore") as f:
+                return f.read()
+
+    elif fn.endswith(".docx"):
+        bio = io.BytesIO(raw_bytes) if raw_bytes is not None else file_input
+        try:
+            import docx
+            doc = docx.Document(bio)
+            return "\n\n".join([p.text for p in doc.paragraphs if p.text.strip()])
+        except Exception:
+            import zipfile
+            import xml.etree.ElementTree as ET
+            try:
+                z_target = io.BytesIO(raw_bytes) if raw_bytes is not None else file_input
+                with zipfile.ZipFile(z_target) as z:
+                    xml_content = z.read("word/document.xml")
+                    tree = ET.fromstring(xml_content)
+                    texts = [node.text for node in tree.iter() if node.text]
+                    return " ".join(texts)
+            except Exception as e:
+                raise RuntimeError(f"Cannot parse docx file: {e}")
+
+    elif fn.endswith(".pdf"):
+        bio = io.BytesIO(raw_bytes) if raw_bytes is not None else file_input
+        try:
+            from pypdf import PdfReader
+            reader = PdfReader(bio)
+            pages_text = [page.extract_text() or "" for page in reader.pages]
+            return "\n\n".join(pages_text)
+        except Exception:
+            try:
+                import fitz
+                if raw_bytes is not None:
+                    doc = fitz.open(stream=raw_bytes, filetype="pdf")
+                else:
+                    doc = fitz.open(file_input)
+                pages_text = [page.get_text() for page in doc]
+                return "\n\n".join(pages_text)
+            except Exception as e:
+                raise RuntimeError(f"Cannot parse pdf file: {e}")
+
+    if raw_bytes is not None:
+        return raw_bytes.decode("utf-8", errors="ignore")
+    with open(file_input, "r", encoding="utf-8", errors="ignore") as f:
+        return f.read()
+
+

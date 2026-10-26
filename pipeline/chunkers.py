@@ -1,4 +1,5 @@
 import re
+import hashlib
 from typing import List, Dict, Any, Optional, Tuple
 from core.schema import CanonicalDocument, ContentBlock, CanonicalChunk, SourceLocation
 from core.registry import ProcessingProfile
@@ -8,6 +9,71 @@ from pipeline.interfaces import IChunker
 def count_tokens(text: str) -> int:
     tokens = re.findall(r"\w+|[^\w\s]", text, re.UNICODE)
     return len(tokens)
+
+
+def split_oversized_text(text: str, max_tokens: int) -> List[str]:
+    """
+    Chia đệ quy một văn bản quá khổ thành các đoạn nhỏ <= max_tokens:
+    Tier 2: Câu (Sentences qua dấu chấm/hỏi/chấm than)
+    Tier 3: Fallback chia theo token/từ nếu một câu đơn lẻ vẫn vượt quá max_tokens.
+    """
+    if count_tokens(text) <= max_tokens:
+        return [text]
+
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    segments: List[str] = []
+    curr_sents: List[str] = []
+    curr_toks = 0
+
+    for s in sentences:
+        s_clean = s.strip()
+        if not s_clean:
+            continue
+        s_toks = count_tokens(s_clean)
+        if s_toks > max_tokens:
+            if curr_sents:
+                segments.append(" ".join(curr_sents))
+                curr_sents = []
+                curr_toks = 0
+            # Tier 3 Token fallback
+            words = re.findall(r"\S+", s_clean)
+            for i in range(0, len(words), max(1, max_tokens)):
+                w_slice = words[i : i + max_tokens]
+                segments.append(" ".join(w_slice))
+            continue
+
+        if curr_toks + s_toks > max_tokens and curr_sents:
+            segments.append(" ".join(curr_sents))
+            curr_sents = []
+            curr_toks = 0
+
+        curr_sents.append(s_clean)
+        curr_toks += s_toks
+
+    if curr_sents:
+        segments.append(" ".join(curr_sents))
+
+    return segments
+
+
+def finalize_chunks(chunks: List[CanonicalChunk]) -> List[CanonicalChunk]:
+    for i, c in enumerate(chunks):
+        c.content_hash = hashlib.sha256(c.content.encode("utf-8")).hexdigest()
+        if i > 0:
+            c.prev_chunk_id = chunks[i - 1].chunk_id
+        if i < len(chunks) - 1:
+            c.next_chunk_id = chunks[i + 1].chunk_id
+        if c.source_location and c.source_location.start_offset is not None:
+            c.start_char = c.source_location.start_offset
+        if c.source_location and c.source_location.end_offset is not None:
+            c.end_char = c.source_location.end_offset
+        c.metadata["content_hash"] = c.content_hash
+        c.metadata["prev_chunk_id"] = c.prev_chunk_id
+        c.metadata["next_chunk_id"] = c.next_chunk_id
+        c.metadata["start_char"] = c.start_char
+        c.metadata["end_char"] = c.end_char
+        c.metadata["section_path"] = c.section_path
+    return chunks
 
 
 class GenericSlidingWindowChunker(IChunker):
@@ -84,13 +150,14 @@ class GenericSlidingWindowChunker(IChunker):
             chunk_idx += 1
             curr_idx += step
 
-        return chunks
+        return finalize_chunks(chunks)
 
 
 class BlockPreservingChunker(IChunker):
     """
     Chunker bảo toàn cấu trúc block: gom các khối nhỏ lại với nhau,
     chỉ ngắt ranh giới khi vượt max_tokens hoặc gặp block mới cấp cao hơn.
+    Nếu một khối đơn lẻ vượt max_tokens, chia đệ quy theo câu và token fallback.
     """
 
     def chunk(
@@ -113,6 +180,7 @@ class BlockPreservingChunker(IChunker):
         current_tokens = 0
         min_start: Optional[int] = None
         max_end: Optional[int] = None
+        current_section_path: List[str] = []
 
         def flush_chunk():
             nonlocal chunk_idx, current_block_ids, current_texts, current_tokens, min_start, max_end
@@ -136,6 +204,7 @@ class BlockPreservingChunker(IChunker):
                     source_location=SourceLocation(start_offset=min_start, end_offset=max_end),
                     security_classification=doc.security_classification,
                     acl=doc.acl,
+                    section_path=list(current_section_path),
                 )
             )
             chunk_idx += 1
@@ -150,34 +219,43 @@ class BlockPreservingChunker(IChunker):
             if not b_text:
                 continue
 
+            if b.block_type == "HEADING":
+                current_section_path = [b_text]
+
             b_tokens = count_tokens(b_text)
 
             # If adding this block exceeds max_tokens and we already have accumulated blocks, flush first
             if current_tokens + b_tokens > max_tokens and current_texts:
                 flush_chunk()
 
-            # If a single block alone is larger than max_tokens, split it or add as its own chunk
-            if b_tokens > max_tokens and not current_texts:
-                # Add as standalone chunk
-                c_id = f"{doc.document_id}__CHK_{chunk_idx:04d}"
-                chunks.append(
-                    CanonicalChunk(
-                        chunk_id=c_id,
-                        document_id=doc.document_id,
-                        domain_id=doc.domain_id,
-                        source_block_ids=[b.block_id],
-                        content=b_text,
-                        chunk_index=chunk_idx,
-                        chunking_strategy="block_preserving",
-                        profile_id=profile.profile_id,
-                        profile_version=profile.profile_version,
-                        token_count=b_tokens,
-                        source_location=b.source_location,
-                        security_classification=doc.security_classification,
-                        acl=doc.acl,
+            # If a single block alone is larger than max_tokens, split recursively
+            if b_tokens > max_tokens:
+                sub_segments = split_oversized_text(b_text, max_tokens)
+                curr_sub_offset = b.start_offset or 0
+                for sub_text in sub_segments:
+                    c_id = f"{doc.document_id}__CHK_{chunk_idx:04d}"
+                    sub_start = curr_sub_offset
+                    sub_end = sub_start + len(sub_text)
+                    curr_sub_offset = sub_end
+                    chunks.append(
+                        CanonicalChunk(
+                            chunk_id=c_id,
+                            document_id=doc.document_id,
+                            domain_id=doc.domain_id,
+                            source_block_ids=[b.block_id],
+                            content=sub_text,
+                            chunk_index=chunk_idx,
+                            chunking_strategy="block_preserving",
+                            profile_id=profile.profile_id,
+                            profile_version=profile.profile_version,
+                            token_count=count_tokens(sub_text),
+                            source_location=SourceLocation(start_offset=sub_start, end_offset=sub_end),
+                            security_classification=doc.security_classification,
+                            acl=doc.acl,
+                            section_path=list(current_section_path),
+                        )
                     )
-                )
-                chunk_idx += 1
+                    chunk_idx += 1
                 continue
 
             current_block_ids.append(b.block_id)
@@ -189,7 +267,7 @@ class BlockPreservingChunker(IChunker):
                 max_end = b.end_offset
 
         flush_chunk()
-        return chunks
+        return finalize_chunks(chunks)
 
 
 class HierarchicalHeadingChunker(IChunker):
@@ -295,7 +373,7 @@ class HierarchicalHeadingChunker(IChunker):
 
             flush_section_chunk()
 
-        return chunks
+        return finalize_chunks(chunks)
 
 
 class FixedTokenChunker(IChunker):
@@ -325,13 +403,14 @@ class FixedTokenChunker(IChunker):
         chunks = sliding.chunk(doc, blocks, profile)
         for c in chunks:
             c.chunking_strategy = "fixed_token"
-        return chunks
+        return finalize_chunks(chunks)
 
 
 class ChunkerRegistry:
     _chunkers: Dict[str, IChunker] = {
         "sliding_window": GenericSlidingWindowChunker(),
         "block_preserving": BlockPreservingChunker(),
+        "recursive_boundary": BlockPreservingChunker(),
         "hierarchical_heading": HierarchicalHeadingChunker(),
         "fixed_token": FixedTokenChunker(),
     }

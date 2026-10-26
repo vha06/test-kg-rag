@@ -169,16 +169,17 @@ class PipelineOrchestrator:
         # 5. Knowledge Extraction (Entities, Mentions, Relationships, Evidences)
         t0 = time.perf_counter()
         eff_extractor_name = extractor_override or document_metadata.get("extractor_override")
-        if eff_extractor_name == "llm_extractor":
-            eff_llm_config = llm_config or document_metadata.get("llm_config")
-            k_ext = ExtractorRegistry.get_knowledge_extractor("llm_extractor")
-            if hasattr(k_ext, "llm_config"):
-                k_ext.llm_config = eff_llm_config
-        elif eff_extractor_name:
+        eff_llm_config = llm_config or document_metadata.get("llm_config")
+        if eff_extractor_name:
             k_ext = ExtractorRegistry.get_knowledge_extractor(eff_extractor_name)
         else:
             k_ext_name = effective_profile.metadata_extractors[1] if len(effective_profile.metadata_extractors) > 1 else "rule_based_ops"
             k_ext = ExtractorRegistry.get_knowledge_extractor(k_ext_name)
+
+        if hasattr(k_ext, "llm_config"):
+            k_ext.llm_config = eff_llm_config
+        if hasattr(k_ext, "db"):
+            k_ext.db = self.db
 
         entities, mentions, relationships, evidences = k_ext.extract_knowledge(
             doc=doc, blocks=blocks, chunks=chunks, profile=effective_profile
@@ -294,5 +295,198 @@ class PipelineOrchestrator:
             relationships=bundle.get("relationships", []),
             evidences=bundle.get("evidences", []),
         )
+
+    def build_full_graphrag_pipeline(
+        self,
+        documents: List[Dict[str, Any]],
+        namespace: str = "graphrag_default",
+        chunking_strategy: str = "recursive_boundary",
+        chunk_size: int = 300,
+        chunk_overlap: int = 50,
+        extractor_name: str = "deterministic_general",
+        llm_config: Optional[Any] = None,
+        embedding_adapter: Optional[Any] = None,
+        max_community_levels: int = 3,
+        clear_existing: bool = True,
+        progress_callback: Optional[Any] = None,
+        **kwargs: Any,
+    ) -> Dict[str, Any]:
+        """
+        Thực thi toàn trình Indexing theo thiết kế Microsoft GraphRAG:
+        1. Parse & Chunk toàn bộ tài liệu thành TextUnits (CanonicalChunk).
+        2. Bóc tách Thực thể & Quan hệ ở cấp độ Chunk (Grounding Verification + Canonicalization).
+        3. Phân cụm cộng đồng đa cấp L0/L1/L2 (Hierarchical Louvain).
+        4. Sinh Báo cáo Cộng đồng (Community Reports) kèm kiểm chứng tham chiếu.
+        5. Xây dựng 3 chỉ mục vector độc lập (TextUnits, Entities, Community Reports) & Index Manifest.
+        """
+        start_t = time.perf_counter()
+
+        if progress_callback:
+            progress_callback("Đang dọn dẹp và chuẩn bị không gian tri thức...", 0.05)
+
+        if clear_existing and self.db:
+            self.db.clear_namespace_artifacts(namespace)
+
+        all_docs: List[CanonicalDocument] = []
+        all_blocks: List[ContentBlock] = []
+        all_chunks: List[CanonicalChunk] = []
+
+        # 1. Parsing & Chunking
+        if progress_callback:
+            progress_callback("Đang phân tích cấu trúc và cắt TextUnits...", 0.1)
+
+        chunker = ChunkerRegistry.get(chunking_strategy)
+        parser = ParserRegistry.get("generic_paragraph")
+
+        for idx, doc_item in enumerate(documents):
+            raw_text = doc_item.get("text", "")
+            if not raw_text.strip():
+                continue
+            doc_id = doc_item.get("document_id") or f"DOC_{hashlib.sha256(raw_text.encode('utf-8')).hexdigest()[:10]}"
+            title = doc_item.get("title") or f"Tài liệu {idx + 1}"
+            chksum = hashlib.sha256(raw_text.encode("utf-8")).hexdigest()
+
+            doc = CanonicalDocument(
+                document_id=doc_id,
+                title=title,
+                source_id=doc_id,
+                domain_id=namespace,
+                document_type="unstructured",
+                profile_id="graphrag_default",
+                checksum=chksum,
+            )
+            all_docs.append(doc)
+
+            blocks = parser.parse(raw_text=raw_text, doc=doc)
+            all_blocks.extend(blocks)
+
+            dummy_profile = ProcessingProfile(
+                profile_id="graphrag_default",
+                domain_id=namespace,
+                document_type="unstructured",
+                chunking_strategy=chunking_strategy,
+                chunking_parameters={"max_tokens": chunk_size, "chunk_overlap": chunk_overlap},
+            )
+            chunks = chunker.chunk(doc=doc, blocks=blocks, profile=dummy_profile)
+            all_chunks.extend(chunks)
+
+        if not all_chunks:
+            return {"status": "FAILED", "reason": "No text units generated from input documents."}
+
+        # 2. Knowledge Extraction
+        if progress_callback:
+            progress_callback(f"Đang trích xuất thực thể & quan hệ từ {len(all_chunks)} chunks...", 0.25)
+
+        k_ext = ExtractorRegistry.get_knowledge_extractor(extractor_name)
+        if hasattr(k_ext, "llm_config"):
+            k_ext.llm_config = llm_config
+        if hasattr(k_ext, "db"):
+            k_ext.db = self.db
+        if hasattr(k_ext, "progress_callback"):
+            k_ext.progress_callback = progress_callback
+
+        lead_doc = all_docs[0] if all_docs else CanonicalDocument(document_id="DOC_MERGED", title="Merged", source_id="M1", checksum="chk")
+        lead_profile = ProcessingProfile(profile_id="graphrag_default", domain_id=namespace, document_type="unstructured")
+
+        entities, mentions, relationships, evidences = k_ext.extract_knowledge(
+            doc=lead_doc,
+            blocks=all_blocks,
+            chunks=all_chunks,
+            profile=lead_profile,
+        )
+
+        # 3. Persist core entities/chunks to DB
+        if self.db:
+            for doc in all_docs:
+                self.db.insert_platform_documents([doc])
+            self.db.insert_platform_content_blocks(all_blocks)
+            self.db.insert_platform_chunks(all_chunks)
+            self.db.insert_platform_entities(entities)
+            self.db.insert_platform_entity_mentions(mentions)
+            self.db.insert_platform_relationships(relationships)
+            self.db.insert_platform_evidences(evidences)
+
+        # 4. Hierarchical Community Detection
+        if progress_callback:
+            progress_callback(f"Đang phát hiện cộng đồng phân cấp L0/L1/L2 từ {len(entities)} thực thể...", 0.6)
+
+        from knowledge_graph.community_detector import HierarchicalCommunityDetector
+        detector = HierarchicalCommunityDetector(
+            algorithm="louvain_hierarchical",
+            max_levels=max_community_levels,
+            min_split_size=6,
+            seed=42,
+        )
+        communities = detector.detect_communities(entities, relationships, namespace=namespace)
+        if self.db:
+            self.db.insert_graphrag_communities(communities)
+
+        # 5. Community Reports Generation
+        if progress_callback:
+            progress_callback(f"Đang sinh báo cáo phân tích cho {len(communities)} cụm cộng đồng...", 0.75)
+
+        from knowledge_graph.community_report_generator import CommunityReportGenerator
+        rep_gen = CommunityReportGenerator(llm_config=llm_config)
+        ent_map = {e.entity_id: e for e in entities}
+        rel_map = {r.relationship_id: r for r in relationships}
+        chunk_map = {c.chunk_id: c for c in all_chunks}
+
+        reports = []
+        for comm in communities:
+            rep = rep_gen.generate_report(comm, ent_map, rel_map, chunk_map)
+            reports.append(rep)
+
+        if self.db:
+            self.db.insert_graphrag_community_reports(reports)
+
+        # 6. Build 3 Vector Indices & Save Manifest
+        if progress_callback:
+            progress_callback("Đang xây dựng 3 chỉ mục Vector (TextUnits, Entities, Reports)...", 0.9)
+
+        from retrieval.graphrag_index_manager import GraphRAGIndexManager
+        idx_mgr = GraphRAGIndexManager(db_manager=self.db, embedding_adapter=embedding_adapter)
+        doc_checksums = [d.checksum for d in all_docs]
+
+        manifest_config = {
+            "doc_checksums": doc_checksums,
+            "chunking_strategy": chunking_strategy,
+            "chunk_size": chunk_size,
+            "chunk_overlap": chunk_overlap,
+            "extractor_model": extractor_name,
+            "extraction_prompt_version": "2.0.0",
+            "embedding_model": "sentence-transformers" if embedding_adapter is None else getattr(embedding_adapter, "model_name", "hash"),
+            "community_algorithm": "louvain_hierarchical",
+            "max_community_levels": max_community_levels,
+        }
+
+        chunks_dict = [c.model_dump() for c in all_chunks]
+        entities_dict = [e.model_dump() for e in entities]
+        reports_dict = [r.model_dump() for r in reports]
+
+        idx_mgr.build_all_indices(
+            namespace=namespace,
+            chunks=chunks_dict,
+            entities=entities_dict,
+            reports=reports_dict,
+            embedding_adapter=embedding_adapter,
+            manifest_config=manifest_config,
+        )
+
+        if progress_callback:
+            progress_callback("Hoàn tất xây dựng toàn trình GraphRAG Index!", 1.0)
+
+        total_sec = time.perf_counter() - start_t
+        return {
+            "status": "SUCCESS",
+            "namespace": namespace,
+            "document_count": len(all_docs),
+            "chunk_count": len(all_chunks),
+            "entity_count": len(entities),
+            "relationship_count": len(relationships),
+            "community_count": len(communities),
+            "report_count": len(reports),
+            "elapsed_seconds": round(total_sec, 2),
+            "index_manager": idx_mgr,
+        }
 
 

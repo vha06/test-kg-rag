@@ -51,9 +51,9 @@ class CanonicalDocument(BaseModel):
     schema_version: str = "1.0.0"
     title: str
     source_id: str
-    domain_id: str
-    document_type: str
-    profile_id: str
+    domain_id: str = "unstructured"
+    document_type: str = "general"
+    profile_id: str = "graphrag_default"
     profile_version: str = "1.0.0"
     checksum: str
     ingested_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
@@ -103,18 +103,24 @@ class CanonicalChunk(BaseModel):
 
     chunk_id: str
     document_id: str
-    domain_id: str
+    domain_id: str = "unstructured"
     source_block_ids: List[str] = Field(default_factory=list)
     content: str
-    chunk_index: int
-    chunking_strategy: str
-    profile_id: str
+    chunk_index: int = 0
+    chunking_strategy: str = "generic"
+    profile_id: str = "graphrag_default"
     profile_version: str = "1.0.0"
     token_count: int = 0
     source_location: SourceLocation = Field(default_factory=SourceLocation)
     security_classification: str = "INTERNAL"
     acl: ACLPolicy = Field(default_factory=ACLPolicy)
     metadata: Dict[str, Any] = Field(default_factory=dict)
+    content_hash: str = ""
+    start_char: int = 0
+    end_char: int = 0
+    section_path: List[str] = Field(default_factory=list)
+    prev_chunk_id: Optional[str] = None
+    next_chunk_id: Optional[str] = None
 
     @field_validator("source_block_ids")
     @classmethod
@@ -167,14 +173,16 @@ class CanonicalEntity(BaseModel):
     entity_type: str
     aliases: List[str] = Field(default_factory=list)
     description: Optional[str] = None
-    domain_id: str
-    graph_namespace: str
+    domain_id: str = "unstructured"
+    graph_namespace: str = "graphrag_default"
     extraction_method: str = "RULE_BASED"
     extractor_version: str = "1.0.0"
     verification_status: str = "UNVERIFIED"  # UNVERIFIED, VERIFIED, REJECTED
     schema_version: str = "1.0.0"
     attributes: Dict[str, Any] = Field(default_factory=dict)
     evidence_refs: List[str] = Field(default_factory=list)
+    source_chunk_ids: List[str] = Field(default_factory=list)
+    source_document_ids: List[str] = Field(default_factory=list)
 
     @field_validator("verification_status")
     @classmethod
@@ -208,8 +216,8 @@ class CanonicalRelationship(BaseModel):
     subject_entity_id: str
     predicate: str
     object_entity_id: str
-    domain_id: str
-    graph_namespace: str
+    domain_id: str = "unstructured"
+    graph_namespace: str = "graphrag_default"
     evidence_refs: List[str] = Field(default_factory=list)
     extraction_method: str = "RULE_BASED"
     extractor_version: str = "1.0.0"
@@ -218,6 +226,10 @@ class CanonicalRelationship(BaseModel):
     recorded_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     schema_version: str = "1.0.0"
     attributes: Dict[str, Any] = Field(default_factory=dict)
+    description: str = ""
+    weight: float = 1.0
+    source_chunk_ids: List[str] = Field(default_factory=list)
+    source_document_ids: List[str] = Field(default_factory=list)
 
     @field_validator("confidence")
     @classmethod
@@ -250,3 +262,93 @@ class CanonicalClaim(BaseModel):
     valid_to: Optional[str] = None
     evidence_refs: List[str] = Field(default_factory=list)
     verification_status: str = "UNVERIFIED"
+
+
+class CanonicalCommunity(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    community_id: str
+    namespace: str = "graphrag_default"
+    level: int = 0
+    parent_community_id: Optional[str] = None
+    child_community_ids: List[str] = Field(default_factory=list)
+    title: str = ""
+    entity_ids: List[str] = Field(default_factory=list)
+    relationship_ids: List[str] = Field(default_factory=list)
+    source_chunk_ids: List[str] = Field(default_factory=list)
+    source_document_ids: List[str] = Field(default_factory=list)
+    period: Optional[str] = None
+    size: int = 0
+    attributes: Dict[str, Any] = Field(default_factory=dict)
+
+
+class CanonicalCommunityReport(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    report_id: str
+    community_id: str
+    namespace: str = "graphrag_default"
+    level: int = 0
+    title: str = ""
+    summary: str = ""
+    full_content: str = ""
+    key_findings: List[str] = Field(default_factory=list)
+    supporting_entity_ids: List[str] = Field(default_factory=list)
+    supporting_relationship_ids: List[str] = Field(default_factory=list)
+    source_chunk_ids: List[str] = Field(default_factory=list)
+    source_document_ids: List[str] = Field(default_factory=list)
+    rating: float = 0.0
+    generation_model: str = "unknown"
+    prompt_version: str = "1.0.0"
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    attributes: Dict[str, Any] = Field(default_factory=dict)
+
+
+class GraphRAGIndexManifest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    run_id: str
+    namespace: str = "graphrag_default"
+    corpus_fingerprint: str = ""
+    chunking_strategy: str = "recursive_boundary"
+    chunk_size: int = 300
+    chunk_overlap: int = 50
+    extractor_model: str = "mock"
+    extraction_prompt_version: str = "1.0.0"
+    embedding_model: str = "sentence-transformers"
+    community_algorithm: str = "louvain_hierarchical"
+    max_community_levels: int = 3
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    artifact_counts: Dict[str, int] = Field(default_factory=dict)
+    status: str = "FRESH"  # FRESH, STALE, BUILDING, FAILED
+
+
+class GraphRAGQueryTrace(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    query_id: str
+    query_text: str
+    query_mode: str  # VECTOR, LOCAL, GLOBAL, DRIFT
+    selected_chunk_ids: List[str] = Field(default_factory=list)
+    seed_entity_ids: List[str] = Field(default_factory=list)
+    expanded_entity_ids: List[str] = Field(default_factory=list)
+    selected_relationship_ids: List[str] = Field(default_factory=list)
+    selected_community_ids: List[str] = Field(default_factory=list)
+    map_outputs: List[Dict[str, Any]] = Field(default_factory=list)
+    drift_steps: List[Dict[str, Any]] = Field(default_factory=list)
+    stop_reason: Optional[str] = None
+    llm_calls: int = 0
+    latency_ms: float = 0.0
+    refusal_reason: Optional[str] = None
+    details: Dict[str, Any] = Field(default_factory=dict)
+
+
+class GraphRAGQueryResult(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    query_id: str
+    query_text: str
+    query_mode: str
+    answer: str
+    grounded_citations: List[Dict[str, Any]] = Field(default_factory=list)
+    trace: GraphRAGQueryTrace
